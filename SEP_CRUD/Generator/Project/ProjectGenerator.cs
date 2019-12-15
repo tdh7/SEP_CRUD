@@ -1,45 +1,46 @@
 ﻿using SEP_CRUD.Generator.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using SEP_CRUD.Template.Project;
 
 namespace SEP_CRUD.Generator.Project
 {
-    public class ProjectGenerator : FileGenerator
+    public class ProjectGenerator : GroupGenerator<FileGenerator>
     {
-        
-        private List<FileGenerator> fileList = new List<FileGenerator>();
-
-        public void AddFile(FileGenerator file)
-        {
-            fileList.Add(file);
+        public string TypeGuid {
+            get { return "FAE04EC0-301F-11D3-BF4B-00C04F79EFBC"; }
         }
-        public readonly string projectName;
+
+        public string Guid { get; }
+
+        public FileGenerator DefaultFormGenerator { get; set; }
+
+
         private ProjectGenerator(string name)
         {
-            projectName = name;
+            this.name = name;
+            Guid = System.Guid.NewGuid().ToString().ToUpperInvariant();
         }
 
-        public static ProjectGenerator CreateEmptyProject(string name)
+        public static ProjectGenerator NewInstance(string name)
         {
             ProjectGenerator p = new ProjectGenerator(name);
+            p.DefaultFormGenerator = p;
+            p.Add(MustHaveGroupGenerator.NewInstance(p));
             return p;
         }
 
         public override string GetFileName()
         {
-            return projectName + ".csproj";
+            return name + ".csproj";
         }
 
         public override string GetRelativePath()
         {
-            return projectName;
+            return name;
         }
 
         public override string ToSourceCode()
         {
-            return "This is project files.";
+            return new ProjectTemplate(this).TransformText();
         }
     }
 }

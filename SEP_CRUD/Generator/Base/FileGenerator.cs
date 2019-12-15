@@ -1,12 +1,15 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace SEP_CRUD.Generator.Base
 {
     public abstract class FileGenerator : Generator
     {
+        protected string name;
+        public string Name
+        {
+            get { return name; }
+        }
 
         public abstract string GetFileName();
 
@@ -14,12 +17,12 @@ namespace SEP_CRUD.Generator.Base
 
         public abstract string ToSourceCode();
 
-        public virtual Result ExportTo(string path)
+        public virtual Result ExportToFiles(string path)
         {
             return WriteToFile(path);
         }
 
-        public Result WriteToFile(string rootPath)
+        public virtual Result WriteToFile(string rootPath)
         {
 
             string content = ToSourceCode();

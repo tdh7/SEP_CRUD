@@ -1,13 +1,6 @@
 ﻿using SEP_CRUD.Generator.Base;
 using SEP_CRUD.Generator.Project;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace SEP_CRUD
@@ -18,9 +11,11 @@ namespace SEP_CRUD
         {
             InitializeComponent();
             SolutionGenerator solutionGenerator = new SolutionGenerator("SQLViewer");
-            ProjectGenerator project = ProjectGenerator.CreateEmptyProject("SQLViewer");
-            solutionGenerator.addProject(project);
-            Result result = solutionGenerator.ExportTo("output");
+            ProjectGenerator project = ProjectGenerator.NewInstance("SQLViewer");
+            ProjectGenerator project2 = ProjectGenerator.NewInstance("CreatedProject2");
+            solutionGenerator.Add(project);
+            solutionGenerator.Add(project2);
+            Result result = solutionGenerator.ExportToFiles("output");
             Console.WriteLine("write " + result.GetResult() + " with message " + result.GetMessage());
         }
     }

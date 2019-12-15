@@ -43,14 +43,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constant\Constant.cs" />
-    <Compile Include="Constant\Project\Project.cs" />
-    <Compile Include="Constant\Project\RuntimeTextTemplate1.cs">
+    <Compile Include="Generator\Base\ClassGenerator.cs" />
+    <Compile Include="Generator\Base\FormGenerator.cs" />
+    <Compile Include="Generator\Base\GroupGenerator.cs" />
+    <Compile Include="Generator\Base\FileDetail.cs" />
+    <Compile Include="Generator\Project\MustHaveGroupGenerator.cs" />
+    <Compile Include="Template\Project\AssemblyInfoTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssemblyInfoTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Project\ProgramTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProgramTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Project\SettingDesignerTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SettingDesignerTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Project\SettingTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SettingTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Project\Template.cs" />
+    <Compile Include="Template\Project\ProjectTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Project\RuntimeTextTemplate1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RuntimeTextTemplate1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Constant\Project\SolutionTemplate.cs">
+    <Compile Include="Template\Project\SolutionTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SolutionTemplate.tt</DependentUpon>
@@ -93,11 +122,31 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Constant\Project\SolutionTemplate.tt">
+    <Content Include="Template\Project\AssemblyInfoTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>AssemblyInfoTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Project\ProgramTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ProgramTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Project\ProjectTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ProjectTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Project\SettingDesignerTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>SettingDesignerTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Project\SettingTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>SettingTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Project\SolutionTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>SolutionTemplate.cs</LastGenOutput>
     </Content>
-    <Content Include="Constant\Project\RuntimeTextTemplate1.tt">
+    <Content Include="Template\Project\RuntimeTextTemplate1.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>RuntimeTextTemplate1.cs</LastGenOutput>
     </Content>

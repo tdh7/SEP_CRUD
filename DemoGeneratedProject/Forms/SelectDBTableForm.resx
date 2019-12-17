@@ -117,33 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="contextMenuStripDataGrid.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>626, 17</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="editToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        xAAADsQBlSsOGwAAAPJJREFUOE9j+P//P0UYqyApGEIQAN++fcsC4tdA/BeItwKxKNEGABVXnLn17L9m
-        3ur/HBHz/3etO/cfZAhRBoA0n7757L9wwuL/tUtP/t9z7h7YEKD4X4IGIGtuWH7q/4f3H8GGgFwClHuN
-        1wBsmkE0iA/yDlA+C6cB+DSDxEHyIHVYDSBWMwhgGACUtLn64BVRmkEAmwENTSvP/A/o2ElQMwhgM+CA
-        S8PW/96t28GG4NMMAigGABVxfPr89YdY0pL/IENALgF5B5dmEEA3wAFowH+QISCXAHEDENtA1WIF6AYY
-        gAwBYg6oPEGAYgD5+D8DAGhJI49XYArhAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="deleteToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        xAAADsQBlSsOGwAAALlJREFUOE+1kj0OwjAMhTuxcQUmxOmQEDNCnIUNRjgDvQRzr9Csxl9w2qjxQFNh
-        6SnO8/OT89OIyCK45ByMiUUIYaXY2HYIOGq29Q2s+anoFNtIapAbRy2aFAYUELwfd2kvRwl9H00iNIej
-        hgatZ8CIXXs+yHW3ltdp/zVRkMNRQ4O2MBhGzRpY8zxN5R4hxdTEayb+YzBtZs3z3KQw0MKyS1TSnvFW
-        94x2hPqPlAKBYv5XroVL/g5pPn3Nk/7CiQcVAAAAAElFTkSuQmCC
-</value>
-  </data>
   <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>406, 17</value>
-  </metadata>
-  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>511, 17</value>
+    <value>17, 17</value>
   </metadata>
 </root>

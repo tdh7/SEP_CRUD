@@ -70,11 +70,29 @@
     <Compile Include="Forms\CreateOrUpdateDataForm.Designer.cs">
       <DependentUpon>CreateOrUpdateDataForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\LoginDBFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginDBFrom.Designer.cs">
+      <DependentUpon>LoginDBFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SelectDBTableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelectDBTableForm.Designer.cs">
+      <DependentUpon>SelectDBTableForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ViewDataFrom.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ViewDataFrom.Designer.cs">
       <DependentUpon>ViewDataFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WaitingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WaitingForm.Designer.cs">
+      <DependentUpon>WaitingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\Annotations.cs" />
@@ -85,8 +103,17 @@
     <EmbeddedResource Include="Forms\CreateOrUpdateDataForm.resx">
       <DependentUpon>CreateOrUpdateDataForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginDBFrom.resx">
+      <DependentUpon>LoginDBFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelectDBTableForm.resx">
+      <DependentUpon>SelectDBTableForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ViewDataFrom.resx">
       <DependentUpon>ViewDataFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WaitingForm.resx">
+      <DependentUpon>WaitingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -96,7 +123,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Properties\DataSources\DemoGeneratedProject.DTO.LoginDBInfo.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -111,5 +140,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="icons\Add_16x.png" />
+    <Content Include="icons\Cancel_16x.png" />
+    <Content Include="icons\Connect_16x.png" />
+    <Content Include="icons\Edit_16x.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

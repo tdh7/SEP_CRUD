@@ -1,17 +1,32 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
 
 namespace DemoGeneratedProject
 {
     public static class ExtensionClass
     {
-        public static bool isEmpty(this Hashtable hashtable)
+        public static bool isEmpty(this ICollection collection)
         {
-            return hashtable.Count == 0;
+            return collection.Count == 0;
+        }
+
+        public static bool isEmpty<T>(this ICollection<T> collection)
+        {
+            return collection.Count == 0;
+        }
+
+        public static void DisplayData(this DataTable table)
+        {
+            foreach (DataRow row in table.Rows)
+            {
+                foreach (DataColumn col in table.Columns)
+                {
+                    Console.WriteLine("{0} = {1}", col.ColumnName, row[col]);
+                }
+                Console.WriteLine("============================");
+            }
         }
     }
 }

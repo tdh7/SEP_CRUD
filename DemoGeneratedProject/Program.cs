@@ -17,7 +17,7 @@ namespace DemoGeneratedProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ViewDataFrom());
+            Application.Run(new SelectDBTableForm());
         }
     }
 }

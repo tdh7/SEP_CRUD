@@ -115,30 +115,30 @@ namespace DemoGeneratedProject.Forms
             // toolStripButtonNew
             // 
             this.toolStripButtonNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonNew.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonNew.Image")));
+            this.toolStripButtonNew.Image = global::DemoGeneratedProject.Properties.Resources.Add_16x;
             this.toolStripButtonNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonNew.Name = "toolStripButtonNew";
             this.toolStripButtonNew.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonNew.Text = "New";
+            this.toolStripButtonNew.Text = "New Item";
             this.toolStripButtonNew.Click += new System.EventHandler(this.toolStripButtonNew_Click);
             // 
             // toolStripButtonEdit
             // 
             this.toolStripButtonEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonEdit.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonEdit.Image")));
+            this.toolStripButtonEdit.Image = global::DemoGeneratedProject.Properties.Resources.Edit_16x;
             this.toolStripButtonEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonEdit.Name = "toolStripButtonEdit";
             this.toolStripButtonEdit.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonEdit.Text = "Edit";
+            this.toolStripButtonEdit.Text = "Edit Item";
             // 
             // toolStripButtonDelete
             // 
             this.toolStripButtonDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDelete.Image")));
+            this.toolStripButtonDelete.Image = global::DemoGeneratedProject.Properties.Resources.Cancel_16x;
             this.toolStripButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonDelete.Name = "toolStripButtonDelete";
             this.toolStripButtonDelete.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonDelete.Text = "Delete";
+            this.toolStripButtonDelete.Text = "Delete Item";
             // 
             // menuStrip1
             // 

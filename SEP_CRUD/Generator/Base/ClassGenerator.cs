@@ -1,12 +1,8 @@
 ﻿using SEP_CRUD.Generator.Project;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace SEP_CRUD.Generator.Base
 {
-    public abstract class ClassGenerator : GroupGenerator<ClassGenerator>
+    public abstract class ClassGenerator : FileGenerator
     {
         public ProjectGenerator ProjectOwner { get; set; }
         public string Namespace { get; set; }

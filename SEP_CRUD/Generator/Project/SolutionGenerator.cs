@@ -1,7 +1,5 @@
 ﻿using SEP_CRUD.Generator.Base;
 using SEP_CRUD.Template.Project;
-using System;
-using System.Collections.Generic;
 
 namespace SEP_CRUD.Generator.Project
 {
@@ -11,7 +9,7 @@ namespace SEP_CRUD.Generator.Project
 
         public void SetStartupProject(int position)
         {
-
+           
         }
 
         public SolutionGenerator(string name)

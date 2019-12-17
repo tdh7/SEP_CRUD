@@ -44,14 +44,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Generator\Base\ClassGenerator.cs" />
+    <Compile Include="Generator\Base\FormDesignerGenerator.cs" />
     <Compile Include="Generator\Base\FormGenerator.cs" />
     <Compile Include="Generator\Base\GroupGenerator.cs" />
     <Compile Include="Generator\Base\FileDetail.cs" />
+    <Compile Include="Generator\Base\ItemGenerator.cs" />
+    <Compile Include="Generator\ProgramGenerator.cs" />
     <Compile Include="Generator\Project\MustHaveGroupGenerator.cs" />
+    <Compile Include="Template\Form\Template.cs" />
     <Compile Include="Template\Project\AssemblyInfoTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AssemblyInfoTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Form\FormDesignerTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FormDesignerTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Form\FormTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FormTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Template\Project\ProgramTemplate.cs">
       <AutoGen>True</AutoGen>
@@ -125,6 +139,14 @@
     <Content Include="Template\Project\AssemblyInfoTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>AssemblyInfoTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Form\FormDesignerTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>FormDesignerTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Form\FormTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>FormTemplate.cs</LastGenOutput>
     </Content>
     <Content Include="Template\Project\ProgramTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

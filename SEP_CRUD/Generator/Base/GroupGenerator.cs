@@ -8,7 +8,7 @@ namespace SEP_CRUD.Generator.Base
       
         public List<T> generatorList = new List<T>();
 
-        public int Count
+        public override int Count
         {
             get { return generatorList.Count; }
         }
@@ -37,6 +37,11 @@ namespace SEP_CRUD.Generator.Base
         public virtual bool HasContent()
         {
             return true;
+        }
+
+        public override FileGenerator GetItem(int position)
+        {
+            return this[position];
         }
 
         public override Result ExportToFiles(string path)

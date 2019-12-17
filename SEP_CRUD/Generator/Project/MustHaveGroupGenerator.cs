@@ -14,13 +14,9 @@ namespace SEP_CRUD.Generator.Project
         public static MustHaveGroupGenerator NewInstance(ProjectGenerator p)
         {
             MustHaveGroupGenerator g = new MustHaveGroupGenerator();
-            g.Add(new QuickFileGenerator("Program")
-            {
-                RelativePath = p.GetRelativePath(),
-                SourceCode = new ProgramTemplate(p).TransformText()
-            });
+            g.Add(new ProgramGenerator(p));
 
-            g.Add(new QuickFileGenerator("Settings","Settings.Designer.cs")
+            g.Add(new QuickFileGenerator("Settings.Designer","Settings.Designer.cs")
             {
                 RelativePath = p.GetRelativePath() + "/Properties",
                 SourceCode = new SettingDesignerTemplate().TransformText()
@@ -37,6 +33,7 @@ namespace SEP_CRUD.Generator.Project
                 RelativePath = p.GetRelativePath() + "/Properties",
                 SourceCode = new SettingTemplate().TransformText()
             });
+
             return g;
         }
 

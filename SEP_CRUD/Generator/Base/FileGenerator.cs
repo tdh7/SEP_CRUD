@@ -5,7 +5,7 @@ namespace SEP_CRUD.Generator.Base
 {
     public abstract class FileGenerator : Generator
     {
-        protected string name;
+        protected string name = "";
         public string Name
         {
             get { return name; }
@@ -17,9 +17,29 @@ namespace SEP_CRUD.Generator.Base
 
         public abstract string ToSourceCode();
 
+        public string RegisterToProject()
+        {
+            return string.Empty;
+        }
+
         public virtual Result ExportToFiles(string path)
         {
             return WriteToFile(path);
+        }
+
+        public string GetRelativeFilePath()
+        {
+            return GetRelativePath() + "/" + GetFileName();
+        }
+
+        public virtual int Count
+        {
+            get { return 0; }
+        }
+
+        public virtual FileGenerator GetItem(int position)
+        {
+            return this;
         }
 
         public virtual Result WriteToFile(string rootPath)

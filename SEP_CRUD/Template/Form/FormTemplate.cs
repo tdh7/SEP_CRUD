@@ -7,21 +7,20 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace SEP_CRUD.Template.Project
+namespace SEP_CRUD.Template.Form
 {
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-    using SEP_CRUD.Generator.Base;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Project\ProjectTemplate.tt"
+    #line 1 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\FormTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public partial class ProjectTemplate : ProjectTemplateBase
+    public partial class FormTemplate : FormTemplateBase
     {
 #line hidden
         /// <summary>
@@ -29,102 +28,28 @@ namespace SEP_CRUD.Template.Project
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write(@"<?xml version=""1.0"" encoding=""utf-8""?>
-<Project ToolsVersion=""15.0"" xmlns=""http://schemas.microsoft.com/developer/msbuild/2003"">
-  <Import Project=""$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"" Condition=""Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"" />
-  <PropertyGroup>
-    <Configuration Condition="" '$(Configuration)' == '' "">Debug</Configuration>
-    <Platform Condition="" '$(Platform)' == '' "">AnyCPU</Platform>
-    <ProjectGuid>{");
+            this.Write("using System;\r\nusing System.Windows.Forms;\r\n\r\nnamespace ");
             
-            #line 13 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Project\ProjectTemplate.tt"
- Write(generator.Guid); 
+            #line 9 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\FormTemplate.tt"
+ Write(generator.Namespace); 
             
             #line default
             #line hidden
-            this.Write("}</ProjectGuid>\r\n    <OutputType>WinExe</OutputType>\r\n    <RootNamespace>");
+            this.Write("{\r\n    public partial class ");
             
-            #line 15 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Project\ProjectTemplate.tt"
+            #line 11 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\FormTemplate.tt"
  Write(generator.Name); 
             
             #line default
             #line hidden
-            this.Write("</RootNamespace>\r\n    <AssemblyName>");
+            this.Write(" : Form\r\n    {\r\n        public ");
             
-            #line 16 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Project\ProjectTemplate.tt"
+            #line 13 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\FormTemplate.tt"
  Write(generator.Name); 
             
             #line default
             #line hidden
-            this.Write(@"</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-  </PropertyGroup>
-  <PropertyGroup Condition="" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' "">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition="" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' "">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include=""System"" />
-    <Reference Include=""System.Core"" />
-    <Reference Include=""System.Xml.Linq"" />
-    <Reference Include=""System.Data.DataSetExtensions"" />
-    <Reference Include=""System.Data"" />
-    <Reference Include=""System.Deployment"" />
-    <Reference Include=""System.Drawing"" />
-    <Reference Include=""System.Windows.Forms"" />
-    <Reference Include=""System.Xml"" />
-  </ItemGroup>
-  <ItemGroup>
-  ");
-            
-            #line 52 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Project\ProjectTemplate.tt"
-
-	List<string> list = GetCompileItems();
-	int count = list.Count;
-	for(int i= 0;i<count; i++) {
-		WriteLine(list[i]);
-	}
-	  /*<Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-	*/
-	
-            
-            #line default
-            #line hidden
-            this.Write("  </ItemGroup>\r\n  <ItemGroup />\r\n  <Import Project=\"$(MSBuildToolsPath)\\Microsoft" +
-                    ".CSharp.targets\" />\r\n</Project>");
+            this.Write("()\r\n        {\r\n            InitializeComponent();\r\n        }\r\n    }\r\n}\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }
@@ -136,7 +61,7 @@ namespace SEP_CRUD.Template.Project
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public class ProjectTemplateBase
+    public class FormTemplateBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

@@ -1,0 +1,53 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="SEP_CRUD.Generator.Project" #>
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29503.13
+MinimumVisualStudioVersion = 10.0.40219.1
+<#
+//Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCreatedProj", "MyCreatedProj\MyCreatedProj.csproj", "{DAA85495-DCA8-4AE3-9990-1226BBE0EEF5}"
+
+	  int count = generator.Count;
+	  ProjectGenerator p;
+            for(int i = 0; i < count; i++)
+            {
+				p = generator[i];	
+				WriteLine("Project(\"{"+p.TypeGuid+"}\") = \"" + p.Name+"\", \""+p.GetRelativePath()+"\\"+p.GetFileName()+"\", \"{"+p.Guid+"}\"");
+            }
+#>
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+	<#
+			/*
+		{DAA85495-DCA8-4AE3-9990-1226BBE0EEF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAA85495-DCA8-4AE3-9990-1226BBE0EEF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAA85495-DCA8-4AE3-9990-1226BBE0EEF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAA85495-DCA8-4AE3-9990-1226BBE0EEF5}.Release|Any CPU.Build.0 = Release|Any CPU
+			*/
+			for(int i = 0; i < count; i++)
+            {
+				p = generator[i];	
+				WriteLine("{"+p.Guid+"}.Debug|Any CPU.ActiveCfg = Debug|Any CPU");
+				WriteLine("{"+p.Guid+"}.Debug|Any CPU.Build.0 = Debug|Any CPU");
+				WriteLine("{"+p.Guid+"}.Release|Any CPU.ActiveCfg = Release|Any CPU");
+				WriteLine("{"+p.Guid+"}.Release|Any CPU.Build.0 = Release|Any CPU");
+            }
+	#>
+		EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {<# Write(generator.Guid); #>}
+	EndGlobalSection
+EndGlobal

@@ -42,5 +42,6 @@ namespace SEP_CRUD.Generator.Project
         {
             return new ProjectTemplate(this).TransformText();
         }
+
     }
 }

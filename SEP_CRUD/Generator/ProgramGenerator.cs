@@ -10,7 +10,7 @@ namespace SEP_CRUD.Generator
 {
     public class ProgramGenerator : ClassGenerator
     {
-        public ProgramGenerator(ProjectGenerator p) : base(p, "Program", p.Name)
+        public ProgramGenerator(ProjectGenerator p) : base(p, "Program")
         {
         }
 

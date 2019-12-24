@@ -56,10 +56,18 @@ namespace SEP_CRUD.Generator.Base
             return result;
         }
 
-        readonly string message;
-        public string GetMessage()
+        public bool OK
         {
-            return message;
+            get { return GetResult(); }
+        }
+
+        readonly string message;
+        public string Message
+        {
+            get
+            {
+                return message;
+            }
         }
     }
 }

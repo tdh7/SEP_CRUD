@@ -18,7 +18,7 @@ namespace SEP_CRUD.Template.Entity
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+    #line 1 "C:\Users\Kim Ninh\Source\Repos\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ModelTemplate : ModelTemplateBase
     {
@@ -30,21 +30,21 @@ namespace SEP_CRUD.Template.Entity
         {
             this.Write("using System;\r\nusing System.Collections.Generic;\r\n\r\nnamespace ");
             
-            #line 9 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+            #line 9 "C:\Users\Kim Ninh\Source\Repos\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
  Write(generator.Namespace); 
             
             #line default
             #line hidden
             this.Write("{\r\n\tpublic class ");
             
-            #line 11 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+            #line 11 "C:\Users\Kim Ninh\Source\Repos\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
  Write(generator.Name); 
             
             #line default
             #line hidden
             this.Write("\t{\r\n");
             
-            #line 13 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+            #line 13 "C:\Users\Kim Ninh\Source\Repos\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
  Write(GetBodyClass()); 
             
             #line default

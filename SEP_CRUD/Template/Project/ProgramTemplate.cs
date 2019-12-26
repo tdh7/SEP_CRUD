@@ -18,7 +18,7 @@ namespace SEP_CRUD.Template.Project
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Project\ProgramTemplate.tt"
+    #line 1 "C:\Users\Kim Ninh\Source\Repos\SEP_CRUD\SEP_CRUD\Template\Project\ProgramTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ProgramTemplate : ProgramTemplateBase
     {
@@ -31,7 +31,7 @@ namespace SEP_CRUD.Template.Project
             this.Write("using System;\r\nusing System.Collections.Generic;\r\nusing System.Linq;\r\nusing Syste" +
                     "m.Windows.Forms;\r\n\r\nnamespace ");
             
-            #line 11 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Project\ProgramTemplate.tt"
+            #line 11 "C:\Users\Kim Ninh\Source\Repos\SEP_CRUD\SEP_CRUD\Template\Project\ProgramTemplate.tt"
  Write(generator.Name); 
             
             #line default
@@ -51,7 +51,7 @@ namespace SEP_CRUD.Template.Project
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ");
             
-            #line 25 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Project\ProgramTemplate.tt"
+            #line 25 "C:\Users\Kim Ninh\Source\Repos\SEP_CRUD\SEP_CRUD\Template\Project\ProgramTemplate.tt"
  Write(generator.DefaultFormGenerator.Name); 
             
             #line default

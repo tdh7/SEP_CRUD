@@ -18,7 +18,7 @@ namespace SEP_CRUD.Template.Project
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Project\AssemblyInfoTemplate.tt"
+    #line 1 "C:\Users\Kim Ninh\Source\Repos\SEP_CRUD\SEP_CRUD\Template\Project\AssemblyInfoTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class AssemblyInfoTemplate : AssemblyInfoTemplateBase
     {
@@ -37,7 +37,7 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 [assembly: AssemblyTitle(""");
             
-            #line 13 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Project\AssemblyInfoTemplate.tt"
+            #line 13 "C:\Users\Kim Ninh\Source\Repos\SEP_CRUD\SEP_CRUD\Template\Project\AssemblyInfoTemplate.tt"
  Write(generator.Name); 
             
             #line default
@@ -45,14 +45,14 @@ using System.Runtime.InteropServices;
             this.Write("\")]\r\n[assembly: AssemblyDescription(\"\")]\r\n[assembly: AssemblyConfiguration(\"\")]\r\n" +
                     "[assembly: AssemblyCompany(\"\")]\r\n[assembly: AssemblyProduct(\"");
             
-            #line 17 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Project\AssemblyInfoTemplate.tt"
+            #line 17 "C:\Users\Kim Ninh\Source\Repos\SEP_CRUD\SEP_CRUD\Template\Project\AssemblyInfoTemplate.tt"
  Write(generator.Name); 
             
             #line default
             #line hidden
             this.Write("\")]\r\n[assembly: AssemblyCopyright(\"Copyright ©  ");
             
-            #line 18 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Project\AssemblyInfoTemplate.tt"
+            #line 18 "C:\Users\Kim Ninh\Source\Repos\SEP_CRUD\SEP_CRUD\Template\Project\AssemblyInfoTemplate.tt"
  Write(DateTime.Now.Year.ToString()); 
             
             #line default
@@ -69,7 +69,7 @@ using System.Runtime.InteropServices;
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid(""");
             
-            #line 28 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Project\AssemblyInfoTemplate.tt"
+            #line 28 "C:\Users\Kim Ninh\Source\Repos\SEP_CRUD\SEP_CRUD\Template\Project\AssemblyInfoTemplate.tt"
  Write(generator.Guid.ToLowerInvariant()); 
             
             #line default

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using SEP_CRUD.Forms;
+using DemoGeneratedProject.Forms;
 
-namespace SEP_CRUD
+namespace DemoGeneratedProject
 {
     static class Program
     {
@@ -16,7 +17,7 @@ namespace SEP_CRUD
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ProjectInfoForm());
+            Application.Run(new SelectDBTableForm());
         }
     }
 }

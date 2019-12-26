@@ -9,6 +9,14 @@ namespace SEP_CRUD
 {
     class Util
     {
+        public static int sIdCount = 0;
+        public static int NextId
+        {
+            get
+            {
+                return sIdCount++;
+            }
+        }
         public static string GetTextFromAsset(string path)
         {
             Assembly ass = Assembly.GetExecutingAssembly();

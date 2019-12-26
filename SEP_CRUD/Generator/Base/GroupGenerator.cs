@@ -58,7 +58,8 @@ namespace SEP_CRUD.Generator.Base
             for (int i = 0; i < n; i++)
             {
                 result = generatorList[i].ExportToFiles(path);
-                if (!result.GetResult()) return Result.Create("Error when trying to export item " + generatorList[i].GetFileName());
+                if (!result.GetResult())
+                    return Result.Create("Error when trying to export item " + generatorList[i].GetFileName() +", "+ result.Message);
             }
             return Result.Create(true);
         }

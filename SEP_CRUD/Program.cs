@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using SEP_CRUD.Forms;
 
 namespace SEP_CRUD
 {
@@ -15,7 +16,7 @@ namespace SEP_CRUD
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new ProjectInfoForm());
         }
     }
 }

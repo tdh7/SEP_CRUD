@@ -105,6 +105,7 @@
     <Compile Include="Generator\Model\ModelsGenerator.cs" />
     <Compile Include="Generator\ProgramGenerator.cs" />
     <Compile Include="Generator\Project\MustHaveGroupGenerator.cs" />
+    <Compile Include="Helper\Mapping\SqlStringBuilderToDatabaseLoader.cs" />
     <Compile Include="Helper\NameConvention\NameConvention.cs" />
     <Compile Include="Template\Entity\Constant.cs" />
     <Compile Include="Template\Entity\ModelTemplate.cs">

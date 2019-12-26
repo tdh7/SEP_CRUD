@@ -7,10 +7,11 @@ using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Forms;
+using SEP_CRUD.Entities.Loader;
 using SEP_CRUD.Generator.Base;
 using SEP_CRUD.Generator.Project;
+using SEP_CRUD.Helper.Mapping;
 
-//using DemoGeneratedProject.DTO;
 
 namespace SEP_CRUD.Forms
 {
@@ -19,6 +20,8 @@ namespace SEP_CRUD.Forms
         private SqlConnectionStringBuilder builder;
 
         private const string COLUMN_NAME = "TABLE_NAME";
+
+        private DatabaseLoader databaseLoader = new DatabaseLoader();
 
         public ProjectInfoForm()
         {
@@ -29,9 +32,17 @@ namespace SEP_CRUD.Forms
         {
             this.builder = e;
             string dbName = builder.InitialCatalog.toClassNameNotation();
+            SqlStringBuilderToDatabaseLoader.Convert(builder, databaseLoader);
+            var result = databaseLoader.Connect();
+            if (result.OK == false)
+            {
+                MessageBox.Show(result.Message);
+                return;
+            }
 
-            listBoxDBTableName.DataSource = getTableName();
-            listBoxDBTableName.DisplayMember = COLUMN_NAME;
+            listBoxDBTableName.DataSource = databaseLoader.LoadTableNames();
+            databaseLoader.Disconnect();
+//            listBoxDBTableName.DisplayMember = COLUMN_NAME;
 
             toolStripButtonConnect.Enabled = false;
             buttonStart.Enabled = true;
@@ -83,8 +94,10 @@ namespace SEP_CRUD.Forms
 
             foreach (int i in listBoxDBTableName.SelectedIndices)
             {
-                DataRowView dataRowView = (DataRowView)listBoxDBTableName.Items[i];
-                string tableName = dataRowView.Row[COLUMN_NAME].ToString();
+//                DataRowView dataRowView = (DataRowView)listBoxDBTableName.Items[i];
+//                string tableName = dataRowView.Row[COLUMN_NAME].ToString();
+
+                var tableName = listBoxDBTableName.Items[i].ToString();
 
                 tablesName.Add(tableName);
                 Console.WriteLine(tableName); // log
@@ -107,7 +120,7 @@ namespace SEP_CRUD.Forms
 
             solutionGenerator.Add(projectGenerator);
             Result result = solutionGenerator.ExportToFiles("output");
-            Console.WriteLine("write " + result.GetResult() + " with message " + result.GetMessage());
+            Console.WriteLine("write " + result.GetResult() + " with message " + result.Message);
         }
     }
 

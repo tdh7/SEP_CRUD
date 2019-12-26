@@ -1,4 +1,5 @@
-﻿using SQLHibernate.Define.Inteface;
+﻿using SQLHibernate.DAO;
+using SQLHibernate.Define.Inteface;
 using SQLHibernate.Define.SQLServer;
 using System;
 using System.Collections;
@@ -10,10 +11,12 @@ using System.Threading.Tasks;
 
 namespace SQLHibernate.DTO
 {
-    class FirmDAO
+    class FirmDAO : AbstractDAO<Firm>
     {
-        private IDatabase database;
-        private String connectionString = "Data Source=DESKTOP-G7ODJ9B\\SQLEXPRESS;Initial Catalog=ManagementSystem;Integrated Security=True";
+        private string connectionString = "Data Source=DESKTOP-G7ODJ9B\\SQLEXPRESS;Initial Catalog=ManagementSystem;Integrated Security=True";
+
+        public FirmDAO() : base() { }
+
         public static FirmDAO Instance
         {
             get
@@ -22,33 +25,12 @@ namespace SQLHibernate.DTO
             }
         }
 
-        private FirmDAO()
+        protected override string ConnectionString
         {
-            database = new SqlDatabase(connectionString);
-        }
-
-        public IList readAll()
-        {
-            ITable table = database.Table(typeof(Firm));
-            return table.ReadAll();
-        }
-
-        public int Delete(object obj)
-        {
-            ITable table = database.Table(typeof(Firm));
-            return table.Delete(obj);
-        }
-
-        public int Update(object obj)
-        {
-            ITable table = database.Table(typeof(Firm));
-            return table.Update(obj);
-        }
-
-        public int Insert(object obj)
-        {
-            ITable table = database.Table(typeof(Firm));
-            return table.Insert(obj);
+            get
+            {
+                return connectionString;
+            }
         }
     }
 }

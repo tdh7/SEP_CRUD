@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\AbstractDAO.cs" />
     <Compile Include="Define\HAttribute\AttributesTableDefinitionBuilder.cs" />
     <Compile Include="Define\HAttribute\FieldAttribute.cs" />
     <Compile Include="Define\HAttribute\TableAttribute.cs" />

@@ -24,7 +24,9 @@ namespace SEP_CRUD.Generator.Base
 
         public virtual Result ExportToFiles(string path)
         {
-            return WriteToFile(path);
+            OnExportedStart();
+            Result r = WriteToFile(path);
+            return r;
         }
 
         public string GetRelativeFilePath()
@@ -42,11 +44,13 @@ namespace SEP_CRUD.Generator.Base
             return this;
         }
 
+        public virtual void OnExportedStart() {}
+
         public virtual Result WriteToFile(string rootPath)
         {
 
             string content = ToSourceCode();
-            if (content.Length == 0) return Result.Create("Generated Source Code is empty");
+            if (content==null) return Result.Create("Generated Source Code is null");
 
             string relativePath = GetRelativePath();
             if (relativePath == null) return Result.Create("Relative Path is null");

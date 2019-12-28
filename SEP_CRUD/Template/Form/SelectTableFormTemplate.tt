@@ -1,4 +1,9 @@
-﻿using System;
+﻿<#@ template language="C#" inherits="SharedFormGenerator"#>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,15 +12,14 @@ using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Forms;
-using DemoGeneratedProject.DTO;
 
-namespace DemoGeneratedProject.Forms
+namespace <#= Generator.Namespace #>
 {
-    public partial class SelectDBTableForm : DemoGeneratedProject.Forms.BaseForm
+    public partial class SelectTableForm : BaseForm
     {
         private string connectionStr;
 
-        public SelectDBTableForm()
+        public SelectTableForm()
         {
             InitializeComponent();
         }
@@ -49,11 +53,11 @@ namespace DemoGeneratedProject.Forms
         private void buttonViewTable_Click(object sender, EventArgs e)
         {
             string tableName = (string) listBoxDBTableName.SelectedValue;
-
             MessageBox.Show($"Table {tableName} has chosen");
 
-            ViewSinhVienForm form = new ViewSinhVienForm();
-            form.Show();
+			// TODO: open form
+            var form = ViewFormFactory.getFormByTableName(tableName);
+			form.Show();
         }
 
         private void SelectDBTableForm_Shown(object sender, EventArgs e)
@@ -63,7 +67,7 @@ namespace DemoGeneratedProject.Forms
 
         private void OpenLoginForm()
         {
-            LoginDBFrom form = new LoginDBFrom();
+            LoginForm form = new LoginForm();
             form.OnLoginSuccessHandler = OnLoginSuccessHandler;
             form.ShowDialog(); // Force user focus on login form
         }

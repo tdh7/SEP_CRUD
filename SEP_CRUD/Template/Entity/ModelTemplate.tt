@@ -11,7 +11,7 @@ using System.Text;
 namespace <# Write(generator.Namespace); #>
 {
 
-	public class <# Write(generator.Name); #>
+	public class <# Write(generator.Name); #> : BaseModel
 	{
 <#     Table table = generator.Table;
             int count = table.Count;

@@ -93,10 +93,17 @@
     <Compile Include="Generator\Form\EditDataFormGenerator.cs" />
     <Compile Include="Generator\Form\EditFormDesignerGenerator.cs" />
     <Compile Include="Generator\Form\EditFormGenerator.cs" />
+    <Compile Include="Generator\Form\LoginFormDesignerGenerator.cs" />
+    <Compile Include="Generator\Form\LoginFormGenerator.cs" />
+    <Compile Include="Generator\Form\SelectTableFormDesignerGenerator.cs" />
+    <Compile Include="Generator\Form\SelectTableFormGenerator.cs" />
     <Compile Include="Generator\Form\ViewDataFormDesignerGenerator.cs" />
     <Compile Include="Generator\Form\ViewDataFormGenerator.cs" />
     <Compile Include="Generator\Form\ViewFormDesignerGenerator.cs" />
+    <Compile Include="Generator\Form\ViewFormFactoryGenerator.cs" />
     <Compile Include="Generator\Form\ViewFormGenerator.cs" />
+    <Compile Include="Generator\Form\WaitingFormDesignerGenerator.cs" />
+    <Compile Include="Generator\Form\WaitingFormGenerator.cs" />
     <Compile Include="Generator\Model\BaseModelGenerator.cs" />
     <Compile Include="Generator\Model\EditableObjectGenerator.cs" />
     <Compile Include="Generator\Model\ModelGenerator.cs" />
@@ -157,6 +164,31 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EditFormTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="Template\Form\ViewFormFactoryTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewFormFactoryTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Form\LoginFormDesignerTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginFormDesignerTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Form\LoginFormTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginFormTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Form\SelectTableFormDesignerTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SelectTableFormDesignerTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Form\SelectTableFormTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SelectTableFormTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Template\Form\SharedFormDesignerGenerator.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -187,6 +219,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ViewFormDesignerTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Form\WaitingFormDesignerTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WaitingFormDesignerTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Form\WaitingFormTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WaitingFormTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Template\Project\AssemblyInfoTemplate.cs">
       <AutoGen>True</AutoGen>
@@ -304,6 +346,10 @@
     <Content Include="icons\Cancel_16x.png" />
     <Content Include="icons\Connect_16x.png" />
     <Content Include="icons\Edit_16x.png" />
+    <Content Include="Template\Entity\ModelTemplate2.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ModelTemplate2.cs</LastGenOutput>
+    </Content>
     <Content Include="Template\Form\BaseFormDesignerTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>BaseFormDesignerTemplate.cs</LastGenOutput>
@@ -328,6 +374,26 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>EditFormTemplate.cs</LastGenOutput>
     </Content>
+    <Content Include="Template\Form\ViewFormFactoryTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ViewFormFactoryTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Form\LoginFormDesignerTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>LoginFormDesignerTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Form\LoginFormTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>LoginFormTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Form\SelectTableFormDesignerTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>SelectTableFormDesignerTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Form\SelectTableFormTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>SelectTableFormTemplate.cs</LastGenOutput>
+    </Content>
     <Content Include="Template\Form\SharedFormDesignerGenerator.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>SharedFormDesignerGenerator.cs</LastGenOutput>
@@ -351,6 +417,14 @@
     <Content Include="Template\Form\ViewFormDesignerTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ViewFormDesignerTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Form\WaitingFormDesignerTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WaitingFormDesignerTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Form\WaitingFormTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WaitingFormTemplate.cs</LastGenOutput>
     </Content>
     <Content Include="Template\Project\AssemblyInfoTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

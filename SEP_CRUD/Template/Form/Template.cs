@@ -53,4 +53,15 @@ namespace SEP_CRUD.Template.Form
     {
         public Table Table;
     }
+
+    public partial class LoginFormTemplate
+    {
+        public string DBName;
+    }
+
+    public partial class ViewFormFactoryTemplate
+    {
+        public List<Table> Tables;
+        public string _namespace;
+    }
 }

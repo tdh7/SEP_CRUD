@@ -7,21 +7,20 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace SEP_CRUD.Template.Entity
+namespace SEP_CRUD.Template.Form
 {
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-    using SEP_CRUD.Entities;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate2.tt"
+    #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public partial class ModelTemplate2 : ModelTemplate2Base
+    public partial class ViewFormFactoryTemplate : ViewFormFactoryTemplateBase
     {
 #line hidden
         /// <summary>
@@ -30,68 +29,83 @@ namespace SEP_CRUD.Template.Entity
         public virtual string TransformText()
         {
             this.Write("using System;\r\nusing System.Collections.Generic;\r\nusing System.Text;\r\nusing Syste" +
-                    "m.Linq;\r\nusing System.Data.Linq;\r\nusing System.Data.Linq.Mapping;\r\n\r\nnamespace ");
+                    "m.Windows.Forms;\r\n\r\nnamespace ");
             
-            #line 14 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate2.tt"
- Write(generator.Namespace); 
-            
-            #line default
-            #line hidden
-            this.Write("{\r\n    #pragma warning disable 0169\r\n\r\n    [Table(Name = \"");
-            
-            #line 18 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate2.tt"
-Write(generator.Table.DatabaseName);
+            #line 11 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(_namespace));
             
             #line default
             #line hidden
-            this.Write("\")]\r\n\tpublic class ");
+            this.Write("\r\n{\r\n\tpublic class ViewFormFactory\r\n\t{\r\n\t\tpublic static Form getFormByTableName(s" +
+                    "tring TableName)\r\n\t\t{\r\n");
             
-            #line 19 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate2.tt"
- Write(generator.Name); 
-            
-            #line default
-            #line hidden
-            this.Write("\t{\r\n");
-            
-            #line 21 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate2.tt"
-     Table table = generator.Table;
-            int count = table.Count;
-            string attr;
-            Column c;
-            for(int i =0;i<count;i++)
-            {
-                c = table[i];
+            #line 17 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
 
-                
-                if (c.MapType == MapType.PRIMITIVE)
-                {
-
-                    if(table.PrimaryKey.HasColumn(c))
-                    WriteLine("        [Column( IsPrimaryKey = true, Name = \""+c.DatabaseName+"\" )]");
-                    else
-                    WriteLine("        [Column( Name = \""+c.DatabaseName+"\" )]");
-
-                    WriteLine("        public "+c.BindingType+" "+c.BindingName+"{ get; set; }");
-                }
-                else
-                {
-              Column relation = c.ReferenceColumn;
-                    if(table.PrimaryKey.HasColumn(c))
-                     WriteLine("        [Column( IsPrimaryKey = true, Name = \""+c.DatabaseName+"\" )]");
-                    else WriteLine("        [Column( Name = \""+c.DatabaseName+"\" )]");     
-WriteLine("        private "+c.BindingType+" _"+c.BindingName+";");
-                    WriteLine("        private EntityRef<"+relation.Table.BindingName+"> "+c.BindingName+"Ref = new EntityRef<"+relation.Table.BindingName+">()");
-WriteLine("        [Association( Name = \""+c.ForeignKey.DatabaseName+"\", IsForeignKey = true, Storage = \"_"+c.BindingName+"Ref\", ThisKey = \"_"+c.BindingName+"\" )]");   
-                }
-        WriteLine("");
-            }
+    for (int i = 0; i < Tables.Count; i++)
+    {
+		writeIfStatement(i);	 
+    }
 
             
             #line default
             #line hidden
-            this.Write("\t}\r\n}\r\n");
+            this.Write("\t\t\treturn new Form();\r\n\t\t}\r\n\t}\r\n}\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
+        
+        #line 28 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+ 
+private void writeIfStatement(int i)
+{
+	var tableName = Tables[i].DatabaseName;
+	var formName = "View" + Tables[i].BindingName + "Form";
+
+        
+        #line default
+        #line hidden
+        
+        #line 33 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+this.Write("\t\t\tif (TableName.Equals(\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 34 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(tableName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 34 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+this.Write("\"))\r\n\t\t\t\treturn new ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 35 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(formName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 35 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+this.Write("();\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 36 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+
+}
+
+        
+        #line default
+        #line hidden
     }
     
     #line default
@@ -101,7 +115,7 @@ WriteLine("        [Association( Name = \""+c.ForeignKey.DatabaseName+"\", IsFor
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public class ModelTemplate2Base
+    public class ViewFormFactoryTemplateBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

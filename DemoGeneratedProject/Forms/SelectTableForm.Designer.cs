@@ -1,6 +1,6 @@
 ﻿namespace DemoGeneratedProject.Forms
 {
-    partial class SelectDBTableForm
+    partial class SelectTableForm
     {
         /// <summary>
         /// Required designer variable.
@@ -71,11 +71,11 @@
             // 
             // toolStripButtonConnect
             // 
-            this.toolStripButtonConnect.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonConnect.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripButtonConnect.Image = global::DemoGeneratedProject.Properties.Resources.Connect_16x;
             this.toolStripButtonConnect.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonConnect.Name = "toolStripButtonConnect";
-            this.toolStripButtonConnect.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonConnect.Size = new System.Drawing.Size(123, 22);
             this.toolStripButtonConnect.Text = "Connect to DB Server";
             this.toolStripButtonConnect.Click += new System.EventHandler(this.toolStripButtonConnect_Click);
             // 
@@ -87,6 +87,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.buttonViewTable);
             this.Controls.Add(this.listBoxDBTableName);
+            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "SelectDBTableForm";
             this.Text = "Select Table";
             this.WindowState = System.Windows.Forms.FormWindowState.Normal;

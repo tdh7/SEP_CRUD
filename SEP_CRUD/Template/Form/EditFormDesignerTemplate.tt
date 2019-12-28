@@ -123,6 +123,7 @@ namespace <# Write(Generator.Namespace); #>
 		var x = TEXT_BOX_MARGIN_LEFT;
 		var y = ComputeControlYLocation(i, dateTimePickerSize);	
 #>
+			this.dateTimePicker<#= Table[i].BindingName #>.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.dateTimePicker<#= Table[i].BindingName #>.Location = new System.Drawing.Point(<#= x #>, <#= y #>);
             this.dateTimePicker<#= Table[i].BindingName #>.Name = "dateTimePicker<#= Table[i].BindingName #>";
             this.dateTimePicker<#= Table[i].BindingName #>.Size = new System.Drawing.Size(130, <#= controlHeight #>);

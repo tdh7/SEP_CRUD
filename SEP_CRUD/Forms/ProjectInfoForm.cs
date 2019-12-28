@@ -113,18 +113,22 @@ namespace SEP_CRUD.Forms
 
         private void startGenerate(ProjectInfo projectInfo)
         {
+            var listTable = listBoxDBTableName.SelectedItems.Cast<Table>().ToList();
             SolutionGenerator solutionGenerator = new SolutionGenerator(projectInfo.SolutionName);
             ProjectGenerator project = ProjectGenerator.NewInstance(projectInfo.ProjectName);
 
             // add must have class            
-            var baseForm = new BaseFormGenerator(project, project.Name);
-            project.Add(baseForm);
-            project.DefaultFormGenerator = baseForm;
-
+            project.Add(new BaseFormGenerator(project, project.Name));
             project.Add(new EditDataFormGenerator(project, project.Name));
             project.Add(new EditableObjectGenerator(project));
             project.Add(new BaseModelGenerator(project));
             project.Add(new ViewDataFormGenerator(project, project.Name));
+            project.Add(new LoginFormGenerator(project, project.Name, builder.InitialCatalog));
+            project.Add(new WaitingFormGenerator(project, project.Name));
+            project.Add(new ViewFormFactoryGenerator(project, listTable));
+            var selectTableForm = new SelectTableFormGenerator(project, project.Name);
+            project.Add(selectTableForm);
+            project.DefaultFormGenerator = selectTableForm;
 
             // add concrete class
             // TODO loop for each table name, genera form

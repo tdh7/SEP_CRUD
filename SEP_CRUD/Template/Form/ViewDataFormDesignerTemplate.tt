@@ -1,6 +1,9 @@
-﻿using DemoGeneratedProject.DTO;
-
-namespace DemoGeneratedProject.Forms
+﻿<#@ template language="C#" inherits="SharedFormDesignerGenerator"#>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+namespace <#= Generator.Namespace #>
 {
     abstract partial class ViewDataFrom<E>
     {
@@ -77,7 +80,7 @@ namespace DemoGeneratedProject.Forms
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.editToolStripMenuItem.Image = global::DemoGeneratedProject.Properties.Resources.Edit_16x;
+            //this.editToolStripMenuItem.Image = global::DemoGeneratedProject.Properties.Resources.Edit_16x;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editToolStripMenuItem.Text = "Edit";
@@ -85,7 +88,7 @@ namespace DemoGeneratedProject.Forms
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.deleteToolStripMenuItem.Image = global::DemoGeneratedProject.Properties.Resources.Cancel_16x;
+            //this.deleteToolStripMenuItem.Image = global::DemoGeneratedProject.Properties.Resources.Cancel_16x;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
@@ -105,7 +108,7 @@ namespace DemoGeneratedProject.Forms
             // toolStripButtonNew
             // 
             this.toolStripButtonNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonNew.Image = global::DemoGeneratedProject.Properties.Resources.Add_16x;
+            //this.toolStripButtonNew.Image = global::DemoGeneratedProject.Properties.Resources.Add_16x;
             this.toolStripButtonNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonNew.Name = "toolStripButtonNew";
             this.toolStripButtonNew.Size = new System.Drawing.Size(62, 22);
@@ -115,7 +118,7 @@ namespace DemoGeneratedProject.Forms
             // toolStripButtonEdit
             // 
             this.toolStripButtonEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonEdit.Image = global::DemoGeneratedProject.Properties.Resources.Edit_16x;
+            //this.toolStripButtonEdit.Image = global::DemoGeneratedProject.Properties.Resources.Edit_16x;
             this.toolStripButtonEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonEdit.Name = "toolStripButtonEdit";
             this.toolStripButtonEdit.Size = new System.Drawing.Size(58, 22);
@@ -124,7 +127,7 @@ namespace DemoGeneratedProject.Forms
             // toolStripButtonDelete
             // 
             this.toolStripButtonDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonDelete.Image = global::DemoGeneratedProject.Properties.Resources.Cancel_16x;
+            //this.toolStripButtonDelete.Image = global::DemoGeneratedProject.Properties.Resources.Cancel_16x;
             this.toolStripButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonDelete.Name = "toolStripButtonDelete";
             this.toolStripButtonDelete.Size = new System.Drawing.Size(71, 22);

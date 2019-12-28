@@ -124,6 +124,7 @@ namespace SEP_CRUD.Forms
             project.Add(new EditDataFormGenerator(project, project.Name));
             project.Add(new EditableObjectGenerator(project));
             project.Add(new BaseModelGenerator(project));
+            project.Add(new ViewDataFormGenerator(project, project.Name));
 
             // add concrete class
             // TODO loop for each table name, genera form
@@ -132,6 +133,7 @@ namespace SEP_CRUD.Forms
                 var table = listBoxDBTableName.Items[i] as Table;
                 project.Add(new EditFormGenerator(project, project.Name, table));
                 project.Add(new ModelGenerator(table, project));
+                project.Add(new ViewFormGenerator(project, table, project.Name));
             }
 
             solutionGenerator.Add(project);

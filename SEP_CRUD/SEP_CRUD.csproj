@@ -108,6 +108,10 @@
     <Compile Include="Generator\Form\EditDataFormGenerator.cs" />
     <Compile Include="Generator\Form\EditFormDesignerGenerator.cs" />
     <Compile Include="Generator\Form\EditFormGenerator.cs" />
+    <Compile Include="Generator\Form\ViewDataFormDesignerGenerator.cs" />
+    <Compile Include="Generator\Form\ViewDataFormGenerator.cs" />
+    <Compile Include="Generator\Form\ViewFormDesignerGenerator.cs" />
+    <Compile Include="Generator\Form\ViewFormGenerator.cs" />
     <Compile Include="Generator\Model\BaseModelGenerator.cs" />
     <Compile Include="Generator\Model\EditableObjectGenerator.cs" />
     <Compile Include="Generator\Model\ModelGenerator.cs" />
@@ -174,6 +178,26 @@
       <DependentUpon>SharedFormGenerator.tt</DependentUpon>
     </Compile>
     <Compile Include="Template\Form\Template.cs" />
+    <Compile Include="Template\Form\ViewDataFormDesignerTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewDataFormDesignerTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Form\ViewDataFormTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewDataFormTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Form\ViewFormTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewFormTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Form\ViewFormDesignerTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewFormDesignerTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Template\Project\AssemblyInfoTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -321,6 +345,22 @@
     <Content Include="Template\Form\SharedFormGenerator.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>SharedFormGenerator.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Form\ViewDataFormDesignerTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ViewDataFormDesignerTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Form\ViewDataFormTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ViewDataFormTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Form\ViewFormTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ViewFormTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Form\ViewFormDesignerTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ViewFormDesignerTemplate.cs</LastGenOutput>
     </Content>
     <Content Include="Template\Project\AssemblyInfoTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

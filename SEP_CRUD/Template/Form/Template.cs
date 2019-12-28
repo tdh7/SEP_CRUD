@@ -43,4 +43,14 @@ namespace SEP_CRUD.Template.Form
     {
         public Table Table;
     }
+
+    public partial class ViewFormDesignerTemplate
+    {
+        public Table Table;
+    }
+
+    public partial class ViewFormTemplate
+    {
+        public Table Table;
+    }
 }

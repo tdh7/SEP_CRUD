@@ -128,7 +128,7 @@ namespace SQLHibernate.Define.SQLServer
         public int Insert(object obj)
         {
             SqlField[] writeable = GetFields(FieldFlags.Write);
-            //SqlField[] identity = GetFields(FieldFlags.Auto);
+           // SqlField[] identity = GetFields(FieldFlags.Auto);
             string[] names = new string[writeable.Length];
             string[] places = new string[writeable.Length];
             for (int i = 0; i < writeable.Length; ++i)

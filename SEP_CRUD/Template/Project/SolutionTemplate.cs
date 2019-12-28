@@ -19,7 +19,7 @@ namespace SEP_CRUD.Template.Project
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Project\SolutionTemplate.tt"
+    #line 1 "C:\Users\Kim Ninh\Source\Repos\SEP_CRUD\SEP_CRUD\Template\Project\SolutionTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class SolutionTemplate : SolutionTemplateBase
     {
@@ -33,7 +33,7 @@ namespace SEP_CRUD.Template.Project
                     "rsion 16\r\nVisualStudioVersion = 16.0.29503.13\r\nMinimumVisualStudioVersion = 10.0" +
                     ".40219.1\r\n");
             
-            #line 12 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Project\SolutionTemplate.tt"
+            #line 12 "C:\Users\Kim Ninh\Source\Repos\SEP_CRUD\SEP_CRUD\Template\Project\SolutionTemplate.tt"
 
 //Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCreatedProj", "MyCreatedProj\MyCreatedProj.csproj", "{DAA85495-DCA8-4AE3-9990-1226BBE0EEF5}"
 
@@ -52,7 +52,7 @@ namespace SEP_CRUD.Template.Project
                     "\n\t\tDebug|Any CPU = Debug|Any CPU\r\n\t\tRelease|Any CPU = Release|Any CPU\r\n\tEndGloba" +
                     "lSection\r\n\tGlobalSection(ProjectConfigurationPlatforms) = postSolution\r\n\t");
             
-            #line 30 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Project\SolutionTemplate.tt"
+            #line 30 "C:\Users\Kim Ninh\Source\Repos\SEP_CRUD\SEP_CRUD\Template\Project\SolutionTemplate.tt"
 
 			/*
 		{DAA85495-DCA8-4AE3-9990-1226BBE0EEF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -76,7 +76,7 @@ namespace SEP_CRUD.Template.Project
                     "ionNode = FALSE\r\n\tEndGlobalSection\r\n\tGlobalSection(ExtensibilityGlobals) = postS" +
                     "olution\r\n\t\tSolutionGuid = {");
             
-            #line 51 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Project\SolutionTemplate.tt"
+            #line 51 "C:\Users\Kim Ninh\Source\Repos\SEP_CRUD\SEP_CRUD\Template\Project\SolutionTemplate.tt"
  Write(generator.Guid); 
             
             #line default

@@ -12,13 +12,14 @@ namespace SEP_CRUD.Template.Entity
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
+    using SEP_CRUD.Entities;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+    #line 1 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ModelTemplate : ModelTemplateBase
     {
@@ -28,24 +29,58 @@ namespace SEP_CRUD.Template.Entity
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("using System;\r\nusing System.Collections.Generic;\r\n\r\nnamespace ");
+            this.Write("using System;\r\nusing System.Collections.Generic;\r\nusing System.Text;\r\n\r\nnamespace" +
+                    " ");
             
-            #line 9 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+            #line 11 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
  Write(generator.Namespace); 
             
             #line default
             #line hidden
-            this.Write("{\r\n\tpublic class ");
+            this.Write("{\r\n\r\n\tpublic class ");
             
-            #line 11 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+            #line 14 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
  Write(generator.Name); 
             
             #line default
             #line hidden
             this.Write(" : BaseModel\r\n\t{\r\n");
             
-            #line 13 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
- Write(GetBodyClass()); 
+            #line 16 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+     Table table = generator.Table;
+            int count = table.Count;
+            string attr;
+            Column c;
+            for(int i =0;i<count;i++)
+            {
+                c = table[i];
+
+                
+                if (c.MapType == MapType.PRIMITIVE)
+                {
+
+                    //if(table.PrimaryKey.HasColumn(c))
+                    //WriteLine("        [Column( IsPrimaryKey = true, Name = \""+c.DatabaseName+"\" )]");
+                    //else
+                    //WriteLine("        [Column( Name = \""+c.DatabaseName+"\" )]");
+
+                    WriteLine("        public "+c.BindingType+" "+c.BindingName+"{ get; set; }");
+                }
+                else
+                {
+              Column relation = c.ReferenceColumn;
+              Table relationTable= relation.Table;
+                    //if(table.PrimaryKey.HasColumn(c))
+                     //WriteLine("        [Column( IsPrimaryKey = true, Name = \""+c.DatabaseName+"\" )]");
+                    //else WriteLine("        [Column( Name = \""+c.DatabaseName+"\" )]");     
+                    WriteLine("        private "+c.BindingType+" _"+c.BindingName+";");
+                    //WriteLine("        private EntityRef<"+relation.Table.BindingName+"> "+c.BindingName+"Ref = new EntityRef<"+relation.Table.BindingName+">()");
+                    //WriteLine("        [Association( Name = \""+c.ForeignKey.DatabaseName+"\", IsForeignKey = true, Storage = \"_"+c.BindingName+"Ref\", ThisKey = \"_"+c.BindingName+"\" )]");   
+                    WriteLine("        public "+relationTable.BindingName+" "+c.BindingName+"{ get; set; }");
+}
+        WriteLine("");
+            }
+
             
             #line default
             #line hidden

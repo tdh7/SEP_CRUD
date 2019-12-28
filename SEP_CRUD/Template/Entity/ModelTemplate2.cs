@@ -7,20 +7,21 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace SEP_CRUD.Template.Form
+namespace SEP_CRUD.Template.Entity
 {
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
+    using SEP_CRUD.Entities;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\Kim Ninh\Source\Repos\SEP_CRUD\SEP_CRUD\Template\Form\FormTemplate.tt"
+    #line 1 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate2.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public partial class FormTemplate : FormTemplateBase
+    public partial class ModelTemplate2 : ModelTemplate2Base
     {
 #line hidden
         /// <summary>
@@ -28,28 +29,67 @@ namespace SEP_CRUD.Template.Form
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("using System;\r\nusing System.Windows.Forms;\r\n\r\nnamespace ");
+            this.Write("using System;\r\nusing System.Collections.Generic;\r\nusing System.Text;\r\nusing Syste" +
+                    "m.Linq;\r\nusing System.Data.Linq;\r\nusing System.Data.Linq.Mapping;\r\n\r\nnamespace ");
             
-            #line 9 "C:\Users\Kim Ninh\Source\Repos\SEP_CRUD\SEP_CRUD\Template\Form\FormTemplate.tt"
+            #line 14 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate2.tt"
  Write(generator.Namespace); 
             
             #line default
             #line hidden
-            this.Write("{\r\n    public partial class ");
+            this.Write("{\r\n    #pragma warning disable 0169\r\n\r\n    [Table(Name = \"");
             
-            #line 11 "C:\Users\Kim Ninh\Source\Repos\SEP_CRUD\SEP_CRUD\Template\Form\FormTemplate.tt"
+            #line 18 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate2.tt"
+Write(generator.Table.DatabaseName);
+            
+            #line default
+            #line hidden
+            this.Write("\")]\r\n\tpublic class ");
+            
+            #line 19 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate2.tt"
  Write(generator.Name); 
             
             #line default
             #line hidden
-            this.Write(" : Form\r\n    {\r\n        public ");
+            this.Write("\t{\r\n");
             
-            #line 13 "C:\Users\Kim Ninh\Source\Repos\SEP_CRUD\SEP_CRUD\Template\Form\FormTemplate.tt"
- Write(generator.Name); 
+            #line 21 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate2.tt"
+     Table table = generator.Table;
+            int count = table.Count;
+            string attr;
+            Column c;
+            for(int i =0;i<count;i++)
+            {
+                c = table[i];
+
+                
+                if (c.MapType == MapType.PRIMITIVE)
+                {
+
+                    if(table.PrimaryKey.HasColumn(c))
+                    WriteLine("        [Column( IsPrimaryKey = true, Name = \""+c.DatabaseName+"\" )]");
+                    else
+                    WriteLine("        [Column( Name = \""+c.DatabaseName+"\" )]");
+
+                    WriteLine("        public "+c.BindingType+" "+c.BindingName+"{ get; set; }");
+                }
+                else
+                {
+              Column relation = c.ReferenceColumn;
+                    if(table.PrimaryKey.HasColumn(c))
+                     WriteLine("        [Column( IsPrimaryKey = true, Name = \""+c.DatabaseName+"\" )]");
+                    else WriteLine("        [Column( Name = \""+c.DatabaseName+"\" )]");     
+WriteLine("        private "+c.BindingType+" _"+c.BindingName+";");
+                    WriteLine("        private EntityRef<"+relation.Table.BindingName+"> "+c.BindingName+"Ref = new EntityRef<"+relation.Table.BindingName+">()");
+WriteLine("        [Association( Name = \""+c.ForeignKey.DatabaseName+"\", IsForeignKey = true, Storage = \"_"+c.BindingName+"Ref\", ThisKey = \"_"+c.BindingName+"\" )]");   
+                }
+        WriteLine("");
+            }
+
             
             #line default
             #line hidden
-            this.Write("()\r\n        {\r\n            InitializeComponent();\r\n        }\r\n    }\r\n}\r\n");
+            this.Write("\t}\r\n}\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }
@@ -61,7 +101,7 @@ namespace SEP_CRUD.Template.Form
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public class FormTemplateBase
+    public class ModelTemplate2Base
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

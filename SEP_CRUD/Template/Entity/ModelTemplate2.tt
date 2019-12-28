@@ -1,0 +1,54 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="SEP_CRUD.Entities" #>
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Data.Linq;
+using System.Data.Linq.Mapping;
+
+namespace <# Write(generator.Namespace); #>
+{
+    #pragma warning disable 0169
+
+    [Table(Name = "<#Write(generator.Table.DatabaseName);#>")]
+	public class <# Write(generator.Name); #>
+	{
+<#     Table table = generator.Table;
+            int count = table.Count;
+            string attr;
+            Column c;
+            for(int i =0;i<count;i++)
+            {
+                c = table[i];
+
+                
+                if (c.MapType == MapType.PRIMITIVE)
+                {
+
+                    if(table.PrimaryKey.HasColumn(c))
+                    WriteLine("        [Column( IsPrimaryKey = true, Name = \""+c.DatabaseName+"\" )]");
+                    else
+                    WriteLine("        [Column( Name = \""+c.DatabaseName+"\" )]");
+
+                    WriteLine("        public "+c.BindingType+" "+c.BindingName+"{ get; set; }");
+                }
+                else
+                {
+              Column relation = c.ReferenceColumn;
+                    if(table.PrimaryKey.HasColumn(c))
+                     WriteLine("        [Column( IsPrimaryKey = true, Name = \""+c.DatabaseName+"\" )]");
+                    else WriteLine("        [Column( Name = \""+c.DatabaseName+"\" )]");     
+WriteLine("        private "+c.BindingType+" _"+c.BindingName+";");
+                    WriteLine("        private EntityRef<"+relation.Table.BindingName+"> "+c.BindingName+"Ref = new EntityRef<"+relation.Table.BindingName+">()");
+WriteLine("        [Association( Name = \""+c.ForeignKey.DatabaseName+"\", IsForeignKey = true, Storage = \"_"+c.BindingName+"Ref\", ThisKey = \"_"+c.BindingName+"\" )]");   
+                }
+        WriteLine("");
+            }
+#>
+	}
+}

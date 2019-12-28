@@ -18,7 +18,7 @@ namespace SEP_CRUD.Template.Form
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\FormDesignerTemplate.tt"
+    #line 1 "C:\Users\Kim Ninh\Source\Repos\SEP_CRUD\SEP_CRUD\Template\Form\FormDesignerTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class FormDesignerTemplate : FormDesignerTemplateBase
     {
@@ -30,14 +30,14 @@ namespace SEP_CRUD.Template.Form
         {
             this.Write("namespace ");
             
-            #line 6 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\FormDesignerTemplate.tt"
+            #line 6 "C:\Users\Kim Ninh\Source\Repos\SEP_CRUD\SEP_CRUD\Template\Form\FormDesignerTemplate.tt"
  Write(generator.Namespace); 
             
             #line default
             #line hidden
             this.Write("{\r\n    partial class ");
             
-            #line 8 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\FormDesignerTemplate.tt"
+            #line 8 "C:\Users\Kim Ninh\Source\Repos\SEP_CRUD\SEP_CRUD\Template\Form\FormDesignerTemplate.tt"
  Write(generator.Name); 
             
             #line default
@@ -73,7 +73,7 @@ namespace SEP_CRUD.Template.Form
             // 
             // ");
             
-            #line 38 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\FormDesignerTemplate.tt"
+            #line 38 "C:\Users\Kim Ninh\Source\Repos\SEP_CRUD\SEP_CRUD\Template\Form\FormDesignerTemplate.tt"
  Write(generator.Name); 
             
             #line default
@@ -84,14 +84,14 @@ namespace SEP_CRUD.Template.Form
             this.ClientSize = new System.Drawing.Size(431, 730);
             this.Name = """);
             
-            #line 43 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\FormDesignerTemplate.tt"
+            #line 43 "C:\Users\Kim Ninh\Source\Repos\SEP_CRUD\SEP_CRUD\Template\Form\FormDesignerTemplate.tt"
  Write(generator.Name); 
             
             #line default
             #line hidden
             this.Write("\";\r\n            this.Text = \"");
             
-            #line 44 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\FormDesignerTemplate.tt"
+            #line 44 "C:\Users\Kim Ninh\Source\Repos\SEP_CRUD\SEP_CRUD\Template\Form\FormDesignerTemplate.tt"
  Write(generator.Name); 
             
             #line default

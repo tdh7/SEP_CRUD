@@ -57,7 +57,7 @@ namespace SEP_CRUD.Template.Project
             #line default
             #line hidden
             this.Write(@"</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
@@ -83,6 +83,7 @@ namespace SEP_CRUD.Template.Project
   <ItemGroup>
     <Reference Include=""System"" />
     <Reference Include=""System.Core"" />
+    <Reference Include=""System.Data.Linq"" />
     <Reference Include=""System.Xml.Linq"" />
     <Reference Include=""System.Data.DataSetExtensions"" />
     <Reference Include=""System.Data"" />
@@ -94,7 +95,7 @@ namespace SEP_CRUD.Template.Project
   <ItemGroup>
   ");
             
-            #line 52 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Project\ProjectTemplate.tt"
+            #line 53 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Project\ProjectTemplate.tt"
 
 	List<string> list = GetCompileItems();
 	int count = list.Count;

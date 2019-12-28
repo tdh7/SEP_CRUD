@@ -1,5 +1,4 @@
-﻿using SEP_CRUD.Entities;
-using SEP_CRUD.Entities.Loader;
+﻿using SEP_CRUD.Entities.Loader;
 using SEP_CRUD.Generator.Base;
 using SEP_CRUD.Generator.Model;
 using SEP_CRUD.Generator.Project;

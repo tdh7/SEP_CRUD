@@ -90,7 +90,6 @@
             // 
             // EditSinhVienForm
             // 
-            this.AcceptButton = this.buttonSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(234, 276);
             this.Controls.Add(this.textBoxMSSV);
@@ -100,8 +99,6 @@
             this.Controls.Add(label2);
             this.Controls.Add(label1);
             this.Name = "EditSinhVienForm";
-            this.Controls.SetChildIndex(this.buttonCancel, 0);
-            this.Controls.SetChildIndex(this.buttonSave, 0);
             this.Controls.SetChildIndex(label1, 0);
             this.Controls.SetChildIndex(label2, 0);
             this.Controls.SetChildIndex(label3, 0);

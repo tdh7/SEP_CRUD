@@ -161,6 +161,8 @@
     <Content Include="icons\Cancel_16x.png" />
     <Content Include="icons\Connect_16x.png" />
     <Content Include="icons\Edit_16x.png" />
+    <Content Include="icons\Save_16x.png" />
+    <Content Include="icons\Undo_16x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

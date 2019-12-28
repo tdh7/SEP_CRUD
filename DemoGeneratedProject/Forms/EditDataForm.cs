@@ -48,19 +48,28 @@ namespace DemoGeneratedProject.Forms
             bindingSourceItem.DataSource = entity;
         }
 
-        private void buttonSave_Click(object sender, EventArgs e)
+        private void SaveChange()
         {
             var item = bindingSourceItem.Current as E;
             item.EndEdit();
             _saveAction.Invoke(item);
-            this.Close();
         }
 
-        private void buttonCancel_Click(object sender, EventArgs e)
+        private void UndoChange()
         {
             var item = bindingSourceItem.Current as E;
             item.CancelEdit();
+        }
+
+        private void toolStripButtonSave_Click(object sender, EventArgs e)
+        {
+            SaveChange();
             this.Close();
+        }
+
+        private void toolStripButtonUndo_Click(object sender, EventArgs e)
+        {
+            UndoChange();
         }
     }
 }

@@ -47,10 +47,20 @@ namespace SEP_CRUD.Template.Entity
             this.Write(" : BaseModel\r\n\t{\r\n");
             
             #line 16 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
-     Table table = generator.Table;
-            int count = table.Count;
-            string attr;
-            Column c;
+
+	Table table = generator.Table;
+    int count = table.Count;
+    string attr;
+    Column c;
+    for (int i = 0; i < count; i++)
+    {
+		c = table[i];
+		if (c.MapType == MapType.PRIMITIVE)
+			 WriteBackingField(c);
+    }
+	WriteLine("");
+
+
             for(int i =0;i<count;i++)
             {
                 c = table[i];
@@ -64,7 +74,7 @@ namespace SEP_CRUD.Template.Entity
                     //else
                     //WriteLine("        [Column( Name = \""+c.DatabaseName+"\" )]");
 
-                    WriteLine("        public "+c.BindingType+" "+c.BindingName+"{ get; set; }");
+                    WriteProperty(c);
                 }
                 else
                 {
@@ -87,6 +97,138 @@ namespace SEP_CRUD.Template.Entity
             this.Write("\t}\r\n}\r\n");
             return this.GenerationEnvironment.ToString();
         }
+        
+        #line 62 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+
+private void WriteBackingField(Column c)
+{
+
+        
+        #line default
+        #line hidden
+        
+        #line 65 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+this.Write("\t\tprivate ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 66 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(c.BindingType));
+
+        
+        #line default
+        #line hidden
+        
+        #line 66 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+this.Write(" _");
+
+        
+        #line default
+        #line hidden
+        
+        #line 66 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(c.BindingName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 66 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+this.Write(";\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 67 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+
+} 
+
+        
+        #line default
+        #line hidden
+        
+        #line 70 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+
+private void WriteProperty(Column c)
+{ 
+
+        
+        #line default
+        #line hidden
+        
+        #line 73 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+this.Write("        public ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 74 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(c.BindingType));
+
+        
+        #line default
+        #line hidden
+        
+        #line 74 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+this.Write(" ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 74 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(c.BindingName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 74 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+this.Write("\r\n        {\r\n            get { return _");
+
+        
+        #line default
+        #line hidden
+        
+        #line 76 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(c.BindingName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 76 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+this.Write("; }\r\n\r\n            set\r\n            {\r\n                _");
+
+        
+        #line default
+        #line hidden
+        
+        #line 80 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(c.BindingName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 80 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+this.Write(" = value;\r\n                onPropertyChange();\r\n            }\r\n        }\r\n\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 85 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+ 
+}
+
+        
+        #line default
+        #line hidden
     }
     
     #line default

@@ -67,7 +67,7 @@ namespace SEP_CRUD.Entities.Loader
             get
             {
                 if (!Valid) return "";
-                if (Username.Equals("") || Password.Equals(""))
+                if (Username.Equals("") && Password.Equals(""))
                     return @"Data Source=" + DataSource + ";Initial Catalog="
                          + DatabaseName + ";Persist Security Info=True";
                 return @"Data Source=" + DataSource + ";Initial Catalog="

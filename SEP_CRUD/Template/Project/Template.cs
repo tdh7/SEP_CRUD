@@ -57,8 +57,8 @@ namespace SEP_CRUD.Template.Project
       <SubType>Form</SubType>
     </Compile>
     <Compile Include = ""{1}"" >
-      <DependentUpon>{0}</DependentUpon>
-    </Compile> ", NormalizeRelativeFilePath(f), NormalizeRelativeFilePath(f.GetItem(0))));
+      <DependentUpon>{2}</DependentUpon>
+    </Compile> ", NormalizeRelativeFilePath(f), NormalizeRelativeFilePath(f.GetItem(0)), f.GetFileName()));
             }
             else if (f is ClassGenerator)
             {

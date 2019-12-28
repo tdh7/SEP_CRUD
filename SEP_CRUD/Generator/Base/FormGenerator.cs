@@ -1,6 +1,4 @@
-﻿using System;
-using SEP_CRUD.Generator.Project;
-using SEP_CRUD.Template.Form;
+﻿using SEP_CRUD.Generator.Project;
 
 namespace SEP_CRUD.Generator.Base
 {
@@ -15,14 +13,21 @@ namespace SEP_CRUD.Generator.Base
             }
         }
 
+        public FormGenerator AddToNamespace(string _namespace)
+        {
+            this[0].AddToNamespace(_namespace);
+            return this;
+        }
+
         public FormGenerator(ProjectGenerator p, string name) 
         {
             ProjectOwner = p;
             this.name = name;
-            Add(FormDesignerGenerator);
+            Add(OnCreateFormDesignerGenerator());
+            AddToNamespace(p.DefaultFormNamespace);
         }
 
-        public abstract FormDesignerGenerator FormDesignerGenerator { get; }
+        public abstract ClassGenerator OnCreateFormDesignerGenerator();
 
         public override string GetFileName()
         {

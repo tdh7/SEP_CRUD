@@ -1,0 +1,63 @@
+﻿<#@ template language="C#" inherits="SharedFormGenerator"#>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<# var entityName = Table.BindingName; #>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+using <#= Generator.ProjectOwner.DefaultModelNamespaces #>;
+
+namespace <#= Generator.Namespace #>
+{
+    public partial class View<#= entityName #>Form: ViewDataFrom<<#= entityName #>>
+    {
+
+        public View<#= entityName #>Form()
+        {
+            InitializeComponent();
+        }
+
+		// TODO: retrieve data from BUS and return result here
+        protected override IList<<#= entityName #>> initList()
+        {
+			return new List<<#= entityName #>>();   
+        }
+
+        protected override void Add()
+        {
+            Edit<#= entityName #>Form.Add(delegate(<#= entityName #> sv)
+            {
+                bindingList.Add(sv);
+				// TODO: update data to BUS here
+                
+            });
+        }
+
+        protected override void Edit(<#= entityName #> item)
+        {
+            Edit<#= entityName #>Form.Edit(item, delegate(<#= entityName #> sv)
+            {
+                // TODO: update data to BUS here
+            });
+        }
+
+        protected override void Delete(<#= entityName #> item)
+        {
+			// TODO: update data to BUS here
+
+            bindingList.Remove(item);
+        }
+
+        protected override void ViewDataFrom_Load(object sender, EventArgs e)
+        {
+            base.ViewDataFrom_Load(sender, e);
+
+        }
+    }
+}

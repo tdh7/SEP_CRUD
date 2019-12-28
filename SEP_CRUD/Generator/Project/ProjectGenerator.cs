@@ -9,10 +9,27 @@ namespace SEP_CRUD.Generator.Project
             get { return "FAE04EC0-301F-11D3-BF4B-00C04F79EFBC"; }
         }
 
+        public string DefaultFormNamespace { get; set; } = "Forms";
+        public string DefaultModelNamespace { get; set; } = "Models";
+        public string DefaultFormNamespaces
+        {
+            get { return Name + "." + DefaultFormNamespace; }
+        }
+
+        public string DefaultModelNamespaces
+        {
+            get { return Name + "." + DefaultModelNamespace; }
+        }
+
         public string Guid { get; }
+        private FormGenerator startupForm;
+        public FormGenerator StartupForm { get { return startupForm; } }
 
-        public FileGenerator DefaultFormGenerator { get; set; }
-
+        public void AddAsStartupForm(FormGenerator g)
+        {
+            startupForm = g;
+            Add(g);
+        }
 
         private ProjectGenerator(string name)
         {
@@ -23,7 +40,6 @@ namespace SEP_CRUD.Generator.Project
         public static ProjectGenerator NewInstance(string name)
         {
             ProjectGenerator p = new ProjectGenerator(name);
-            p.DefaultFormGenerator = p;
             p.Add(MustHaveGroupGenerator.NewInstance(p));
             return p;
         }

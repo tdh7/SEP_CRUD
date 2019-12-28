@@ -11,12 +11,22 @@ using System.Text;
 namespace <# Write(generator.Namespace); #>
 {
 
-	public class <# Write(generator.Name); #>
+	public class <# Write(generator.Name); #> : BaseModel
 	{
-<#     Table table = generator.Table;
-            int count = table.Count;
-            string attr;
-            Column c;
+<#
+	Table table = generator.Table;
+    int count = table.Count;
+    string attr;
+    Column c;
+    for (int i = 0; i < count; i++)
+    {
+		c = table[i];
+		if (c.MapType == MapType.PRIMITIVE)
+			 WriteBackingField(c);
+    }
+	WriteLine("");
+
+
             for(int i =0;i<count;i++)
             {
                 c = table[i];
@@ -30,7 +40,7 @@ namespace <# Write(generator.Namespace); #>
                     //else
                     //WriteLine("        [Column( Name = \""+c.DatabaseName+"\" )]");
 
-                    WriteLine("        public "+c.BindingType+" "+c.BindingName+"{ get; set; }");
+                    WriteProperty(c);
                 }
                 else
                 {
@@ -49,3 +59,29 @@ namespace <# Write(generator.Namespace); #>
 #>
 	}
 }
+<#+
+private void WriteBackingField(Column c)
+{
+#>
+		private <#= c.BindingType #> _<#= c.BindingName #>;
+<#+
+} 
+#>
+<#+
+private void WriteProperty(Column c)
+{ 
+#>
+        public <#= c.BindingType #> <#= c.BindingName #>
+        {
+            get { return _<#= c.BindingName #>; }
+
+            set
+            {
+                _<#= c.BindingName #> = value;
+                onPropertyChange();
+            }
+        }
+
+<#+ 
+}
+#>

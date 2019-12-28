@@ -16,9 +16,8 @@ namespace SEP_CRUD
             SolutionGenerator solutionGenerator = new SolutionGenerator("SQLViewer");
             ProjectGenerator project = ProjectGenerator.NewInstance("SQLViewer");
 
-            FormGenerator f1 = new EmptyFormGenerator(project, "GeneratedForm");
-            project.Add(f1);
-            project.DefaultFormGenerator = f1;
+            FormGenerator f1 = new BaseFormGenerator(project);
+            project.AddAsStartupForm(f1);
 
             solutionGenerator.Add(project);
 

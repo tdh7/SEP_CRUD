@@ -19,6 +19,13 @@ namespace SEP_CRUD.Generator.Base
                 return ns;
             }
         }
+
+        public ClassGenerator AddToNamespace(string _namespace)
+        {
+            Namespaces.Add(_namespace);
+            return this;
+        }
+
         public ClassGenerator(ProjectGenerator p, string name)
         {
             ProjectOwner = p;

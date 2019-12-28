@@ -1,0 +1,189 @@
+﻿<#@ template language="C#" inherits="SharedFormDesignerGenerator" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Drawing" #>
+namespace <# Write(Generator.Namespace); #>
+{
+    partial class Edit<#= Table.BindingName #>Form
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+<# /*									*/ #>
+<# /*									*/ #>
+<# /*System.Windows.Forms.Label label1; */ #>
+<# for (int i = 0; i < Table.Count; i++)
+   { #>
+			System.Windows.Forms.Label label<#= i + 1 #>;
+<# } #>
+<#/*																*/ #>
+<#/*																*/ #>
+<#/*        this.textBoxHoTen = new System.Windows.Forms.TextBox(); */ #>
+<# for (int i = 0; i < Table.Count; i++)
+   { #>
+<#	 if (Table[i].IsAbleBindingToTextBoxControl())
+	 {	#>
+			this.textBox<#= Table[i].BindingName #> = new System.Windows.Forms.TextBox();
+<#   }  #>		
+<#   if (Table[i].IsAbleBindingToDateTimePicker()) 
+     { #>
+			this.dateTimePicker<#= Table[i].BindingName #> = new System.Windows.Forms.DateTimePicker();
+<#   } #>
+	 
+<# } #>            
+<# /*										   */ #>
+<# /*										   */ #>
+<# /*label1 = new System.Windows.Forms.Label();*/ #>
+<# for (int i = 0; i < Table.Count; i++)
+   { #>
+			label<#= i + 1 #> = new System.Windows.Forms.Label();
+<# } #>
+            this.SuspendLayout();
+<#/*
+			//
+			// label2
+			//
+			label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(18, 87);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(48, 13);
+            label2.TabIndex = 3;
+            label2.Text = "Diem TB";
+			*/ 
+			for (int i = 0; i < Table.Count; i++)
+              {
+				string label = "label"+(i + 1);
+				var x = LABEL_MARGIN_LEFT;
+				var y = SPACING * (i + 1) + i * labelSize.Height;
+#>
+			// 
+			// <#= label #>
+			// 
+			<#= label #>.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			<#= label #>.AutoSize = true;
+			<#= label #>.Location = new System.Drawing.Point(<#= x #>, <#= y #>);
+			<#= label #>.Name = "<#= label #>";
+			<#= label #>.Size = new System.Drawing.Size(<#= labelSize.Width #>, <#= labelSize.Height #>);
+			<#= label #>.TabIndex = 1;
+			<#= label #>.Text = "<#= Table[i].BindingName #>"; 
+<# } #>
+<#/*        // 
+            // textBoxHoTen
+            // 
+            this.textBoxHoTen.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.textBoxHoTen.Location = new System.Drawing.Point(91, 29);
+            this.textBoxHoTen.Name = "textBoxHoTen";
+            this.textBoxHoTen.Size = new System.Drawing.Size(124, 20);
+            this.textBoxHoTen.TabIndex = 1;*/ 
+#>          
+<# for (int i = 0; i < Table.Count; i++)
+   { 
+	 if (Table[i].IsAbleBindingToTextBoxControl())
+	 {	
+		 var x = TEXT_BOX_MARGIN_LEFT;
+		 var y = ComputeControlYLocation(i, textBoxSize);
+#>
+			// 
+            // textBox<#= Table[i].BindingName #>
+            // 
+			this.textBox<#= Table[i].BindingName #>.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.textBox<#= Table[i].BindingName #>.Location = new System.Drawing.Point(<#= x #>, <#= y #>);
+            this.textBox<#= Table[i].BindingName #>.Name = "textBox<#= Table[i].BindingName #>";
+            this.textBox<#= Table[i].BindingName #>.Size = new System.Drawing.Size(130, <#= controlHeight #>);
+            this.textBox<#= Table[i].BindingName #>.TabIndex = <#= i + 1 #>;
+<#  } #>
+<# if (Table[i].IsAbleBindingToDateTimePicker()) 
+	{ 
+		var x = TEXT_BOX_MARGIN_LEFT;
+		var y = ComputeControlYLocation(i, dateTimePickerSize);	
+#>
+			this.dateTimePicker<#= Table[i].BindingName #>.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.dateTimePicker<#= Table[i].BindingName #>.Location = new System.Drawing.Point(<#= x #>, <#= y #>);
+            this.dateTimePicker<#= Table[i].BindingName #>.Name = "dateTimePicker<#= Table[i].BindingName #>";
+            this.dateTimePicker<#= Table[i].BindingName #>.Size = new System.Drawing.Size(130, <#= controlHeight #>);
+            this.dateTimePicker<#= Table[i].BindingName #>.TabIndex = <#= i + 1 #>;
+<#  } #>
+<# } #>
+            // 
+            // Edit<#= Table.BindingName #>Form
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.ClientSize = new System.Drawing.Size(<#= ComputeFormWidth() #>, <#= ComputeFormHeight() #>);
+<# for (int i = 0; i < Table.Count; i++)
+   {  #>
+<#	 if (Table[i].IsAbleBindingToTextBoxControl())
+	 {	#>
+			this.Controls.Add(this.textBox<#= Table[i].BindingName #>);
+<#	 }  #>			
+<#   if (Table[i].IsAbleBindingToDateTimePicker()) 
+     {  #>
+			this.Controls.Add(this.dateTimePicker<#= Table[i].BindingName #>);
+<#   }  #> 
+<# } #>
+<# for (int i = 0; i < Table.Count; i++)
+   { #>
+			this.Controls.Add(label<#= i + 1 #>); 
+<# } #>
+            this.Name = "Edit<#= Table.BindingName #>Form";
+            this.Text = "Edit<#= Table.BindingName #>Form";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+<# for (int i = 0; i < Table.Count; i++)
+   { #>
+<#	 if (Table[i].IsAbleBindingToTextBoxControl())
+	 {	#>
+		private System.Windows.Forms.TextBox textBox<#= Table[i].BindingName #>;
+<#   }  #>
+<#   if (Table[i].IsAbleBindingToDateTimePicker()) 
+	 {  #>
+		private System.Windows.Forms.DateTimePicker dateTimePicker<#= Table[i].BindingName #>;
+<#   }  #>
+<# } #>
+    }
+}
+<#+   // Start of class feature block
+private int ComputeControlYLocation(int i, Size size)
+{
+    return SPACING * (i + 1) + i * size.Height;
+}
+
+private int ComputeFormHeight()
+{
+	return SPACING * (Table.Count + 1) + (Table.Count) * controlHeight;
+}
+
+private int ComputeFormWidth()
+{
+	return TEXT_BOX_MARGIN_LEFT + textBoxSize.Width + LABEL_MARGIN_LEFT;
+}
+#>

@@ -1,0 +1,27 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter name="_namespace" type="System.String" #>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace <#= _namespace #>
+{
+    public class BaseModel: EditableObject, INotifyPropertyChanged
+    {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void onPropertyChange([CallerMemberName] string propertyName = null)
+        {
+            PropertyChangedEventArgs args = new PropertyChangedEventArgs(propertyName);
+            PropertyChanged?.Invoke(this, args);
+        }
+    }
+}

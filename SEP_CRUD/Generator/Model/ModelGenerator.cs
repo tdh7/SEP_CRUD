@@ -11,7 +11,7 @@ namespace SEP_CRUD.Generator.Model
         public ModelGenerator(Table table, ProjectGenerator p) : base(p, table.BindingName)
         {
             Table = table;
-            Namespaces.Add("Model");
+            Namespaces.Add(p.DefaultModelNamespace);
         }
 
         public override string ToSourceCode()

@@ -1,9 +1,9 @@
 ﻿namespace SEP_CRUD.Generator.Base
 {
-    public abstract class FormDesignerGenerator : ClassGenerator
+    public abstract class FormDesignerGenerator<T> : ClassGenerator where T : FormGenerator
     {
-        FormGenerator Owner;
-        public FormDesignerGenerator(FormGenerator owner) : base(owner.ProjectOwner,owner.Name)
+        protected T Owner;
+        public FormDesignerGenerator(T owner) : base(owner.ProjectOwner,owner.Name)
         {
             Owner = owner;
         }

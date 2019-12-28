@@ -59,8 +59,8 @@ namespace SEP_CRUD.Template.Form
                     "         this.toolStrip1.TabIndex = 6;\r\n            this.toolStrip1.Text = \"tool" +
                     "Strip1\";\r\n            // \r\n            // toolStripButtonSave\r\n            // \r\n" +
                     "            this.toolStripButtonSave.DisplayStyle = System.Windows.Forms.ToolStr" +
-                    "ipItemDisplayStyle.Image;\r\n            //this.toolStripButtonSave.Image = global" +
-                    "::");
+                    "ipItemDisplayStyle.Text;\r\n            //this.toolStripButtonSave.Image = global:" +
+                    ":");
             
             #line 58 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditDataFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Generator.Namespace));
@@ -70,13 +70,13 @@ namespace SEP_CRUD.Template.Form
             this.Write(@".Properties.Resources.Save_16x;
             this.toolStripButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonSave.Name = ""toolStripButtonSave"";
-            this.toolStripButtonSave.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonSave.Size = new System.Drawing.Size(35, 22);
             this.toolStripButtonSave.Text = ""Save"";
             this.toolStripButtonSave.Click += new System.EventHandler(this.toolStripButtonSave_Click);
             // 
             // toolStripButtonUndo
             // 
-            this.toolStripButtonUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             //this.toolStripButtonUndo.Image = global::");
             
             #line 68 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditDataFormDesignerTemplate.tt"
@@ -87,7 +87,7 @@ namespace SEP_CRUD.Template.Form
             this.Write(@".Properties.Resources.Undo_16x;
             this.toolStripButtonUndo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonUndo.Name = ""toolStripButtonUndo"";
-            this.toolStripButtonUndo.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonUndo.Size = new System.Drawing.Size(40, 22);
             this.toolStripButtonUndo.Text = ""Undo"";
             this.toolStripButtonUndo.Click += new System.EventHandler(this.toolStripButtonUndo_Click);
             // 

@@ -49,21 +49,21 @@ namespace DemoGeneratedProject.Forms
             // 
             // toolStripButtonSave
             // 
-            this.toolStripButtonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripButtonSave.Image = global::DemoGeneratedProject.Properties.Resources.Save_16x;
             this.toolStripButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonSave.Name = "toolStripButtonSave";
-            this.toolStripButtonSave.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonSave.Size = new System.Drawing.Size(35, 22);
             this.toolStripButtonSave.Text = "Save";
             this.toolStripButtonSave.Click += new System.EventHandler(this.toolStripButtonSave_Click);
             // 
             // toolStripButtonUndo
             // 
-            this.toolStripButtonUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripButtonUndo.Image = global::DemoGeneratedProject.Properties.Resources.Undo_16x;
             this.toolStripButtonUndo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonUndo.Name = "toolStripButtonUndo";
-            this.toolStripButtonUndo.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonUndo.Size = new System.Drawing.Size(40, 22);
             this.toolStripButtonUndo.Text = "Undo";
             this.toolStripButtonUndo.Click += new System.EventHandler(this.toolStripButtonUndo_Click);
             // 

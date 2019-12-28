@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace DemoGeneratedProject.DTO
 {
-    public class SinhVien: BaseObject
+    public class SinhVien: BaseModel
     {
         private String _ten;
         private float _diemTb;

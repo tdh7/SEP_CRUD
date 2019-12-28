@@ -48,7 +48,7 @@
   <ItemGroup>
     <Compile Include="BUS\SinhVienBUS.cs" />
     <Compile Include="DAO\SinhVienDAO.cs" />
-    <Compile Include="DTO\BaseObject.cs" />
+    <Compile Include="DTO\BaseModel.cs" />
     <Compile Include="DTO\EditableObject.cs" />
     <Compile Include="DTO\SinhVien.cs" />
     <Compile Include="ExtensionClass.cs" />
@@ -64,11 +64,17 @@
     <Compile Include="Forms\BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\CreateOrUpdateDataForm.cs">
+    <Compile Include="Forms\EditDataForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CreateOrUpdateDataForm.Designer.cs">
-      <DependentUpon>CreateOrUpdateDataForm.cs</DependentUpon>
+    <Compile Include="Forms\EditDataForm.Designer.cs">
+      <DependentUpon>EditDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditSinhVienForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditSinhVienForm.Designer.cs">
+      <DependentUpon>EditSinhVienForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\LoginDBFrom.cs">
       <SubType>Form</SubType>
@@ -88,6 +94,12 @@
     <Compile Include="Forms\ViewDataFrom.Designer.cs">
       <DependentUpon>ViewDataFrom.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ViewSinhVienForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewSinhVienForm.Designer.cs">
+      <DependentUpon>ViewSinhVienForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\WaitingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,8 +112,11 @@
     <EmbeddedResource Include="Forms\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CreateOrUpdateDataForm.resx">
-      <DependentUpon>CreateOrUpdateDataForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\EditDataForm.resx">
+      <DependentUpon>EditDataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditSinhVienForm.resx">
+      <DependentUpon>EditSinhVienForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginDBFrom.resx">
       <DependentUpon>LoginDBFrom.cs</DependentUpon>
@@ -125,7 +140,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Properties\DataSources\DemoGeneratedProject.DTO.LoginDBInfo.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -139,7 +153,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="icons\Add_16x.png" />
     <Content Include="icons\Cancel_16x.png" />

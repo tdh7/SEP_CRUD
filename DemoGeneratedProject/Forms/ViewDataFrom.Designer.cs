@@ -2,7 +2,7 @@
 
 namespace DemoGeneratedProject.Forms
 {
-    partial class ViewDataFrom
+    abstract partial class ViewDataFrom<E>
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,6 @@ namespace DemoGeneratedProject.Forms
             this.contextMenuStripDataGrid = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonNew = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonEdit = new System.Windows.Forms.ToolStripButton();
@@ -73,31 +72,21 @@ namespace DemoGeneratedProject.Forms
             this.editToolStripMenuItem,
             this.deleteToolStripMenuItem});
             this.contextMenuStripDataGrid.Name = "contextMenuStripDataGrid";
-            this.contextMenuStripDataGrid.Size = new System.Drawing.Size(181, 70);
+            this.contextMenuStripDataGrid.Size = new System.Drawing.Size(108, 48);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Image = global::DemoGeneratedProject.Properties.Resources.Edit_16x;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Image = global::DemoGeneratedProject.Properties.Resources.Cancel_16x;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(12, 415);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "New random SV";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // toolStrip1
             // 
@@ -161,7 +150,7 @@ namespace DemoGeneratedProject.Forms
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // helpToolStripMenuItem
@@ -175,16 +164,15 @@ namespace DemoGeneratedProject.Forms
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // ViewDataFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 422);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Location = new System.Drawing.Point(0, 0);
             this.MainMenuStrip = this.menuStrip1;
@@ -205,7 +193,6 @@ namespace DemoGeneratedProject.Forms
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButtonNew;
         private System.Windows.Forms.MenuStrip menuStrip1;

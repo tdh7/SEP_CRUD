@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DemoGeneratedProject.DTO
 {
-    public class BaseObject: EditableObject, INotifyPropertyChanged
+    public class BaseModel: EditableObject, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

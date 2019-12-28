@@ -10,10 +10,10 @@ using DemoGeneratedProject.DTO;
 
 namespace DemoGeneratedProject.Forms
 {
-    public partial class ViewDataFrom : DemoGeneratedProject.Forms.BaseForm
+    public partial class ViewDataFrom<E> : DemoGeneratedProject.Forms.BaseForm
+        where E: BaseModel
     {
-        private BindingList<SinhVien> bindingList;
-        private SinhVienBUS sinhVienBus = new SinhVienBUS();
+        protected BindingList<E> bindingList;
 
         public ViewDataFrom()
         {
@@ -26,56 +26,41 @@ namespace DemoGeneratedProject.Forms
             toolStripButtonDelete.Click += DeleteDataItem;
         }
 
-        private void ViewDataFrom_Load(object sender, EventArgs e)
+        protected virtual void ViewDataFrom_Load(object sender, EventArgs e)
         {
-            bindingList = new BindingList<SinhVien>(sinhVienBus.GetList());
+            IList<E> list = initList();
+            bindingList = new BindingList<E>(list);
             dataGridView1.DataSource = bindingList;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            bindingList.Add(new SinhVien() {DiemTB = 9.1f, Mssv = 1617290, Ten = "NGuyen VaN A"});
-        }
+        protected abstract IList<E> initList();
 
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        protected virtual void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             var item = dataGridView1.CurrentRow.DataBoundItem;
-            Edit((SinhVien) item);
+            Edit((E) item);
         }
 
-        private void toolStripButtonNew_Click(object sender, EventArgs e)
+        protected virtual void toolStripButtonNew_Click(object sender, EventArgs e)
         {
-            CreateOrUpdateDataForm.Add(delegate(SinhVien sv)
-            {
-                bindingList.Add(sv);
-                sinhVienBus.Add(sv);
-            });
+            Add();
         }
 
-        private void Edit(SinhVien item)
-        {
-            CreateOrUpdateDataForm.Edit(item, delegate(SinhVien sv)
-            {
-                sinhVienBus.Update(sv);
-            });
-        }
+        protected abstract void Add();
+        protected abstract void Edit(E item);
 
-        private void Delete(SinhVien item)
-        {
-            sinhVienBus.Delete(item);
-            bindingList.Remove(item);
-        }
+        protected abstract void Delete(E item);
 
-        private void EditDataItem(object sender, EventArgs e)
+        protected virtual void EditDataItem(object sender, EventArgs e)
         {
             var item = dataGridView1.CurrentRow.DataBoundItem;
-            Edit((SinhVien)item);
+            Edit((E)item);
         }
 
-        private void DeleteDataItem(object sender, EventArgs e)
+        protected virtual void DeleteDataItem(object sender, EventArgs e)
         {
             var item = dataGridView1.CurrentRow.DataBoundItem;
-            Delete((SinhVien)item);
+            Delete((E)item);
         }
     }
 }

@@ -52,7 +52,7 @@ namespace DemoGeneratedProject.Forms
 
             MessageBox.Show($"Table {tableName} has chosen");
 
-            ViewDataFrom form = new ViewDataFrom();
+            ViewSinhVienForm form = new ViewSinhVienForm();
             form.Show();
         }
 

@@ -1,5 +1,6 @@
 ﻿using SEP_CRUD.Entities.Loader;
 using SEP_CRUD.Generator.Base;
+using SEP_CRUD.Generator.Form;
 using SEP_CRUD.Generator.Model;
 using SEP_CRUD.Generator.Project;
 using System;
@@ -15,17 +16,11 @@ namespace SEP_CRUD
             SolutionGenerator solutionGenerator = new SolutionGenerator("SQLViewer");
             ProjectGenerator project = ProjectGenerator.NewInstance("SQLViewer");
 
-            FormGenerator f1 = new FormGenerator(project, "GeneratedForm", project.Name);
+            FormGenerator f1 = new EmptyFormGenerator(project, "GeneratedForm");
             project.Add(f1);
             project.DefaultFormGenerator = f1;
 
-            ProjectGenerator project2 = ProjectGenerator.NewInstance("CreatedProject2");
-            FormGenerator f2 = new FormGenerator(project2, "MyForm", project2.Name);
-            project2.Add(f2);
-            project2.DefaultFormGenerator = f2;
-
             solutionGenerator.Add(project);
-            solutionGenerator.Add(project2);
 
             EntitiesLoader loader = EntitiesLoader.Instance;
             loader.DataSource = "DESKTOP-5NQGFJL\\SQLEXPRESS";

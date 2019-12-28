@@ -1,38 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using SEP_CRUD.Generator.Project;
-using SEP_CRUD.Template.Form;
-
-namespace SEP_CRUD.Generator.Base
+﻿namespace SEP_CRUD.Generator.Base
 {
-    public class FormDesignerGenerator : FileGenerator
+    public abstract class FormDesignerGenerator : ClassGenerator
     {
         FormGenerator Owner;
-        public FormDesignerGenerator(FormGenerator owner) 
+        public FormDesignerGenerator(FormGenerator owner) : base(owner.ProjectOwner,owner.Name)
         {
             Owner = owner;
-            this.name = owner.Name;
-        }
-        public string Namespace
-        {
-            get { return Owner.Namespace; }
         }
 
         public override string GetFileName()
         {
             return Owner.Name + ".Designer.cs";
-        }
-
-        public override string GetRelativePath()
-        {
-            return Owner.GetRelativePath();
-        }
-
-        public override string ToSourceCode()
-        {
-            return new FormDesignerTemplate(this).TransformText();
         }
     }
 }

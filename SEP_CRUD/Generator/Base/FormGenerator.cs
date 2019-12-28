@@ -4,18 +4,25 @@ using SEP_CRUD.Template.Form;
 
 namespace SEP_CRUD.Generator.Base
 {
-    public class FormGenerator : GroupGenerator<FileGenerator>
+    public abstract class FormGenerator : GroupGenerator<ClassGenerator>
     {
         public ProjectGenerator ProjectOwner { get; set; }
-        public string Namespace { get; set; }
+        public string Namespace
+        {
+            get
+            {
+                return this[0].Namespace;
+            }
+        }
 
-        public FormGenerator(ProjectGenerator p, string name, string _namespace) 
+        public FormGenerator(ProjectGenerator p, string name) 
         {
             ProjectOwner = p;
             this.name = name;
-            Namespace = _namespace;
-            Add(new FormDesignerGenerator(this));
+            Add(FormDesignerGenerator);
         }
+
+        public abstract FormDesignerGenerator FormDesignerGenerator { get; }
 
         public override string GetFileName()
         {
@@ -24,14 +31,7 @@ namespace SEP_CRUD.Generator.Base
 
         public override string GetRelativePath()
         {
-            if (ProjectOwner != null)
-                return ProjectOwner.GetRelativePath();
-            return "";
-        }
-
-        public override string ToSourceCode()
-        {
-            return new FormTemplate(this).TransformText();
+            return this[0].GetRelativePath();
         }
     }
 }

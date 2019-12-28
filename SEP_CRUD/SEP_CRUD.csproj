@@ -61,6 +61,8 @@
     <Compile Include="Generator\Base\GroupGenerator.cs" />
     <Compile Include="Generator\Base\FileDetail.cs" />
     <Compile Include="Generator\Base\ItemGenerator.cs" />
+    <Compile Include="Generator\Form\EmptyDesignerFormGenerator.cs" />
+    <Compile Include="Generator\Form\EmptyFormGenerator.cs" />
     <Compile Include="Generator\Model\ModelGenerator.cs" />
     <Compile Include="Generator\Model\ModelsGenerator.cs" />
     <Compile Include="Generator\ProgramGenerator.cs" />

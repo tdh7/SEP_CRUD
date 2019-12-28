@@ -7,20 +7,18 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace SEP_CRUD.Template.Entity
+namespace SEP_CRUD.Template.Form
 {
-    using System.Linq;
-    using System.Text;
-    using System.Collections.Generic;
+    using SEP_CRUD.Generator.Base;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+    #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\SharedFormDesignerGenerator.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public partial class ModelTemplate : ModelTemplateBase
+    public partial class SharedFormDesignerGenerator : SharedFormDesignerGeneratorBase
     {
 #line hidden
         /// <summary>
@@ -28,30 +26,16 @@ namespace SEP_CRUD.Template.Entity
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("using System;\r\nusing System.Collections.Generic;\r\n\r\nnamespace ");
-            
-            #line 9 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
- Write(generator.Namespace); 
-            
-            #line default
-            #line hidden
-            this.Write("{\r\n\tpublic class ");
-            
-            #line 11 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
- Write(generator.Name); 
-            
-            #line default
-            #line hidden
-            this.Write(" : BaseModel\r\n\t{\r\n");
-            
-            #line 13 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
- Write(GetBodyClass()); 
-            
-            #line default
-            #line hidden
-            this.Write("\t}\r\n}\r\n");
             return this.GenerationEnvironment.ToString();
         }
+        
+        #line 3 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\SharedFormDesignerGenerator.tt"
+ 
+public FormDesignerGenerator Generator;
+
+        
+        #line default
+        #line hidden
     }
     
     #line default
@@ -61,7 +45,7 @@ namespace SEP_CRUD.Template.Entity
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public class ModelTemplateBase
+    public class SharedFormDesignerGeneratorBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

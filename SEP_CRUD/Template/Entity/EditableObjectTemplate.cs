@@ -18,9 +18,9 @@ namespace SEP_CRUD.Template.Entity
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+    #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\EditableObjectTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public partial class ModelTemplate : ModelTemplateBase
+    public partial class EditableObjectTemplate : EditableObjectTemplateBase
     {
 #line hidden
         /// <summary>
@@ -28,30 +28,84 @@ namespace SEP_CRUD.Template.Entity
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("using System;\r\nusing System.Collections.Generic;\r\n\r\nnamespace ");
+            this.Write("using System.Collections;\r\nusing System.ComponentModel;\r\nusing System.Reflection;" +
+                    "\r\n\r\nnamespace ");
             
-            #line 9 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
- Write(generator.Namespace); 
-            
-            #line default
-            #line hidden
-            this.Write("{\r\n\tpublic class ");
-            
-            #line 11 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
- Write(generator.Name); 
+            #line 11 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\EditableObjectTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(_namespace));
             
             #line default
             #line hidden
-            this.Write(" : BaseModel\r\n\t{\r\n");
-            
-            #line 13 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
- Write(GetBodyClass()); 
-            
-            #line default
-            #line hidden
-            this.Write("\t}\r\n}\r\n");
+            this.Write("\r\n{\r\n    public class EditableObject: IEditableObject\r\n    {\r\n        private Has" +
+                    "htable _properties = new Hashtable(16);\r\n\r\n        public void BeginEdit()\r\n    " +
+                    "    {\r\n            if (_properties.Count != 0)\r\n            {\r\n                r" +
+                    "eturn;\r\n            }\r\n\r\n            PropertyInfo[] properties = (this.GetType()" +
+                    ").GetProperties(BindingFlags.Public | BindingFlags.Instance);\r\n\r\n            for" +
+                    " (int i = 0; i < properties.Length; i++)\r\n            {\r\n                //check" +
+                    " if there is set accessor\r\n                if (null != properties[i].GetSetMetho" +
+                    "d())\r\n                {\r\n                    object value = properties[i].GetVal" +
+                    "ue(this, null);\r\n                    _properties.Add(properties[i].Name, value);" +
+                    "\r\n                }\r\n            }\r\n        }\r\n\r\n        public void EndEdit()\r\n" +
+                    "        {\r\n            _properties.Clear();\r\n        }\r\n\r\n        public void Ca" +
+                    "ncelEdit()\r\n        {\r\n            if (_properties.Count == 0)\r\n                " +
+                    "return;\r\n\r\n            //restore old values\r\n            PropertyInfo[] properti" +
+                    "es = (this.GetType())\r\n                .GetProperties(BindingFlags.Public | Bind" +
+                    "ingFlags.Instance);\r\n\r\n            for (int i = 0; i < properties.Length; i++)\r\n" +
+                    "            {\r\n                //check if there is set accessor\r\n               " +
+                    " if (null != properties[i].GetSetMethod())\r\n                {\r\n                 " +
+                    "   object value = _properties[properties[i].Name];\r\n                    properti" +
+                    "es[i].SetValue(this, value, null);\r\n                }\r\n            }\r\n\r\n        " +
+                    "    //delete current values            \r\n            _properties.Clear();\r\n     " +
+                    "   }\r\n    }\r\n}");
             return this.GenerationEnvironment.ToString();
         }
+        
+        #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\EditableObjectTemplate.tt"
+
+private string @__namespaceField;
+
+/// <summary>
+/// Access the _namespace parameter of the template.
+/// </summary>
+private string _namespace
+{
+    get
+    {
+        return this.@__namespaceField;
+    }
+}
+
+
+/// <summary>
+/// Initialize the template
+/// </summary>
+public virtual void Initialize()
+{
+    if ((this.Errors.HasErrors == false))
+    {
+bool _namespaceValueAcquired = false;
+if (this.Session.ContainsKey("_namespace"))
+{
+    this.@__namespaceField = ((string)(this.Session["_namespace"]));
+    _namespaceValueAcquired = true;
+}
+if ((_namespaceValueAcquired == false))
+{
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("_namespace");
+    if ((data != null))
+    {
+        this.@__namespaceField = ((string)(data));
+    }
+}
+
+
+    }
+}
+
+
+        
+        #line default
+        #line hidden
     }
     
     #line default
@@ -61,7 +115,7 @@ namespace SEP_CRUD.Template.Entity
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public class ModelTemplateBase
+    public class EditableObjectTemplateBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

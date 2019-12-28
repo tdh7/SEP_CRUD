@@ -9,6 +9,7 @@ namespace SEP_CRUD.Generator.Base
         public ProjectGenerator ProjectOwner { get; set; }
         public string Namespace { get; set; }
 
+        private string SubNamespace = "Forms";
         public FormGenerator(ProjectGenerator p, string name, string _namespace) 
         {
             ProjectOwner = p;

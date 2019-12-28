@@ -4,13 +4,19 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Forms;
+using SEP_CRUD.Entities;
 using SEP_CRUD.Entities.Loader;
 using SEP_CRUD.Generator.Base;
+using SEP_CRUD.Generator.Form;
+using SEP_CRUD.Generator.Model;
 using SEP_CRUD.Generator.Project;
 using SEP_CRUD.Helper.Mapping;
+using SEP_CRUD.Template.Form;
 
 
 namespace SEP_CRUD.Forms
@@ -19,9 +25,8 @@ namespace SEP_CRUD.Forms
     {
         private SqlConnectionStringBuilder builder;
 
-        private const string COLUMN_NAME = "TABLE_NAME";
-
-        private DatabaseLoader databaseLoader = new DatabaseLoader();
+        private EntitiesLoader entitiesLoader = EntitiesLoader.Instance;
+        private Entities.Entities entities;
 
         public ProjectInfoForm()
         {
@@ -32,17 +37,6 @@ namespace SEP_CRUD.Forms
         {
             this.builder = e;
             string dbName = builder.InitialCatalog.toClassNameNotation();
-            SqlStringBuilderToDatabaseLoader.Convert(builder, databaseLoader);
-            var result = databaseLoader.Connect();
-            if (result.OK == false)
-            {
-                MessageBox.Show(result.Message);
-                return;
-            }
-
-            listBoxDBTableName.DataSource = databaseLoader.LoadTableNames();
-            databaseLoader.Disconnect();
-//            listBoxDBTableName.DisplayMember = COLUMN_NAME;
 
             toolStripButtonConnect.Enabled = false;
             buttonStart.Enabled = true;
@@ -51,21 +45,37 @@ namespace SEP_CRUD.Forms
             textBoxPrjName.Enabled = true;
 
             projectInfoBindingSource.DataSource = new ProjectInfo()
-                { ProjectName = dbName, SolutionName = dbName };
+                {ProjectName = dbName, SolutionName = dbName};
+
+
+            SqlStringBuilderToDatabaseLoader.Convert(builder, entitiesLoader);
+            Result loadResult = entitiesLoader.CheckValid();
+            if (loadResult.OK)
+            {
+                loadResult = entitiesLoader.Connect();
+            }
+            if (loadResult.OK)
+            {
+                loadResult = Entities.Entities.Instance.UpdateData();
+            }
+
+            if (loadResult.OK)
+            {
+                entities = Entities.Entities.Instance;
+                listBoxDBTableName.DataSource = loadAllTable();
+                listBoxDBTableName.DisplayMember = "DatabaseName";
+                Console.WriteLine("Entities info load successful");
+            }
         }
 
-        private DataTable getTableName()
+        private List<Table> loadAllTable()
         {
-            var sqlQuery = $"SELECT {COLUMN_NAME} FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'";
-            var dt = new DataTable();
-            using (var sqlConnection = new SqlConnection(builder.ConnectionString))
+            List<Table> tables = new List<Table>();
+            foreach (var t in entities.Tables)
             {
-                sqlConnection.Open();
-                var sqlCommand = new SqlCommand(sqlQuery, sqlConnection);
-                var adapter = new SqlDataAdapter(sqlCommand);
-                adapter.Fill(dt);
+                tables.Add(t.Value);
             }
-            return dt;
+            return tables;
         }
 
         private void ProjectInfoForm_Shown(object sender, EventArgs e)
@@ -87,38 +97,44 @@ namespace SEP_CRUD.Forms
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
-            List<String> tablesName = new List<string>();
+            // Log solution name, project name, selected tables:
             ProjectInfo projectInfo = projectInfoBindingSource.Current as ProjectInfo;
-
             Console.WriteLine(projectInfo); // projectInfo.ToString() 
 
             foreach (int i in listBoxDBTableName.SelectedIndices)
             {
-//                DataRowView dataRowView = (DataRowView)listBoxDBTableName.Items[i];
-//                string tableName = dataRowView.Row[COLUMN_NAME].ToString();
-
-                var tableName = listBoxDBTableName.Items[i].ToString();
-
-                tablesName.Add(tableName);
-                Console.WriteLine(tableName); // log
+                var table = listBoxDBTableName.Items[i] as Table;
+                Console.WriteLine(table.DatabaseName);
             }
 
-            startGenerate(projectInfo, tablesName, builder);
+            startGenerate(projectInfo);
+            MessageBox.Show("Done");
         }
 
-        private void startGenerate(ProjectInfo projectInfo,
-            List<string> tablesName,
-            SqlConnectionStringBuilder builder)
+        private void startGenerate(ProjectInfo projectInfo)
         {
             SolutionGenerator solutionGenerator = new SolutionGenerator(projectInfo.SolutionName);
-            ProjectGenerator projectGenerator = ProjectGenerator.NewInstance(projectInfo.ProjectName);
+            ProjectGenerator project = ProjectGenerator.NewInstance(projectInfo.ProjectName);
 
+            // add must have class            
+            var baseForm = new BaseFormGenerator(project, project.Name);
+            project.Add(baseForm);
+            project.DefaultFormGenerator = baseForm;
+
+            project.Add(new EditDataFormGenerator(project, project.Name));
+            project.Add(new EditableObjectGenerator(project));
+            project.Add(new BaseModelGenerator(project));
+
+            // add concrete class
             // TODO loop for each table name, genera form
-            FormGenerator f1 = new FormGenerator(projectGenerator, "GeneratedForm", projectGenerator.Name);
-            projectGenerator.Add(f1);
-            projectGenerator.DefaultFormGenerator = f1;
+            foreach (int i in listBoxDBTableName.SelectedIndices)
+            {
+                var table = listBoxDBTableName.Items[i] as Table;
+                project.Add(new EditFormGenerator(project, project.Name, table));
+                project.Add(new ModelGenerator(table, project));
+            }
 
-            solutionGenerator.Add(projectGenerator);
+            solutionGenerator.Add(project);
             Result result = solutionGenerator.ExportToFiles("output");
             Console.WriteLine("write " + result.GetResult() + " with message " + result.Message);
         }

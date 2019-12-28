@@ -18,9 +18,9 @@ namespace SEP_CRUD.Template.Entity
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+    #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\BaseModelTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public partial class ModelTemplate : ModelTemplateBase
+    public partial class BaseModelTemplate : BaseModelTemplateBase
     {
 #line hidden
         /// <summary>
@@ -28,30 +28,78 @@ namespace SEP_CRUD.Template.Entity
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("using System;\r\nusing System.Collections.Generic;\r\n\r\nnamespace ");
+            this.Write("using System;\r\nusing System.Collections.Generic;\r\nusing System.ComponentModel;\r\nu" +
+                    "sing System.Linq;\r\nusing System.Runtime.CompilerServices;\r\nusing System.Text;\r\nu" +
+                    "sing System.Threading.Tasks;\r\n\r\nnamespace ");
             
-            #line 9 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
- Write(generator.Namespace); 
-            
-            #line default
-            #line hidden
-            this.Write("{\r\n\tpublic class ");
-            
-            #line 11 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
- Write(generator.Name); 
+            #line 15 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\BaseModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(_namespace));
             
             #line default
             #line hidden
-            this.Write(" : BaseModel\r\n\t{\r\n");
-            
-            #line 13 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
- Write(GetBodyClass()); 
-            
-            #line default
-            #line hidden
-            this.Write("\t}\r\n}\r\n");
+            this.Write(@"
+{
+    public class BaseModel: EditableObject, INotifyPropertyChanged
+    {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void onPropertyChange([CallerMemberName] string propertyName = null)
+        {
+            PropertyChangedEventArgs args = new PropertyChangedEventArgs(propertyName);
+            PropertyChanged?.Invoke(this, args);
+        }
+    }
+}
+");
             return this.GenerationEnvironment.ToString();
         }
+        
+        #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\BaseModelTemplate.tt"
+
+private string @__namespaceField;
+
+/// <summary>
+/// Access the _namespace parameter of the template.
+/// </summary>
+private string _namespace
+{
+    get
+    {
+        return this.@__namespaceField;
+    }
+}
+
+
+/// <summary>
+/// Initialize the template
+/// </summary>
+public virtual void Initialize()
+{
+    if ((this.Errors.HasErrors == false))
+    {
+bool _namespaceValueAcquired = false;
+if (this.Session.ContainsKey("_namespace"))
+{
+    this.@__namespaceField = ((string)(this.Session["_namespace"]));
+    _namespaceValueAcquired = true;
+}
+if ((_namespaceValueAcquired == false))
+{
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("_namespace");
+    if ((data != null))
+    {
+        this.@__namespaceField = ((string)(data));
+    }
+}
+
+
+    }
+}
+
+
+        
+        #line default
+        #line hidden
     }
     
     #line default
@@ -61,7 +109,7 @@ namespace SEP_CRUD.Template.Entity
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public class ModelTemplateBase
+    public class BaseModelTemplateBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

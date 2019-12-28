@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace <# Write(generator.Namespace); #>
 {
-	public class <# Write(generator.Name); #>
+	public class <# Write(generator.Name); #> : BaseModel
 	{
 <# Write(GetBodyClass()); #>
 	}

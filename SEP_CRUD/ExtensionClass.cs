@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Globalization;
+using SEP_CRUD.Entities;
 
 namespace SEP_CRUD
 {
@@ -47,6 +48,28 @@ namespace SEP_CRUD
             schemaNameNotation = textInfo.ToTitleCase(schemaNameNotation);
             schemaNameNotation = schemaNameNotation.ClearSpace();                        
             return schemaNameNotation;
+        }
+    }
+
+    public static class ColumnExtension
+    {
+        public static bool IsAbleBindingToTextBoxControl(this Column column)
+        {
+            string primitiveType = column.BindingType;
+
+            return primitiveType.Equals(BindingType.DOUBLE) ||
+                   primitiveType.Equals(BindingType.FLOAT) ||
+                   primitiveType.Equals(BindingType.INT) ||
+                   primitiveType.Equals(BindingType.SHORT) ||
+                   primitiveType.Equals(BindingType.LONG) ||
+                   primitiveType.Equals(BindingType.STRING);
+        }
+
+        public static bool IsAbleBindingToDateTimePicker(this Column column)
+        {
+            string primitiveType = column.BindingType;
+
+            return primitiveType.Equals(BindingType.DATE_TIME);
         }
     }
 }

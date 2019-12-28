@@ -1,0 +1,5 @@
+﻿<#@ template language="C#" #>
+<#@ import namespace="SEP_CRUD.Generator.Base" #>
+<#+ 
+public FormDesignerGenerator Generator;
+#>

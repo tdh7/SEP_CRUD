@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Column.cs" />
-    <Compile Include="Entities\DataTypeBinder.cs" />
+    <Compile Include="Entities\TypeBinder.cs" />
     <Compile Include="Entities\Entities.cs" />
     <Compile Include="Entities\ForeignKey.cs" />
     <Compile Include="Entities\Base\DatabaseProperty.cs" />
@@ -68,6 +68,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Entity\ModelTemplate2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelTemplate2.tt</DependentUpon>
     </Compile>
     <Compile Include="Template\Entity\Template.cs" />
     <Compile Include="Template\Form\Template.cs" />
@@ -158,6 +163,10 @@
     <Content Include="Template\Entity\ModelTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ModelTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Entity\ModelTemplate2.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ModelTemplate2.cs</LastGenOutput>
     </Content>
     <Content Include="Template\Project\AssemblyInfoTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

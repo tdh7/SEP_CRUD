@@ -10,6 +10,11 @@ namespace SEP_CRUD.Entities
             Columns.Add(col);
         }
 
+        public bool HasColumn(Column c)
+        {
+            return Columns.Contains(c);
+        }
+
         public Column this[int i]
         {
             get { return Columns[i]; }

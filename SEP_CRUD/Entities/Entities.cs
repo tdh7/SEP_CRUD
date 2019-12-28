@@ -1,10 +1,7 @@
 ﻿using SEP_CRUD.Entities.Loader;
 using SEP_CRUD.Generator.Base;
 using SEP_CRUD.Helper.NameConvention;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace SEP_CRUD.Entities
 {

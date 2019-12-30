@@ -22,10 +22,10 @@ namespace SQLHibernate.DAO
             database = new SqlDatabase(ConnectionString);
         }
 
-        public IList readAll()
+        public IList<T> readAll()
         {
             ITable table = database.Table(clazz);
-            return table.ReadAll();
+            return table.ReadAll().Cast<T>().ToList();
         }
 
         public int Delete(object obj)

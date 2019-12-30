@@ -28,19 +28,19 @@ namespace SQLHibernate.DAO
             return table.ReadAll().Cast<T>().ToList();
         }
 
-        public int Delete(object obj)
+        public int Delete(T obj)
         {
             ITable table = database.Table(clazz);
             return table.Delete(obj);
         }
 
-        public int Update(object obj)
+        public int Update(T obj)
         {
             ITable table = database.Table(clazz);
             return table.Update(obj);
         }
 
-        public int Insert(object obj)
+        public int Insert(T obj)
         {
             ITable table = database.Table(clazz);
             return table.Insert(obj);

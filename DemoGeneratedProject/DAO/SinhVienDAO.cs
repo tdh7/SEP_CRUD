@@ -4,31 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DemoGeneratedProject.DTO;
+using SQLHibernate.DAO;
 
 namespace DemoGeneratedProject.DAOs
 {
-    class SinhVienDAO
+    class SinhVienDAO: AbstractDAO<SinhVien>
     {
-        public void Update(SinhVien sv)
-        {
-            
-        }
-
-        public void Add(SinhVien sv)
-        {
-            
-        }
-
-        public void Delete(SinhVien sv)
-        {
-            
-        }
-
-        public static IList<SinhVien> GetList()
-        {
-            return generateDummyList();
-        }
-
+        
         private static IList<SinhVien> generateDummyList()
         {
             IList<SinhVien> sv = new List<SinhVien>();
@@ -38,5 +20,27 @@ namespace DemoGeneratedProject.DAOs
 
             return sv;
         }
+
+        protected override string ConnectionString
+        {
+            get
+            {
+                return "Data Source=NINH\\SQLENTERPIRSE;Initial Catalog=QL_LOP_HOC;Integrated Security=True"; 
+
+            }
+        }
+
+        private static SinhVienDAO _instance = null;
+
+        public static SinhVienDAO Instance
+        {
+            get
+            {
+                return _instance == null ? new SinhVienDAO() : _instance;
+
+            }
+        }
+
+        private SinhVienDAO(): base() { }
     }
 }

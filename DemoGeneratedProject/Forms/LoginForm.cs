@@ -37,7 +37,7 @@ namespace DemoGeneratedProject.Forms
         private void buttonConnect_Click(object sender, EventArgs e)
         {
             var connectionStringBuilder = loginInfoBindingSource.Current as SqlConnectionStringBuilder;
-            connectionStringBuilder.InitialCatalog = "LOP_HOC";
+            connectionStringBuilder.InitialCatalog = "QL_SINH_VIEN";
             if (TestDBConnection(connectionStringBuilder))
             {
                 var connectionString = connectionStringBuilder.ConnectionString;

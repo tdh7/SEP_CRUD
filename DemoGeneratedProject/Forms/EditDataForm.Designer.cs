@@ -72,10 +72,8 @@ namespace DemoGeneratedProject.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(234, 276);
             this.Controls.Add(this.toolStrip1);
-            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "EditDataForm";
             this.Text = "CreateDataForm";
-            this.WindowState = System.Windows.Forms.FormWindowState.Normal;
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);

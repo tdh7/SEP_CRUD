@@ -101,6 +101,33 @@ namespace DemoGeneratedProject.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string LastDatabase {
+            get {
+                return ResourceManager.GetString("LastDatabase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string LastDatabaseSource {
+            get {
+                return ResourceManager.GetString("LastDatabaseSource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string LastUsername {
+            get {
+                return ResourceManager.GetString("LastUsername", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Save_16x {

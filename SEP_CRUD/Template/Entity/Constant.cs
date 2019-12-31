@@ -2,7 +2,10 @@
 {
     public class Constant
     {
-        public const string LoadTablesSqlQuery = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'";
+        public const string LoadTablesSqlQuery = @"SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND
+    OBJECTPROPERTY(OBJECT_ID(QUOTENAME(TABLE_SCHEMA) +
+        N'.' +
+        QUOTENAME(TABLE_NAME)), 'IsMSShipped') = 0";
 
         public static string LoadTableInfoSqlQuery(string tableName)
         {

@@ -23,7 +23,19 @@ namespace DemoGeneratedProject.Forms
             base.InitBinder(entity);
             textBoxHoTen.DataBindings.Add("Text", bindingSourceItem, "Ten");
             textBoxDiemTB.DataBindings.Add("Text", bindingSourceItem, "DiemTB");
-            textBoxMSSV.DataBindings.Add("Text", bindingSourceItem, "Mssv");
+            textBoxMSSV.DataBindings.Add("Text", bindingSourceItem, "Mssv", true, DataSourceUpdateMode.OnValidation, string.Empty);
+        }
+
+        protected override void OnFormLoaded(object sender, FormType e)
+        {
+            if (e == FormType.FormAdd)
+            {
+                textBoxMSSV.ReadOnly = false;
+            }
+            else if (e == FormType.FormUpdate)
+            {
+                textBoxMSSV.ReadOnly = true;
+            }
         }
     }
 

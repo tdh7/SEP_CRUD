@@ -1,15 +1,19 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using SQLHibernate.Define.HAttribute;
+using SQLHibernate.Define.SQLServer;
 
 namespace DemoGeneratedProject.DTO
 {
+    [Table("SINH_VIEN", "dbo")]
     public class SinhVien: BaseModel
     {
         private String _ten;
         private float _diemTb;
-        private int _mssv;
+        private int? _mssv = null;
 
+        [Field("TEN")]
         public String Ten
         {
             get { return _ten; }
@@ -20,7 +24,7 @@ namespace DemoGeneratedProject.DTO
                 onPropertyChange();
             }
         }
-
+        [Field("DIEM_TB")]
         public float DiemTB
         {
             get => _diemTb;
@@ -31,7 +35,8 @@ namespace DemoGeneratedProject.DTO
             }
         }
 
-        public int Mssv
+        [Field("MSSV", FieldFlags.Key)]
+        public int? Mssv
         {
             get => _mssv;
             set

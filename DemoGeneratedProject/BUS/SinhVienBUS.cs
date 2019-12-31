@@ -10,26 +10,27 @@ namespace DemoGeneratedProject.BUS
 {
     class SinhVienBUS
     {
-        private SinhVienDAO sinhVienDao = new SinhVienDAO();
+//        private SinhVienDAO sinhVienDao = new SinhVienDAO();
 
         public void Update(SinhVien sv)
         {
-            sinhVienDao.Update(sv);
+//            sinhVienDao.Update(sv);
         }
 
         public void Add(SinhVien sv)
         {
-            sinhVienDao.Add(sv);
+//            sinhVienDao.Add(sv);
         }
 
         public void Delete(SinhVien sv)
         {
-            sinhVienDao.Delete(sv);
+//            sinhVienDao.Delete(sv);
         }
 
         public IList<SinhVien> GetList()
         {
-            return SinhVienDAO.GetList();
+//            return SinhVienDAO.GetList();
+            return null;
         }
     }
 }

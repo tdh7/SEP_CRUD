@@ -8,7 +8,7 @@ namespace SQLHibernate.Define.HAttribute
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Property,
             Inherited = true, AllowMultiple = false)]
-    class TableAttribute : Attribute
+    public class TableAttribute : Attribute
     {
         private string name;
         private string schema;

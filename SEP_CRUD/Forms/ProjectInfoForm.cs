@@ -31,22 +31,21 @@ namespace SEP_CRUD.Forms
         public ProjectInfoForm()
         {
             InitializeComponent();
+            folderBrowserDialog.RootFolder = Environment.SpecialFolder.Desktop;
+            folderBrowserDialog.SelectedPath = Environment.GetFolderPath(folderBrowserDialog.RootFolder);
         }
 
         private void OnLoginSuccessHandler(object sender, SqlConnectionStringBuilder e)
         {
             this.builder = e;
-            string dbName = builder.InitialCatalog.toClassNameNotation();
 
             toolStripButtonConnect.Enabled = false;
             buttonStart.Enabled = true;
             listBoxDBTableName.Enabled = true;
             textBoxSlnName.Enabled = true;
             textBoxPrjName.Enabled = true;
-
-            projectInfoBindingSource.DataSource = new ProjectInfo()
-                {ProjectName = dbName, SolutionName = dbName};
-
+            textBoxPath.Enabled = true;
+            buttonBrowser.Enabled = true;
 
             SqlStringBuilderToDatabaseLoader.Convert(builder, entitiesLoader);
             Result loadResult = entitiesLoader.CheckValid();
@@ -63,8 +62,15 @@ namespace SEP_CRUD.Forms
             {
                 entities = Entities.Entities.Instance;
                 listBoxDBTableName.DataSource = loadAllTable();
-                listBoxDBTableName.DisplayMember = "DatabaseName";
+                listBoxDBTableName.DisplayMember = "BindingName";
                 Console.WriteLine("Entities info load successful");
+
+                projectInfoBindingSource.DataSource = new ProjectInfo()
+                {
+                    ProjectName = entities.BindingName,
+                    SolutionName = entities.BindingName,
+                    Path = folderBrowserDialog.SelectedPath
+                };
             }
         }
 
@@ -145,8 +151,20 @@ namespace SEP_CRUD.Forms
             }
 
             solutionGenerator.Add(project);
-            Result result = solutionGenerator.ExportToFiles("output");
+            Result result = solutionGenerator.ExportToFiles(projectInfo.Path);
             Console.WriteLine("write " + result.GetResult() + " with message " + result.Message);
+        }
+
+        private void buttonBrowser_Click(object sender, EventArgs e)
+        {
+            var result = folderBrowserDialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                textBoxPath.Text = folderBrowserDialog.SelectedPath;
+                textBoxPath.Focus();
+                Console.Write("Selected Folder: ");
+                Console.WriteLine(folderBrowserDialog.SelectedPath);
+            }
         }
     }
 
@@ -157,9 +175,11 @@ namespace SEP_CRUD.Forms
 
         public string SolutionName { get; set; }
 
+        public string Path { get; set; }
+
         public override string ToString()
         {
-            return $"Project info: Sln: {SolutionName}, Prj: {ProjectName}";
+            return $"Project info:\n Sln: {SolutionName},\n Prj: {ProjectName} \nPath: {Path}";
         }
     }
 }

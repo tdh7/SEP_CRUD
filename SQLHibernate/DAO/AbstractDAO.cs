@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SQLHibernate.DAO
 {
-    abstract class AbstractDAO<T>
+    public abstract class AbstractDAO<T>
     {
         private IDatabase database;
         //private string connectionString = "Data Source=DESKTOP-G7ODJ9B\\SQLEXPRESS;Initial Catalog=ManagementSystem;Integrated Security=True";
@@ -22,25 +22,25 @@ namespace SQLHibernate.DAO
             database = new SqlDatabase(ConnectionString);
         }
 
-        public IList readAll()
+        public IList<T> readAll()
         {
             ITable table = database.Table(clazz);
-            return table.ReadAll();
+            return table.ReadAll().Cast<T>().ToList();
         }
 
-        public int Delete(object obj)
+        public int Delete(T obj)
         {
             ITable table = database.Table(clazz);
             return table.Delete(obj);
         }
 
-        public int Update(object obj)
+        public int Update(T obj)
         {
             ITable table = database.Table(clazz);
             return table.Update(obj);
         }
 
-        public int Insert(object obj)
+        public int Insert(T obj)
         {
             ITable table = database.Table(clazz);
             return table.Insert(obj);

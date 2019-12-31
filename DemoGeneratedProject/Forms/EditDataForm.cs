@@ -22,7 +22,7 @@ namespace DemoGeneratedProject.Forms
             InitializeComponent();
         }
 
-        private static void SetUpAndShowForm(E entity, Action<E> saveAction)
+        private static F SetUpForm(E entity, Action<E> saveAction)
         {
             if (entity == null)
                 entity = new E();
@@ -30,23 +30,32 @@ namespace DemoGeneratedProject.Forms
             F f = new F();
             f.InitBinder(entity);
             f._saveAction = saveAction;
-            f.ShowDialog();
+            return f;
         }
 
         public static void Edit(E entity, Action<E> saveAction)
         {
-            SetUpAndShowForm(entity, saveAction);
+            F f = SetUpForm(entity, saveAction);
+            f.OnFormLoaded(f, FormType.FormUpdate);
+            f.ShowDialog();
         }
 
         public static void Add(Action<E> saveAction)
         {
-            SetUpAndShowForm(null, saveAction);
+            F f = SetUpForm(null, saveAction);
+            f.OnFormLoaded(f, FormType.FormAdd);
+            f.ShowDialog();
         }
 
         protected virtual void InitBinder(E entity)
         {
             bindingSourceItem.DataSource = entity;
         }
+
+        protected virtual void OnFormLoaded(object sender, FormType e)
+        {
+        }
+
 
         private void SaveChange()
         {
@@ -63,6 +72,7 @@ namespace DemoGeneratedProject.Forms
 
         private void toolStripButtonSave_Click(object sender, EventArgs e)
         {
+            Validate();
             SaveChange();
             this.Close();
         }
@@ -71,5 +81,11 @@ namespace DemoGeneratedProject.Forms
         {
             UndoChange();
         }
+    }
+
+    public enum FormType
+    {
+        FormAdd,
+        FormUpdate
     }
 }

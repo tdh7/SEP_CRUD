@@ -56,46 +56,30 @@ namespace SEP_CRUD.Template.Project
             
             #line default
             #line hidden
-            this.Write(@"</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-  </PropertyGroup>
-  <PropertyGroup Condition="" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' "">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition="" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' "">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include=""System"" />
-    <Reference Include=""System.Core"" />
-    <Reference Include=""System.Data.Linq"" />
-    <Reference Include=""System.Xml.Linq"" />
-    <Reference Include=""System.Data.DataSetExtensions"" />
-    <Reference Include=""System.Data"" />
-    <Reference Include=""System.Deployment"" />
-    <Reference Include=""System.Drawing"" />
-    <Reference Include=""System.Windows.Forms"" />
-    <Reference Include=""System.Xml"" />
-  </ItemGroup>
-  <ItemGroup>
-  ");
+            this.Write("</AssemblyName>\r\n    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>\r\n   " +
+                    " <FileAlignment>512</FileAlignment>\r\n    <Deterministic>true</Deterministic>\r\n  " +
+                    "</PropertyGroup>\r\n  <PropertyGroup Condition=\" \'$(Configuration)|$(Platform)\' ==" +
+                    " \'Debug|AnyCPU\' \">\r\n    <PlatformTarget>AnyCPU</PlatformTarget>\r\n    <DebugSymbo" +
+                    "ls>true</DebugSymbols>\r\n    <DebugType>full</DebugType>\r\n    <Optimize>false</Op" +
+                    "timize>\r\n    <OutputPath>bin\\Debug\\</OutputPath>\r\n    <DefineConstants>DEBUG;TRA" +
+                    "CE</DefineConstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4" +
+                    "</WarningLevel>\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\" \'$(Configurati" +
+                    "on)|$(Platform)\' == \'Release|AnyCPU\' \">\r\n    <PlatformTarget>AnyCPU</PlatformTar" +
+                    "get>\r\n    <DebugType>pdbonly</DebugType>\r\n    <Optimize>true</Optimize>\r\n    <Ou" +
+                    "tputPath>bin\\Release\\</OutputPath>\r\n    <DefineConstants>TRACE</DefineConstants>" +
+                    "\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLevel>\r\n  <" +
+                    "/PropertyGroup>\r\n  <ItemGroup>\r\n    <Reference Include=\"SQLHibernate, Version=1." +
+                    "0.0.0, Culture=neutral, processorArchitecture=MSIL\">\r\n      <SpecificVersion>Fal" +
+                    "se</SpecificVersion>\r\n      <HintPath>orm\\SQLHibernate.dll</HintPath>\r\n    </Ref" +
+                    "erence>\t\r\n    <Reference Include=\"System\" />\r\n    <Reference Include=\"System.Cor" +
+                    "e\" />\r\n    <Reference Include=\"System.Data.Linq\" />\r\n    <Reference Include=\"Sys" +
+                    "tem.Xml.Linq\" />\r\n    <Reference Include=\"System.Data.DataSetExtensions\" />\r\n   " +
+                    " <Reference Include=\"System.Data\" />\r\n    <Reference Include=\"System.Deployment\"" +
+                    " />\r\n    <Reference Include=\"System.Drawing\" />\r\n    <Reference Include=\"System." +
+                    "Windows.Forms\" />\r\n    <Reference Include=\"System.Xml\" />\r\n  </ItemGroup>\r\n  <It" +
+                    "emGroup>\r\n  ");
             
-            #line 53 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Project\ProjectTemplate.tt"
+            #line 57 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Project\ProjectTemplate.tt"
 
 	List<string> list = GetCompileItems();
 	int count = list.Count;
@@ -124,8 +108,9 @@ namespace SEP_CRUD.Template.Project
             
             #line default
             #line hidden
-            this.Write("  </ItemGroup>\r\n  <ItemGroup />\r\n  <Import Project=\"$(MSBuildToolsPath)\\Microsoft" +
-                    ".CSharp.targets\" />\r\n</Project>");
+            this.Write("  </ItemGroup>\r\n  <ItemGroup />\r\n  <ItemGroup>\r\n\t<Content Include=\"orm\\SQLHiberna" +
+                    "te.dll\" />\r\n  </ItemGroup>\r\n  <Import Project=\"$(MSBuildToolsPath)\\Microsoft.CSh" +
+                    "arp.targets\" />\r\n</Project>");
             return this.GenerationEnvironment.ToString();
         }
     }

@@ -153,6 +153,20 @@ namespace SEP_CRUD.Forms
             solutionGenerator.Add(project);
             Result result = solutionGenerator.ExportToFiles(projectInfo.Path);
             Console.WriteLine("write " + result.GetResult() + " with message " + result.Message);
+            CopyDLLToGeneratedProject(projectInfo.Path, project.Name);
+        }
+
+        private void CopyDLLToGeneratedProject(string path, string projectName)
+        {
+            var dllName = "SQLHibernate.dll";
+            var srcFilePath = Path.Combine("orm", dllName);
+            var destDir = Path.Combine(path, projectName, "orm");
+            var destFilePath = Path.Combine(destDir, dllName);
+
+            Directory.CreateDirectory(destDir);
+            File.Create(destFilePath).Dispose();
+
+            File.Copy(srcFilePath, destFilePath, true);
         }
 
         private void buttonBrowser_Click(object sender, EventArgs e)

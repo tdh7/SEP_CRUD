@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DemoGeneratedProject.DTO;
@@ -16,7 +17,34 @@ namespace DemoGeneratedProject.Forms
         public EditSinhVienForm()
         {
             InitializeComponent();
+            textBoxHoTen.Validating += OnValidate;
+            textBoxDiemTB.Validating += OnValidate;
+            textBoxMSSV.Validating += OnValidate;
         }
+
+        protected override void OnValidate(object sender, CancelEventArgs e)
+        {
+            base.OnValidate(sender, e);
+            if (sender == textBoxHoTen)
+            {
+                if (textBoxHoTen.Text.Length == 0)
+                {
+                    e.Cancel = true;
+                    MessageBox.Show("Họ tên không được trống");
+                }
+            }
+
+            if (sender == textBoxMSSV)
+            {
+                Regex regex = new Regex(@"\d{7}");
+                if (!regex.IsMatch(textBoxMSSV.Text))
+                {
+                    e.Cancel = true;
+                    MessageBox.Show("MSSV không hợp lệ!");
+                }
+            }
+        }
+     
 
         protected override void InitBinder(SinhVien entity)
         {

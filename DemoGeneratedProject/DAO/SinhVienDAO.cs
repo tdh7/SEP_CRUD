@@ -25,7 +25,7 @@ namespace DemoGeneratedProject.DAOs
         {
             get
             {
-                return "Data Source=NINH\\SQLENTERPIRSE;Initial Catalog=QL_LOP_HOC;Integrated Security=True"; 
+                return "Data Source=NINH\\SQLENTERPIRSE;Initial Catalog=QL_SINH_VIEN;Integrated Security=True"; 
 
             }
         }

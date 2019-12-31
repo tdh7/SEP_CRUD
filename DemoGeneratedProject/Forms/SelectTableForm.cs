@@ -49,8 +49,6 @@ namespace DemoGeneratedProject.Forms
         {
             string tableName = (string) listBoxDBTableName.SelectedValue;
 
-            MessageBox.Show($"Table {tableName} has chosen");
-
             ViewSinhVienForm form = new ViewSinhVienForm();
             form.Show();
         }

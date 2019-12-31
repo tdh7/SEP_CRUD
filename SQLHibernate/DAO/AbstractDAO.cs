@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SQLHibernate.DAO
 {
-    abstract class AbstractDAO<T>
+    public abstract class AbstractDAO<T>
     {
         private IDatabase database;
         //private string connectionString = "Data Source=DESKTOP-G7ODJ9B\\SQLEXPRESS;Initial Catalog=ManagementSystem;Integrated Security=True";

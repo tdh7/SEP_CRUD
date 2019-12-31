@@ -9,7 +9,7 @@ namespace SQLHibernate.Define.HAttribute
 {
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property,
             Inherited = true, AllowMultiple = false)]
-    class FieldAttribute : Attribute
+    public class FieldAttribute : Attribute
     {
         private string name;
         private FieldFlags flags = FieldFlags.Read | FieldFlags.Write;

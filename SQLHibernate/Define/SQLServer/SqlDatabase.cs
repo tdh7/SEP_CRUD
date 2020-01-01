@@ -116,6 +116,10 @@ namespace SQLHibernate.Define.SQLServer
             {
                 throw ex;
             }
+            finally
+            {
+                Close();
+            }
         }
 
         public void Commit()

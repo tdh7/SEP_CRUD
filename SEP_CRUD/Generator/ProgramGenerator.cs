@@ -12,6 +12,7 @@ namespace SEP_CRUD.Generator
     {
         public ProgramGenerator(ProjectGenerator p) : base(p, "Program")
         {
+            
         }
 
         public override string ToSourceCode()

@@ -1,5 +1,6 @@
 ﻿using SQLHibernate.Define.Inteface;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -33,13 +34,27 @@ namespace SQLHibernate.Define.SQLServer
             }
         }
 
-        public void BeginTransaction()
+        public void OpenConnection()
         {
             if (connection.State != ConnectionState.Open)
             {
                 connection.Open();
                 closeConnection = true;
             }
+        }
+
+        public void CloseConnection()
+        {
+            if (connection.State != ConnectionState.Closed)
+            {
+                connection.Close();
+                closeConnection = false;
+            }
+        }
+
+        public void BeginTransaction()
+        {
+            OpenConnection();
             transaction = connection.BeginTransaction();
         }
 
@@ -56,11 +71,16 @@ namespace SQLHibernate.Define.SQLServer
                 command.Parameters.Add(p);
             }
         }
+        public object NewObject(Type clazz)
+        {
+            return Activator.CreateInstance(clazz);
+        }
 
         public SqlDataReader ExecuteReader(string sql, object[] parameters)
         {
             try
             {
+                OpenConnection();
                 SqlCommand command = connection.CreateCommand();
                 command.Connection = this.connection;
                 command.Transaction = this.transaction;
@@ -78,11 +98,14 @@ namespace SQLHibernate.Define.SQLServer
                 }
 
                 SqlDataReader reader = command.ExecuteReader();
-                //Commit();
+
+                IList list = new ArrayList();
+
                 return reader;
             }
             catch (Exception ex)
             {
+                CloseConnection();
                 throw ex;
             }
         }

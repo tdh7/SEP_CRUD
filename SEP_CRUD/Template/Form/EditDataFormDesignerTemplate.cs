@@ -18,7 +18,7 @@ namespace SEP_CRUD.Template.Form
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditDataFormDesignerTemplate.tt"
+    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditDataFormDesignerTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class EditDataFormDesignerTemplate : SharedFormDesignerGenerator
     {
@@ -30,7 +30,7 @@ namespace SEP_CRUD.Template.Form
         {
             this.Write("// using DemoGeneratedProject.DTO;\r\n\r\nnamespace ");
             
-            #line 8 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditDataFormDesignerTemplate.tt"
+            #line 8 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditDataFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Generator.Namespace));
             
             #line default
@@ -62,7 +62,7 @@ namespace SEP_CRUD.Template.Form
                     "ipItemDisplayStyle.Text;\r\n            //this.toolStripButtonSave.Image = global:" +
                     ":");
             
-            #line 58 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditDataFormDesignerTemplate.tt"
+            #line 58 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditDataFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Generator.Namespace));
             
             #line default
@@ -79,7 +79,7 @@ namespace SEP_CRUD.Template.Form
             this.toolStripButtonUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             //this.toolStripButtonUndo.Image = global::");
             
-            #line 68 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditDataFormDesignerTemplate.tt"
+            #line 68 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditDataFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Generator.Namespace));
             
             #line default

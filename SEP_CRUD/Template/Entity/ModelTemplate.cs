@@ -19,7 +19,7 @@ namespace SEP_CRUD.Template.Entity
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ModelTemplate : ModelTemplateBase
     {
@@ -32,21 +32,21 @@ namespace SEP_CRUD.Template.Entity
             this.Write("using System;\r\nusing System.Collections.Generic;\r\nusing System.Text;\r\n\r\nnamespace" +
                     " ");
             
-            #line 11 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+            #line 11 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
  Write(generator.Namespace); 
             
             #line default
             #line hidden
             this.Write("{\r\n\r\n\tpublic class ");
             
-            #line 14 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+            #line 14 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
  Write(generator.Name); 
             
             #line default
             #line hidden
             this.Write(" : BaseModel\r\n\t{\r\n");
             
-            #line 16 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+            #line 16 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
 
 	Table table = generator.Table;
     int count = table.Count;
@@ -98,7 +98,7 @@ namespace SEP_CRUD.Template.Entity
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 62 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+        #line 62 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
 
 private void WriteBackingField(Column c)
 {
@@ -107,42 +107,42 @@ private void WriteBackingField(Column c)
         #line default
         #line hidden
         
-        #line 65 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+        #line 65 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
 this.Write("\t\tprivate ");
 
         
         #line default
         #line hidden
         
-        #line 66 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+        #line 66 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(c.BindingType));
 
         
         #line default
         #line hidden
         
-        #line 66 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+        #line 66 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
 this.Write(" _");
 
         
         #line default
         #line hidden
         
-        #line 66 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+        #line 66 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(c.BindingName));
 
         
         #line default
         #line hidden
         
-        #line 66 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+        #line 66 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
 this.Write(";\r\n");
 
         
         #line default
         #line hidden
         
-        #line 67 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+        #line 67 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
 
 } 
 
@@ -150,7 +150,7 @@ this.Write(";\r\n");
         #line default
         #line hidden
         
-        #line 70 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+        #line 70 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
 
 private void WriteProperty(Column c)
 { 
@@ -159,70 +159,70 @@ private void WriteProperty(Column c)
         #line default
         #line hidden
         
-        #line 73 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+        #line 73 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
 this.Write("        public ");
 
         
         #line default
         #line hidden
         
-        #line 74 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+        #line 74 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(c.BindingType));
 
         
         #line default
         #line hidden
         
-        #line 74 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+        #line 74 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
 this.Write(" ");
 
         
         #line default
         #line hidden
         
-        #line 74 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+        #line 74 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(c.BindingName));
 
         
         #line default
         #line hidden
         
-        #line 74 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+        #line 74 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
 this.Write("\r\n        {\r\n            get { return _");
 
         
         #line default
         #line hidden
         
-        #line 76 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+        #line 76 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(c.BindingName));
 
         
         #line default
         #line hidden
         
-        #line 76 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+        #line 76 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
 this.Write("; }\r\n\r\n            set\r\n            {\r\n                _");
 
         
         #line default
         #line hidden
         
-        #line 80 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+        #line 80 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(c.BindingName));
 
         
         #line default
         #line hidden
         
-        #line 80 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+        #line 80 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
 this.Write(" = value;\r\n                onPropertyChange();\r\n            }\r\n        }\r\n\r\n");
 
         
         #line default
         #line hidden
         
-        #line 85 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate.tt"
+        #line 85 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate.tt"
  
 }
 

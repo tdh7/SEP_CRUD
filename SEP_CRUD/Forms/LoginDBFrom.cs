@@ -33,7 +33,7 @@ namespace SEP_CRUD.Forms
         #region All control event
         private void comboBoxServerList_DropDown(object sender, EventArgs e)
         {
-            RetrieveAllDbInstanceIfEmpty();
+            //RetrieveAllDbInstanceIfEmpty();
         }
 
         private void buttonConnect_Click(object sender, EventArgs e)
@@ -62,7 +62,7 @@ namespace SEP_CRUD.Forms
 
         private void comboBoxDBName_DropDown(object sender, EventArgs e)
         {
-            RetrieveDbNameIfNeed();
+            //RetrieveDbNameIfNeed();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)

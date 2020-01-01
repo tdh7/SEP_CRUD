@@ -18,7 +18,7 @@ namespace SEP_CRUD.Template.Form
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\LoginFormTemplate.tt"
+    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\LoginFormTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class LoginFormTemplate : SharedFormGenerator
     {
@@ -32,7 +32,7 @@ namespace SEP_CRUD.Template.Form
                     "g System.Data;\r\nusing System.Data.Sql;\r\nusing System.ComponentModel;\r\nusing Syst" +
                     "em.Data.SqlClient;\r\nusing System.Windows.Forms;\r\n\r\nnamespace ");
             
-            #line 15 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\LoginFormTemplate.tt"
+            #line 15 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\LoginFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Generator.Namespace));
             
             #line default
@@ -69,7 +69,7 @@ namespace SEP_CRUD.Template.Form
             var connectionStringBuilder = loginInfoBindingSource.Current as SqlConnectionStringBuilder;
             connectionStringBuilder.InitialCatalog = """);
             
-            #line 45 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\LoginFormTemplate.tt"
+            #line 45 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\LoginFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(DBName));
             
             #line default

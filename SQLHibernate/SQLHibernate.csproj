@@ -58,7 +58,6 @@
     <Compile Include="Define\HDefinition\TableDefinition.cs" />
     <Compile Include="Define\Inteface\IDatabase.cs" />
     <Compile Include="Define\Inteface\IField.cs" />
-    <Compile Include="Define\Inteface\IQuery.cs" />
     <Compile Include="Define\Inteface\IQueryResult.cs" />
     <Compile Include="Define\Inteface\IRow.cs" />
     <Compile Include="Define\Inteface\ITable.cs" />

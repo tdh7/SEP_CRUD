@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace SQLHibernate.Define.Inteface
 {
-    class IField
+    interface IField
     {
-
+        void SetValue(object target, object value);
+        object GetValue(object source);
     }
 }

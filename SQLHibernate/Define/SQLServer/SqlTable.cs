@@ -201,6 +201,7 @@ namespace SQLHibernate.Define.SQLServer
                 SqlDataReader reader = database.ExecuteReader(sql.ToString(), null);
                 result = new QueryResult(reader);
                 result.ForEach(callback);
+                database.CloseConnection();
             }
             catch (Exception e)
             {

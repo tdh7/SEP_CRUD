@@ -18,7 +18,7 @@ namespace SEP_CRUD.Template.Entity
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\BaseModelTemplate.tt"
+    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\BaseModelTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class BaseModelTemplate : BaseModelTemplateBase
     {
@@ -32,7 +32,7 @@ namespace SEP_CRUD.Template.Entity
                     "sing System.Linq;\r\nusing System.Runtime.CompilerServices;\r\nusing System.Text;\r\nu" +
                     "sing System.Threading.Tasks;\r\n\r\nnamespace ");
             
-            #line 15 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\BaseModelTemplate.tt"
+            #line 15 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\BaseModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_namespace));
             
             #line default
@@ -54,7 +54,7 @@ namespace SEP_CRUD.Template.Entity
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\BaseModelTemplate.tt"
+        #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\BaseModelTemplate.tt"
 
 private string @__namespaceField;
 

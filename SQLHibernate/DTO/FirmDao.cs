@@ -14,8 +14,11 @@ namespace SQLHibernate.DTO
     class FirmDAO : AbstractDAO<Firm>
     {
         private string connectionString = "Data Source=DESKTOP-G7ODJ9B\\SQLEXPRESS;Initial Catalog=ManagementSystem;Integrated Security=True";
+        //private string connectionString = ConfigController.Instance.ConnectionString;
 
-        public FirmDAO() : base() { }
+        public FirmDAO() : base() {
+            //connectionString = ConfigController.Instance.ConnectionString;
+        }
 
         public static FirmDAO Instance
         {

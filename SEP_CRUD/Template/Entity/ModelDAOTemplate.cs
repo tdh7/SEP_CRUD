@@ -7,7 +7,7 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace SEP_CRUD.Template.Form
+namespace SEP_CRUD.Template.Entity
 {
     using System.Linq;
     using System.Text;
@@ -18,9 +18,9 @@ namespace SEP_CRUD.Template.Form
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public partial class ViewFormFactoryTemplate : ViewFormFactoryTemplateBase
+    public partial class ModelDAOTemplate : ModelDAOTemplateBase
     {
 #line hidden
         /// <summary>
@@ -28,84 +28,101 @@ namespace SEP_CRUD.Template.Form
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("using System;\r\nusing System.Collections.Generic;\r\nusing System.Text;\r\nusing Syste" +
-                    "m.Windows.Forms;\r\n\r\nnamespace ");
             
-            #line 11 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(_namespace));
+            #line 6 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
+ var EntityName = Table.BindingName; 
             
             #line default
             #line hidden
-            this.Write("\r\n{\r\n\tpublic class ViewFormFactory\r\n\t{\r\n\t\tpublic static Form getFormByTableName(s" +
-                    "tring TableName)\r\n\t\t{\r\n");
+            this.Write("using ");
             
-            #line 17 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+            #line 7 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(generator.ProjectOwner.DefaultModelNamespaces));
+            
+            #line default
+            #line hidden
+            this.Write(@";
+using SQLHibernate.DAO;
+using SQLHibernate.Define.Inteface;
+using SQLHibernate.Define.SQLServer;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-    for (int i = 0; i < Tables.Count; i++)
-    {
-		writeIfStatement(i);	 
+namespace ");
+            
+            #line 19 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(generator.Namespace));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n{\r\n    class ");
+            
+            #line 21 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(EntityName));
+            
+            #line default
+            #line hidden
+            this.Write("DAO : AbstractDAO<");
+            
+            #line 21 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(EntityName));
+            
+            #line default
+            #line hidden
+            this.Write(">\r\n    {\r\n\t\tprivate static ");
+            
+            #line 23 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(EntityName));
+            
+            #line default
+            #line hidden
+            this.Write("DAO instance = new ");
+            
+            #line 23 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(EntityName));
+            
+            #line default
+            #line hidden
+            this.Write("DAO();\r\n\r\n\t\tprivate string connectionString;\r\n\r\n        public ");
+            
+            #line 27 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(EntityName));
+            
+            #line default
+            #line hidden
+            this.Write("DAO() : base() {\r\n            connectionString = ConfigController.Instance.Connec" +
+                    "tionString;\r\n        }\r\n\r\n        public static ");
+            
+            #line 31 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(EntityName));
+            
+            #line default
+            #line hidden
+            this.Write(@"DAO Instance
+        {
+            get
+            {
+                return instance;
+            }
+        }
+
+        protected override string ConnectionString
+        {
+            get
+            {
+                return connectionString;
+            }
+        }
     }
-
-            
-            #line default
-            #line hidden
-            this.Write("\t\t\treturn new Form();\r\n\t\t}\r\n\t}\r\n}\r\n\r\n");
+}
+");
             return this.GenerationEnvironment.ToString();
         }
-        
-        #line 28 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
- 
-private void writeIfStatement(int i)
-{
-	var tableName = Tables[i].DatabaseName;
-	var formName = "View" + Tables[i].BindingName + "Form";
-
-        
-        #line default
-        #line hidden
-        
-        #line 33 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
-this.Write("\t\t\tif (TableName.Equals(\"");
-
-        
-        #line default
-        #line hidden
-        
-        #line 34 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(tableName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 34 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
-this.Write("\"))\r\n\t\t\t\treturn new ");
-
-        
-        #line default
-        #line hidden
-        
-        #line 35 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(formName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 35 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
-this.Write("();\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 36 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
-
-}
-
-        
-        #line default
-        #line hidden
     }
     
     #line default
@@ -115,7 +132,7 @@ this.Write("();\r\n");
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public class ViewFormFactoryTemplateBase
+    public class ModelDAOTemplateBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

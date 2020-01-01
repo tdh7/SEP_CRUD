@@ -18,7 +18,7 @@ namespace SEP_CRUD.Template.Form
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\LoginFormDesignerTemplate.tt"
+    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\LoginFormDesignerTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class LoginFormDesignerTemplate : SharedFormDesignerGenerator
     {
@@ -30,7 +30,7 @@ namespace SEP_CRUD.Template.Form
         {
             this.Write("namespace ");
             
-            #line 6 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\LoginFormDesignerTemplate.tt"
+            #line 6 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\LoginFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Generator.Namespace));
             
             #line default

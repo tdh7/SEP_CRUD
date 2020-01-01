@@ -22,7 +22,7 @@ namespace DemoGeneratedProject.Forms
         private void OnLoginSuccessHandler(object sender, string e)
         {
             this.connectionStr = e;
-            
+
             listBoxDBTableName.DataSource = getTableName();
             listBoxDBTableName.DisplayMember = "TABLE_NAME";
             listBoxDBTableName.ValueMember = "TABLE_NAME";

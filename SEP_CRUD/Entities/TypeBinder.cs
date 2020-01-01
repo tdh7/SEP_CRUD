@@ -34,7 +34,7 @@ namespace SEP_CRUD.Entities
 
             Types.Add("binary", "byte[]");
 
-            Types.Add("bit", "boolean");
+            Types.Add("bit", "bool");
 
             Types.Add("char", "string");
 

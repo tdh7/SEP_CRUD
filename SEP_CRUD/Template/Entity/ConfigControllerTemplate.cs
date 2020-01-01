@@ -7,7 +7,7 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace SEP_CRUD.Template.Form
+namespace SEP_CRUD.Template.Entity
 {
     using System.Linq;
     using System.Text;
@@ -18,9 +18,9 @@ namespace SEP_CRUD.Template.Form
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ConfigControllerTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public partial class ViewFormFactoryTemplate : ViewFormFactoryTemplateBase
+    public partial class ConfigControllerTemplate : ConfigControllerTemplateBase
     {
 #line hidden
         /// <summary>
@@ -28,84 +28,53 @@ namespace SEP_CRUD.Template.Form
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("using System;\r\nusing System.Collections.Generic;\r\nusing System.Text;\r\nusing Syste" +
-                    "m.Windows.Forms;\r\n\r\nnamespace ");
+            this.Write("\r\nusing System;\r\nusing System.Collections.Generic;\r\nusing System.Linq;\r\nusing Sys" +
+                    "tem.Text;\r\nusing System.Threading.Tasks;\r\n\r\nnamespace ");
             
-            #line 11 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(_namespace));
+            #line 13 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ConfigControllerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Generator.Namespace));
             
             #line default
             #line hidden
-            this.Write("\r\n{\r\n\tpublic class ViewFormFactory\r\n\t{\r\n\t\tpublic static Form getFormByTableName(s" +
-                    "tring TableName)\r\n\t\t{\r\n");
+            this.Write("\r\n{\r\n    class ConfigController\r\n    {\r\n        private static ConfigController i" +
+                    "nstance = new ConfigController();\r\n        private string connectionString = @\"");
             
-            #line 17 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+            #line 18 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ConfigControllerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ConnectionString));
+            
+            #line default
+            #line hidden
+            this.Write(@""";
 
-    for (int i = 0; i < Tables.Count; i++)
-    {
-		writeIfStatement(i);	 
+        public ConfigController()
+        {
+        }
+
+        public static ConfigController Instance
+        {
+            get
+            {
+                return instance;
+            }
+        }
+
+        public string ConnectionString
+        {
+            get
+            {
+                return connectionString;
+            }
+            set
+            {
+                connectionString = value;
+            }
+        }
+
     }
-
-            
-            #line default
-            #line hidden
-            this.Write("\t\t\treturn new Form();\r\n\t\t}\r\n\t}\r\n}\r\n\r\n");
+}
+");
             return this.GenerationEnvironment.ToString();
         }
-        
-        #line 28 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
- 
-private void writeIfStatement(int i)
-{
-	var tableName = Tables[i].DatabaseName;
-	var formName = "View" + Tables[i].BindingName + "Form";
-
-        
-        #line default
-        #line hidden
-        
-        #line 33 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
-this.Write("\t\t\tif (TableName.Equals(\"");
-
-        
-        #line default
-        #line hidden
-        
-        #line 34 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(tableName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 34 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
-this.Write("\"))\r\n\t\t\t\treturn new ");
-
-        
-        #line default
-        #line hidden
-        
-        #line 35 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(formName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 35 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
-this.Write("();\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 36 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
-
-}
-
-        
-        #line default
-        #line hidden
     }
     
     #line default
@@ -115,7 +84,7 @@ this.Write("();\r\n");
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public class ViewFormFactoryTemplateBase
+    public class ConfigControllerTemplateBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

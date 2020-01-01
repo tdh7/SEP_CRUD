@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using <#= generator.DefaultFormGenerator.Namespace #>;
+using <#= generator.StartupForm.Namespace #>;
 
 namespace <# Write(generator.Name); #>
 {
@@ -23,7 +23,7 @@ namespace <# Write(generator.Name); #>
                 SetProcessDPIAware();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new <# Write(generator.DefaultFormGenerator.Name); #>());
+            Application.Run(new <# Write(generator.StartupForm.Name); #>());
         }
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         private static extern bool SetProcessDPIAware();

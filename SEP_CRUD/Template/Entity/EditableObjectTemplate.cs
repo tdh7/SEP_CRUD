@@ -18,7 +18,7 @@ namespace SEP_CRUD.Template.Entity
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\EditableObjectTemplate.tt"
+    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\EditableObjectTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class EditableObjectTemplate : EditableObjectTemplateBase
     {
@@ -31,7 +31,7 @@ namespace SEP_CRUD.Template.Entity
             this.Write("using System.Collections;\r\nusing System.ComponentModel;\r\nusing System.Reflection;" +
                     "\r\n\r\nnamespace ");
             
-            #line 11 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\EditableObjectTemplate.tt"
+            #line 11 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\EditableObjectTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_namespace));
             
             #line default
@@ -60,7 +60,7 @@ namespace SEP_CRUD.Template.Entity
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\EditableObjectTemplate.tt"
+        #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\EditableObjectTemplate.tt"
 
 private string @__namespaceField;
 

@@ -35,6 +35,11 @@ namespace SQLHibernate.Define.SQLServer
 
         public void BeginTransaction()
         {
+            if (connection.State != ConnectionState.Open)
+            {
+                connection.Open();
+                closeConnection = true;
+            }
             transaction = connection.BeginTransaction();
         }
 
@@ -142,7 +147,6 @@ namespace SQLHibernate.Define.SQLServer
             Rollback();
             if (closeConnection && connection.State != ConnectionState.Closed)
                 connection.Close();
-            connection = null;
         }
 
         public void Rollback()

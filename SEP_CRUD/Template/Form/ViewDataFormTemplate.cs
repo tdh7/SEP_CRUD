@@ -18,7 +18,7 @@ namespace SEP_CRUD.Template.Form
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewDataFormTemplate.tt"
+    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewDataFormTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ViewDataFormTemplate : SharedFormGenerator
     {
@@ -32,14 +32,14 @@ namespace SEP_CRUD.Template.Form
                     "sing System.Data;\r\nusing System.Drawing;\r\nusing System.Text;\r\nusing System.Windo" +
                     "ws.Forms;\r\nusing ");
             
-            #line 13 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewDataFormTemplate.tt"
+            #line 13 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewDataFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Generator.ProjectOwner.DefaultModelNamespaces));
             
             #line default
             #line hidden
             this.Write(";\r\n\r\nnamespace ");
             
-            #line 15 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewDataFormTemplate.tt"
+            #line 15 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewDataFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Generator.Namespace));
             
             #line default

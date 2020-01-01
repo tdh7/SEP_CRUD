@@ -18,7 +18,7 @@ namespace SEP_CRUD.Template.Form
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\BaseFormDesignerTemplate.tt"
+    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\BaseFormDesignerTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class BaseFormDesignerTemplate : SharedFormDesignerGenerator
     {
@@ -30,14 +30,14 @@ namespace SEP_CRUD.Template.Form
         {
             this.Write("\r\nnamespace ");
             
-            #line 7 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\BaseFormDesignerTemplate.tt"
+            #line 7 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\BaseFormDesignerTemplate.tt"
  Write(Generator.Namespace); 
             
             #line default
             #line hidden
             this.Write("{\r\n    partial class ");
             
-            #line 9 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\BaseFormDesignerTemplate.tt"
+            #line 9 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\BaseFormDesignerTemplate.tt"
  Write(Generator.Name); 
             
             #line default
@@ -78,7 +78,7 @@ namespace SEP_CRUD.Template.Form
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = """);
             
-            #line 44 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\BaseFormDesignerTemplate.tt"
+            #line 44 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\BaseFormDesignerTemplate.tt"
  Write(Generator.Name); 
             
             #line default
@@ -86,7 +86,7 @@ namespace SEP_CRUD.Template.Form
             this.Write("\";\r\n            this.StartPosition = System.Windows.Forms.FormStartPosition.Cente" +
                     "rScreen;\r\n            this.Text = \"");
             
-            #line 46 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\BaseFormDesignerTemplate.tt"
+            #line 46 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\BaseFormDesignerTemplate.tt"
  Write(Generator.Name); 
             
             #line default

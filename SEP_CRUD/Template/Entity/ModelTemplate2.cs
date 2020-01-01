@@ -19,7 +19,7 @@ namespace SEP_CRUD.Template.Entity
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate2.tt"
+    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate2.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ModelTemplate2 : ModelTemplate2Base
     {
@@ -32,28 +32,28 @@ namespace SEP_CRUD.Template.Entity
             this.Write("using System;\r\nusing System.Collections.Generic;\r\nusing System.Text;\r\nusing Syste" +
                     "m.Linq;\r\nusing System.Data.Linq;\r\nusing System.Data.Linq.Mapping;\r\n\r\nnamespace ");
             
-            #line 14 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate2.tt"
+            #line 14 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate2.tt"
  Write(generator.Namespace); 
             
             #line default
             #line hidden
             this.Write("{\r\n    #pragma warning disable 0169\r\n\r\n    [Table(Name = \"");
             
-            #line 18 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate2.tt"
+            #line 18 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate2.tt"
 Write(generator.Table.DatabaseName);
             
             #line default
             #line hidden
             this.Write("\")]\r\n\tpublic class ");
             
-            #line 19 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate2.tt"
+            #line 19 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate2.tt"
  Write(generator.Name); 
             
             #line default
             #line hidden
             this.Write("\t{\r\n");
             
-            #line 21 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelTemplate2.tt"
+            #line 21 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelTemplate2.tt"
      Table table = generator.Table;
             int count = table.Count;
             string attr;

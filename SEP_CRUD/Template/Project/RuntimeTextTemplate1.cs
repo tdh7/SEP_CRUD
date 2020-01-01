@@ -18,7 +18,7 @@ namespace SEP_CRUD.Template.Project
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\Kim Ninh\Source\Repos\SEP_CRUD\SEP_CRUD\Template\Project\RuntimeTextTemplate1.tt"
+    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Project\RuntimeTextTemplate1.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class RuntimeTextTemplate1 : RuntimeTextTemplate1Base
     {
@@ -30,7 +30,7 @@ namespace SEP_CRUD.Template.Project
         {
             this.Write(" ");
             
-            #line 6 "C:\Users\Kim Ninh\Source\Repos\SEP_CRUD\SEP_CRUD\Template\Project\RuntimeTextTemplate1.tt"
+            #line 6 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Project\RuntimeTextTemplate1.tt"
 
     for(int i = 0; i < 4; i++)
     {

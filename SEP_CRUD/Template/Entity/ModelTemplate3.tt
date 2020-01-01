@@ -1,0 +1,113 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="SEP_CRUD.Entities" #>
+<# Table table = generator.Table; #>
+using System;
+using System.Collections.Generic;
+using System.Text;
+using SQLHibernate.Define.HAttribute;
+using SQLHibernate.Define.SQLServer;
+
+namespace <# Write(generator.Namespace); #>
+{
+	[Table("<#= table.DatabaseName #>", "dbo")]
+	public class <# Write(generator.Name); #> : BaseModel
+	{
+<#
+    int count = table.Count;
+    string attr;
+    Column c;
+    for (int i = 0; i < count; i++)
+    {
+		c = table[i];
+		WriteBackingField(c);
+		//if (c.MapType == MapType.PRIMITIVE)
+			//WriteBackingField(c);
+    }
+	WriteLine("");
+
+
+            for(int i =0;i<count;i++)
+            {
+                c = table[i];
+
+                WriteColumnSpec(c);
+                WriteProperty(c);
+                if (c.MapType == MapType.PRIMITIVE)
+                {
+
+                    //if(table.PrimaryKey.HasColumn(c))
+                    //WriteLine("        [Column( IsPrimaryKey = true, Name = \""+c.DatabaseName+"\" )]");
+                    //else
+                    //WriteLine("        [Column( Name = \""+c.DatabaseName+"\" )]");
+					//WriteColumnSpec(c);
+                    //WriteProperty(c);
+                }
+                else
+                {
+              Column relation = c.ReferenceColumn;
+              Table relationTable= relation.Table;
+                    //if(table.PrimaryKey.HasColumn(c))
+                     //WriteLine("        [Column( IsPrimaryKey = true, Name = \""+c.DatabaseName+"\" )]");
+                    //else WriteLine("        [Column( Name = \""+c.DatabaseName+"\" )]");     
+                    //WriteLine("        private "+c.BindingType+" _"+c.BindingName+";");
+                    //WriteLine("        private EntityRef<"+relation.Table.BindingName+"> "+c.BindingName+"Ref = new EntityRef<"+relation.Table.BindingName+">()");
+                    //WriteLine("        [Association( Name = \""+c.ForeignKey.DatabaseName+"\", IsForeignKey = true, Storage = \"_"+c.BindingName+"Ref\", ThisKey = \"_"+c.BindingName+"\" )]");   
+                    //WriteLine("        public "+relationTable.BindingName+" "+c.BindingName+"{ get; set; }");
+}
+        WriteLine("");
+            }
+#>
+	}
+}
+<#+
+private void WriteBackingField(Column c)
+{
+	var nullableChar = "";
+	if (c.IsPrimaryKey && c.BindingType != "string")  
+	{
+		nullableChar = "?"; 
+	} 
+#>
+		private <#= c.BindingType #><#= nullableChar #> _<#= c.BindingName #>;
+<#+
+} 
+#>
+<#+
+private void WriteProperty(Column c)
+{
+	var nullableChar = "";
+	if (c.IsPrimaryKey && c.BindingType != "string")  
+	{
+		nullableChar = "?"; 
+	} 
+#>
+        public <#= c.BindingType #><#= nullableChar #> <#= c.BindingName #>
+        {
+            get { return _<#= c.BindingName #>; }
+
+            set
+            {
+                _<#= c.BindingName #> = value;
+                onPropertyChange();
+            }
+        }
+
+<#+ 
+}
+#>
+<#+
+private void WriteColumnSpec(Column c)
+{
+    if (c.IsPrimaryKey) { 
+#>
+		[Field("<#= c.DatabaseName #>", FieldFlags.Key)]
+<#+ } else { #>
+		[Field("<#= c.DatabaseName #>")]
+<#+ } #>
+<#+
+} 
+#>

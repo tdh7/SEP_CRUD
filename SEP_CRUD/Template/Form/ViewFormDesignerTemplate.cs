@@ -18,7 +18,7 @@ namespace SEP_CRUD.Template.Form
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormDesignerTemplate.tt"
+    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormDesignerTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ViewFormDesignerTemplate : SharedFormDesignerGenerator
     {
@@ -29,21 +29,21 @@ namespace SEP_CRUD.Template.Form
         public override string TransformText()
         {
             
-            #line 6 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormDesignerTemplate.tt"
+            #line 6 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormDesignerTemplate.tt"
  var entityName = Table.BindingName; 
             
             #line default
             #line hidden
             this.Write("namespace ");
             
-            #line 7 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormDesignerTemplate.tt"
+            #line 7 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Generator.Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n    partial class View");
             
-            #line 9 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormDesignerTemplate.tt"
+            #line 9 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default

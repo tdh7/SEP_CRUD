@@ -34,6 +34,33 @@ namespace <# Write(Generator.Namespace); #>
     } 
 #>			
         }
+
+        protected override void OnFormLoaded(object sender, FormType e)
+        {
+            if (e == FormType.FormAdd)
+            {
+<#
+    for (int i = 0; i < Table.Count; i++)
+    {
+		Column c = Table[i];
+		if (c.IsAbleBindingToTextBoxControl() && c.IsPrimaryKey)
+			setReadOnlyTextBox(c.BindingName, "false");
+    } 
+#>
+
+            }
+            else if (e == FormType.FormUpdate)
+            {
+<#
+    for (int i = 0; i < Table.Count; i++)
+    {
+		Column c = Table[i];
+		if (c.IsAbleBindingToTextBoxControl() && c.IsPrimaryKey)
+			setReadOnlyTextBox(c.BindingName, "true");
+    } 
+#>
+            }
+        }
     }
 
     // This additional inheritance is required to avoid a WinForms bug,
@@ -48,14 +75,22 @@ private void WriteDataBinding(Column c)
 	if (c.IsAbleBindingToTextBoxControl())
     {
 #>
-			textBox<#= name #>.DataBindings.Add("Text", bindingSourceItem, "<#= name #>");
+			textBox<#= name #>.DataBindings.Add("Text", bindingSourceItem, "<#= name #>", true, DataSourceUpdateMode.OnValidation, string.Empty);
 <#+ 
     }
 
 	if (c.IsAbleBindingToDateTimePicker())
     {
 #>
-			dateTimePicker<#= name #>.DataBindings.Add("Value", bindingSourceItem, "<#= name #>");
+			dateTimePicker<#= name #>.DataBindings.Add("Value", bindingSourceItem, "<#= name #>", true, DataSourceUpdateMode.OnValidation, DateTime.Now);
 <#+ }
 }
+#>
+<#+
+void setReadOnlyTextBox(string name, string b)
+{
+#>
+				textBox<#= name #>.ReadOnly = <#= b #>;
+<#+
+} 
 #>

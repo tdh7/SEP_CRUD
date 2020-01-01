@@ -11,7 +11,7 @@ namespace SQLHibernate.DAO
 {
     public abstract class AbstractDAO<T>
     {
-        private IDatabase database;
+        private IDatabase database = null;
         //private string connectionString = "Data Source=DESKTOP-G7ODJ9B\\SQLEXPRESS;Initial Catalog=ManagementSystem;Integrated Security=True";
         Type clazz = typeof(T);
 
@@ -19,29 +19,38 @@ namespace SQLHibernate.DAO
 
         public AbstractDAO()
         {
-            database = new SqlDatabase(ConnectionString);
+        }
+
+        private void updateDatabase()
+        {
+            if(database == null)
+                database = new SqlDatabase(ConnectionString);
         }
 
         public IList<T> readAll()
         {
+            updateDatabase();
             ITable table = database.Table(clazz);
             return table.ReadAll().Cast<T>().ToList();
         }
 
         public int Delete(T obj)
         {
+            updateDatabase();
             ITable table = database.Table(clazz);
             return table.Delete(obj);
         }
 
         public int Update(T obj)
         {
+            updateDatabase();
             ITable table = database.Table(clazz);
             return table.Update(obj);
         }
 
         public int Insert(T obj)
         {
+            updateDatabase();
             ITable table = database.Table(clazz);
             return table.Insert(obj);
         }

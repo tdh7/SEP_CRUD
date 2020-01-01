@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLHibernate.Define.Inteface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SQLHibernate.Define.SQLServer
 {
-    class SqlField
+    class SqlField : IField
     {
         private string name;
         private PropertyInfo property;

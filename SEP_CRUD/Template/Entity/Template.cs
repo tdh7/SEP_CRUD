@@ -1,4 +1,5 @@
 ﻿using SEP_CRUD.Entities;
+using SEP_CRUD.Generator.Base;
 using SEP_CRUD.Generator.Model;
 
 namespace SEP_CRUD.Template.Entity
@@ -15,6 +16,39 @@ namespace SEP_CRUD.Template.Entity
     {
         ModelGenerator generator;
         public ModelTemplate2(ModelGenerator g)
+        {
+            generator = g;
+        }
+    }
+
+    public partial class ModelDAOTemplate
+    {
+        ClassGenerator generator;
+        public ClassGenerator Generator
+        {
+            get
+            {
+                return generator;
+            }
+            set
+            {
+                generator = value;
+            }
+        }
+
+        public Table Table;
+    }
+
+    public partial class ConfigControllerTemplate
+    {
+        public ClassGenerator Generator;
+        public string ConnectionString;
+    }
+
+    public partial class ModelTemplate3
+    {
+        ModelGenerator generator;
+        public ModelTemplate3(ModelGenerator g)
         {
             generator = g;
         }

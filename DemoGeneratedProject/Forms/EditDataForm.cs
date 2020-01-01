@@ -56,6 +56,10 @@ namespace DemoGeneratedProject.Forms
         {
         }
 
+        protected virtual void OnValidate(object sender, CancelEventArgs e)
+        {
+
+        }
 
         private void SaveChange()
         {

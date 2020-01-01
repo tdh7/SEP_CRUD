@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>SEP_CRUD</RootNamespace>
     <AssemblyName>SEP_CRUD</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -106,7 +106,9 @@
     <Compile Include="Generator\Form\WaitingFormDesignerGenerator.cs" />
     <Compile Include="Generator\Form\WaitingFormGenerator.cs" />
     <Compile Include="Generator\Model\BaseModelGenerator.cs" />
+    <Compile Include="Generator\Model\ConfigControllerGenerator.cs" />
     <Compile Include="Generator\Model\EditableObjectGenerator.cs" />
+    <Compile Include="Generator\Model\ModelDAOGenerator.cs" />
     <Compile Include="Generator\Model\ModelGenerator.cs" />
     <Compile Include="Generator\Model\ModelsGenerator.cs" />
     <Compile Include="Generator\ProgramGenerator.cs" />
@@ -118,11 +120,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BaseModelTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="Template\Entity\ConfigControllerTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConfigControllerTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Template\Entity\Constant.cs" />
     <Compile Include="Template\Entity\EditableObjectTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EditableObjectTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Entity\ModelDAOTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDAOTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Template\Entity\ModelTemplate.cs">
       <AutoGen>True</AutoGen>
@@ -133,6 +145,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelTemplate2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Entity\ModelTemplate3.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelTemplate3.tt</DependentUpon>
     </Compile>
     <Compile Include="Template\Entity\Template.cs" />
     <Compile Include="Template\Form\BaseFormDesignerTemplate.cs">
@@ -335,9 +352,17 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>BaseModelTemplate.cs</LastGenOutput>
     </Content>
+    <Content Include="Template\Entity\ConfigControllerTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ConfigControllerTemplate.cs</LastGenOutput>
+    </Content>
     <Content Include="Template\Entity\EditableObjectTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>EditableObjectTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Entity\ModelDAOTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ModelDAOTemplate.cs</LastGenOutput>
     </Content>
     <Content Include="Template\Entity\ModelTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -350,6 +375,10 @@
     <Content Include="Template\Entity\ModelTemplate2.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ModelTemplate2.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Entity\ModelTemplate3.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ModelTemplate3.cs</LastGenOutput>
     </Content>
     <Content Include="Template\Form\BaseFormDesignerTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

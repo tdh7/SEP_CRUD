@@ -58,7 +58,6 @@
     <Compile Include="Define\HDefinition\TableDefinition.cs" />
     <Compile Include="Define\Inteface\IDatabase.cs" />
     <Compile Include="Define\Inteface\IField.cs" />
-    <Compile Include="Define\Inteface\IQuery.cs" />
     <Compile Include="Define\Inteface\IQueryResult.cs" />
     <Compile Include="Define\Inteface\IRow.cs" />
     <Compile Include="Define\Inteface\ITable.cs" />
@@ -80,6 +79,8 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>COPY /Y "$(TargetDir)$(TargetFileName)" "$(SolutionDir)DemoGeneratedProject\orm"</PostBuildEvent>
+    <PostBuildEvent>COPY /Y "$(TargetDir)$(TargetFileName)" "$(SolutionDir)DemoGeneratedProject\orm"
+MKDIR "$(SolutionDir)SEP_CRUD\$(OutDir)orm"
+COPY /Y "$(TargetDir)$(TargetFileName)" "$(SolutionDir)SEP_CRUD\$(OutDir)orm"</PostBuildEvent>
   </PropertyGroup>
 </Project>

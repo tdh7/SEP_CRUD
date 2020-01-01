@@ -72,14 +72,14 @@ namespace DemoGeneratedProject.Forms
             this.editToolStripMenuItem,
             this.deleteToolStripMenuItem});
             this.contextMenuStripDataGrid.Name = "contextMenuStripDataGrid";
-            this.contextMenuStripDataGrid.Size = new System.Drawing.Size(181, 70);
+            this.contextMenuStripDataGrid.Size = new System.Drawing.Size(108, 48);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.editToolStripMenuItem.Image = global::DemoGeneratedProject.Properties.Resources.Edit_16x;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // deleteToolStripMenuItem
@@ -87,7 +87,7 @@ namespace DemoGeneratedProject.Forms
             this.deleteToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.deleteToolStripMenuItem.Image = global::DemoGeneratedProject.Properties.Resources.Cancel_16x;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             // 
             // toolStrip1
@@ -176,7 +176,6 @@ namespace DemoGeneratedProject.Forms
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.dataGridView1);
-            this.Location = new System.Drawing.Point(0, 0);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ViewDataFrom";
             this.Text = "ViewForm";
@@ -193,8 +192,6 @@ namespace DemoGeneratedProject.Forms
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButtonNew;
         private System.Windows.Forms.MenuStrip menuStrip1;
@@ -207,5 +204,6 @@ namespace DemoGeneratedProject.Forms
         private System.Windows.Forms.ContextMenuStrip contextMenuStripDataGrid;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        protected System.Windows.Forms.DataGridView dataGridView1;
     }
 }

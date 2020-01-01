@@ -12,7 +12,7 @@ namespace SQLHibernate
     {
         static void Main(string[] args)
         {
-            IList firms = FirmDAO.Instance.readAll();
+            IList<Firm> firms = FirmDAO.Instance.readAll();
             foreach (Firm firm in firms)
             {
                 Console.WriteLine(firm.NameFirm);

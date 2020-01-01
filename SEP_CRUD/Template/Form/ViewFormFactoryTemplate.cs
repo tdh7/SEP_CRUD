@@ -18,7 +18,7 @@ namespace SEP_CRUD.Template.Form
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ViewFormFactoryTemplate : ViewFormFactoryTemplateBase
     {
@@ -31,7 +31,7 @@ namespace SEP_CRUD.Template.Form
             this.Write("using System;\r\nusing System.Collections.Generic;\r\nusing System.Text;\r\nusing Syste" +
                     "m.Windows.Forms;\r\n\r\nnamespace ");
             
-            #line 11 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+            #line 11 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_namespace));
             
             #line default
@@ -39,7 +39,7 @@ namespace SEP_CRUD.Template.Form
             this.Write("\r\n{\r\n\tpublic class ViewFormFactory\r\n\t{\r\n\t\tpublic static Form getFormByTableName(s" +
                     "tring TableName)\r\n\t\t{\r\n");
             
-            #line 17 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+            #line 17 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
 
     for (int i = 0; i < Tables.Count; i++)
     {
@@ -53,7 +53,7 @@ namespace SEP_CRUD.Template.Form
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 28 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+        #line 28 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
  
 private void writeIfStatement(int i)
 {
@@ -64,42 +64,42 @@ private void writeIfStatement(int i)
         #line default
         #line hidden
         
-        #line 33 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+        #line 33 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
 this.Write("\t\t\tif (TableName.Equals(\"");
 
         
         #line default
         #line hidden
         
-        #line 34 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+        #line 34 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(tableName));
 
         
         #line default
         #line hidden
         
-        #line 34 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+        #line 34 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
 this.Write("\"))\r\n\t\t\t\treturn new ");
 
         
         #line default
         #line hidden
         
-        #line 35 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+        #line 35 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(formName));
 
         
         #line default
         #line hidden
         
-        #line 35 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+        #line 35 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
 this.Write("();\r\n");
 
         
         #line default
         #line hidden
         
-        #line 36 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+        #line 36 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
 
 }
 

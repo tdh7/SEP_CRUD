@@ -25,7 +25,7 @@ namespace DemoGeneratedProject.Forms
 
         protected override IList<SinhVien> initList()
         {
-//            return sinhVienDao.readAll().Cast<SinhVien>().ToList();
+//            return sinhVienDao.readAll();
             return new List<SinhVien>();
         }
 
@@ -56,6 +56,10 @@ namespace DemoGeneratedProject.Forms
         {
             base.ViewDataFrom_Load(sender, e);
 
+            // change DataGridView column header name, column width,...
+            dataGridView1.Columns[0].HeaderText = "Họ và tên";
+            dataGridView1.Columns[1].HeaderText = "Điểm Trung Bình";
+            dataGridView1.Columns[2].HeaderText = "MSSV";
         }
     }
 }

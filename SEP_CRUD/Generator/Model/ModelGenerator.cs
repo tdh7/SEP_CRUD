@@ -16,7 +16,7 @@ namespace SEP_CRUD.Generator.Model
 
         public override string ToSourceCode()
         {
-            return new ModelTemplate(this).TransformText();
+            return new ModelTemplate3(this).TransformText();
         }
     }
 }

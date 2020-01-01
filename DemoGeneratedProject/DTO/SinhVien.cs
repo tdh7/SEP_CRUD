@@ -13,7 +13,7 @@ namespace DemoGeneratedProject.DTO
         private float _diemTb;
         private int? _mssv = null;
 
-        [Field("TEN")]
+        [Field("Ten")]
         public String Ten
         {
             get { return _ten; }
@@ -24,7 +24,7 @@ namespace DemoGeneratedProject.DTO
                 onPropertyChange();
             }
         }
-        [Field("DIEM_TB")]
+        [Field("DiemTB")]
         public float DiemTB
         {
             get => _diemTb;
@@ -35,7 +35,7 @@ namespace DemoGeneratedProject.DTO
             }
         }
 
-        [Field("MSSV", FieldFlags.Key)]
+        [Field("Mssv", FieldFlags.Key)]
         public int? Mssv
         {
             get => _mssv;

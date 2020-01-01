@@ -18,7 +18,7 @@ namespace SEP_CRUD.Template.Form
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ViewFormTemplate : SharedFormGenerator
     {
@@ -29,7 +29,7 @@ namespace SEP_CRUD.Template.Form
         public override string TransformText()
         {
             
-            #line 6 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 6 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
  var entityName = Table.BindingName; 
             
             #line default
@@ -38,35 +38,35 @@ namespace SEP_CRUD.Template.Form
                     "sing System.Data;\r\nusing System.Drawing;\r\nusing System.Text;\r\nusing System.Windo" +
                     "ws.Forms;\r\nusing ");
             
-            #line 14 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 14 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Generator.ProjectOwner.DefaultModelNamespaces));
             
             #line default
             #line hidden
             this.Write(";\r\n\r\nnamespace ");
             
-            #line 16 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 16 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Generator.Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n    public partial class View");
             
-            #line 18 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 18 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("Form: ViewDataFrom<");
             
-            #line 18 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 18 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write(">\r\n    {\r\n\r\n        public View");
             
-            #line 21 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 21 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
@@ -74,14 +74,14 @@ namespace SEP_CRUD.Template.Form
             this.Write("Form()\r\n        {\r\n            InitializeComponent();\r\n        }\r\n\r\n\t\t// TODO: re" +
                     "trieve data from BUS and return result here\r\n        protected override IList<");
             
-            #line 27 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 27 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("> initList()\r\n        {\r\n\t\t\treturn new List<");
             
-            #line 29 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 29 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
@@ -89,14 +89,14 @@ namespace SEP_CRUD.Template.Form
             this.Write(">();   \r\n        }\r\n\r\n        protected override void Add()\r\n        {\r\n         " +
                     "   Edit");
             
-            #line 34 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 34 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("Form.Add(delegate(");
             
-            #line 34 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 34 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
@@ -105,21 +105,21 @@ namespace SEP_CRUD.Template.Form
                     "ta to BUS here\r\n                \r\n            });\r\n        }\r\n\r\n        protecte" +
                     "d override void Edit(");
             
-            #line 42 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 42 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write(" item)\r\n        {\r\n            Edit");
             
-            #line 44 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 44 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("Form.Edit(item, delegate(");
             
-            #line 44 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 44 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
@@ -127,7 +127,7 @@ namespace SEP_CRUD.Template.Form
             this.Write(" sv)\r\n            {\r\n                // TODO: update data to BUS here\r\n          " +
                     "  });\r\n        }\r\n\r\n        protected override void Delete(");
             
-            #line 50 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 50 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default

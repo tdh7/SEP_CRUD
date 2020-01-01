@@ -81,6 +81,15 @@ namespace SEP_CRUD.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string CNT {
+            get {
+                return ResourceManager.GetString("CNT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Connect_16x {

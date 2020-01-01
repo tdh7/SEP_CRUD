@@ -18,7 +18,7 @@ namespace SEP_CRUD.Template.Form
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\EditDataFormTemplate.tt"
+    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditDataFormTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class EditDataFormTemplate : SharedFormGenerator
     {
@@ -32,14 +32,14 @@ namespace SEP_CRUD.Template.Form
                     "sing System.Data;\r\nusing System.Drawing;\r\nusing System.Runtime.CompilerServices;" +
                     "\r\nusing System.Text;\r\nusing System.Windows.Forms;\r\nusing ");
             
-            #line 14 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\EditDataFormTemplate.tt"
+            #line 14 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditDataFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Generator.ProjectOwner.DefaultModelNamespaces));
             
             #line default
             #line hidden
             this.Write(";\r\n\r\nnamespace ");
             
-            #line 16 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\EditDataFormTemplate.tt"
+            #line 16 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditDataFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Generator.Namespace));
             
             #line default
@@ -48,23 +48,27 @@ namespace SEP_CRUD.Template.Form
                     "eModel, new()\r\n        where F: EditDataForm<E, F>, new()\r\n    {\r\n        privat" +
                     "e Action<E> _saveAction;\r\n        protected BindingSource bindingSourceItem = ne" +
                     "w BindingSource();\r\n\r\n        public EditDataForm()\r\n        {\r\n            Init" +
-                    "ializeComponent();\r\n        }\r\n\r\n        private static void SetUpAndShowForm(E " +
-                    "entity, Action<E> saveAction)\r\n        {\r\n            if (entity == null)\r\n     " +
-                    "           entity = new E();\r\n\r\n            F f = new F();\r\n            f.InitBi" +
-                    "nder(entity);\r\n            f._saveAction = saveAction;\r\n            f.ShowDialog" +
-                    "();\r\n        }\r\n\r\n        public static void Edit(E entity, Action<E> saveAction" +
-                    ")\r\n        {\r\n            SetUpAndShowForm(entity, saveAction);\r\n        }\r\n\r\n  " +
-                    "      public static void Add(Action<E> saveAction)\r\n        {\r\n            SetUp" +
-                    "AndShowForm(null, saveAction);\r\n        }\r\n\r\n        protected virtual void Init" +
-                    "Binder(E entity)\r\n        {\r\n            bindingSourceItem.DataSource = entity;\r" +
-                    "\n        }\r\n\r\n        private void SaveChange()\r\n        {\r\n            var item" +
-                    " = bindingSourceItem.Current as E;\r\n            item.EndEdit();\r\n            _sa" +
-                    "veAction.Invoke(item);\r\n        }\r\n\r\n        private void UndoChange()\r\n        " +
-                    "{\r\n            var item = bindingSourceItem.Current as E;\r\n            item.Canc" +
-                    "elEdit();\r\n        }\r\n\r\n        private void toolStripButtonSave_Click(object se" +
-                    "nder, EventArgs e)\r\n        {\r\n            SaveChange();\r\n            this.Close" +
-                    "();\r\n        }\r\n\r\n        private void toolStripButtonUndo_Click(object sender, " +
-                    "EventArgs e)\r\n        {\r\n            UndoChange();\r\n        }\r\n    }\r\n}");
+                    "ializeComponent();\r\n        }\r\n\r\n        private static F SetUpForm(E entity, Ac" +
+                    "tion<E> saveAction)\r\n        {\r\n            if (entity == null)\r\n               " +
+                    " entity = new E();\r\n\r\n            F f = new F();\r\n            f.InitBinder(entit" +
+                    "y);\r\n            f._saveAction = saveAction;\r\n\t\t\treturn f;\r\n        }\r\n\r\n       " +
+                    " public static void Edit(E entity, Action<E> saveAction)\r\n        {\r\n           " +
+                    " F f = SetUpForm(entity, saveAction);\r\n\t\t\tf.OnFormLoaded(f, FormType.FormUpdate)" +
+                    ";\r\n            f.ShowDialog();\r\n        }\r\n\r\n        public static void Add(Acti" +
+                    "on<E> saveAction)\r\n        {\r\n            F f = SetUpForm(null, saveAction);\r\n  " +
+                    "          f.OnFormLoaded(f, FormType.FormAdd);\r\n            f.ShowDialog();\r\n   " +
+                    "     }\r\n\r\n        protected virtual void OnFormLoaded(object sender, FormType e)" +
+                    "\r\n        {\r\n        }\r\n\r\n        protected virtual void InitBinder(E entity)\r\n " +
+                    "       {\r\n            bindingSourceItem.DataSource = entity;\r\n        }\r\n\r\n     " +
+                    "   private void SaveChange()\r\n        {\r\n            var item = bindingSourceIte" +
+                    "m.Current as E;\r\n            item.EndEdit();\r\n            _saveAction.Invoke(ite" +
+                    "m);\r\n        }\r\n\r\n        private void UndoChange()\r\n        {\r\n            var " +
+                    "item = bindingSourceItem.Current as E;\r\n            item.CancelEdit();\r\n        " +
+                    "}\r\n\r\n        private void toolStripButtonSave_Click(object sender, EventArgs e)\r" +
+                    "\n        {\r\n\t\t\tValidate();\r\n            SaveChange();\r\n            this.Close();" +
+                    "\r\n        }\r\n\r\n        private void toolStripButtonUndo_Click(object sender, Eve" +
+                    "ntArgs e)\r\n        {\r\n            UndoChange();\r\n        }\r\n    }\r\n\r\n    public " +
+                    "enum FormType\r\n    {\r\n        FormAdd,\r\n        FormUpdate\r\n    }\r\n}");
             return this.GenerationEnvironment.ToString();
         }
     }

@@ -134,6 +134,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelTemplate2.tt</DependentUpon>
     </Compile>
+    <Compile Include="Template\Entity\ModelTemplate3.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelTemplate3.tt</DependentUpon>
+    </Compile>
     <Compile Include="Template\Entity\Template.cs" />
     <Compile Include="Template\Form\BaseFormDesignerTemplate.cs">
       <AutoGen>True</AutoGen>
@@ -350,6 +355,10 @@
     <Content Include="Template\Entity\ModelTemplate2.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ModelTemplate2.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Entity\ModelTemplate3.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ModelTemplate3.cs</LastGenOutput>
     </Content>
     <Content Include="Template\Form\BaseFormDesignerTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

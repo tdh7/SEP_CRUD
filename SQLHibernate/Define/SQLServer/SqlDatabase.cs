@@ -56,7 +56,6 @@ namespace SQLHibernate.Define.SQLServer
         {
             try
             {
-                BeginTransaction();
                 SqlCommand command = connection.CreateCommand();
                 command.Connection = this.connection;
                 command.Transaction = this.transaction;

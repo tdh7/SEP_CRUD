@@ -64,7 +64,7 @@ namespace SQLHibernate.Define.SQLServer
                     throw new Exception(string.Format("Cannot find {0} in {1} for column name {2}",
                             fieldDef.FieldName, clazz.FullName, fieldDef.ColumnName));
                 }
-                this.fields[i++] = new SqlField(fieldDef.FieldName, member, fieldDef.Flags);
+                this.fields[i++] = new SqlField(fieldDef.ColumnName, member, fieldDef.Flags);
             }
 
         }

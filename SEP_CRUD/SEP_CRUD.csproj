@@ -82,11 +82,17 @@
     <Compile Include="Entities\PrimaryKey.cs" />
     <Compile Include="Entities\Table.cs" />
     <Compile Include="Generator\Base\ClassGenerator.cs" />
-    <Compile Include="Generator\Base\FormDesignerGenerator.cs" />
-    <Compile Include="Generator\Base\FormGenerator.cs" />
+    <Compile Include="Generator\Dao\MustHaveClassesGenerator.cs" />
+    <Compile Include="Generator\Form\Base\FormDesignerGenerator.cs" />
+    <Compile Include="Generator\Form\Base\FormGenerator.cs" />
     <Compile Include="Generator\Base\GroupGenerator.cs" />
     <Compile Include="Generator\Base\FileDetail.cs" />
     <Compile Include="Generator\Base\ItemGenerator.cs" />
+    <Compile Include="Generator\Form\ItemTableDesignerGenerator.cs" />
+    <Compile Include="Generator\Form\ItemTableGenerator.cs" />
+    <Compile Include="Generator\Form\TableListDesignerGenerator.cs" />
+    <Compile Include="Generator\Form\TableListGenerator.cs" />
+    <Compile Include="Generator\Project\QuickClassGenerator.cs" />
     <Compile Include="Generator\Form\BaseFormGenerator.cs" />
     <Compile Include="Generator\Form\BaseFormDesignerGenerator.cs" />
     <Compile Include="Generator\Form\EditDataFormDesignerGenerator.cs" />
@@ -95,7 +101,6 @@
     <Compile Include="Generator\Form\EditFormGenerator.cs" />
     <Compile Include="Generator\Form\LoginFormDesignerGenerator.cs" />
     <Compile Include="Generator\Form\LoginFormGenerator.cs" />
-    <Compile Include="Generator\Form\MustHaveFormsGenerator.cs" />
     <Compile Include="Generator\Form\SelectTableFormDesignerGenerator.cs" />
     <Compile Include="Generator\Form\SelectTableFormGenerator.cs" />
     <Compile Include="Generator\Form\ViewDataFormDesignerGenerator.cs" />
@@ -106,9 +111,10 @@
     <Compile Include="Generator\Form\WaitingFormDesignerGenerator.cs" />
     <Compile Include="Generator\Form\WaitingFormGenerator.cs" />
     <Compile Include="Generator\Model\BaseModelGenerator.cs" />
-    <Compile Include="Generator\Model\ConfigControllerGenerator.cs" />
+    <Compile Include="Generator\Dao\ConfigControllerGenerator.cs" />
+    <Compile Include="Generator\Dao\DatabaseLoaderGenerator.cs" />
     <Compile Include="Generator\Model\EditableObjectGenerator.cs" />
-    <Compile Include="Generator\Model\ModelDAOGenerator.cs" />
+    <Compile Include="Generator\Dao\ModelDAOGenerator.cs" />
     <Compile Include="Generator\Model\ModelGenerator.cs" />
     <Compile Include="Generator\Model\ModelsGenerator.cs" />
     <Compile Include="Generator\ProgramGenerator.cs" />
@@ -126,6 +132,11 @@
       <DependentUpon>ConfigControllerTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Template\Entity\Constant.cs" />
+    <Compile Include="Template\Entity\DatabaseLoaderTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseLoaderTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Template\Entity\EditableObjectTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -150,6 +161,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelTemplate3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Entity\ClassTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClassTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Entity\ResultTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResultTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Template\Entity\Template.cs" />
     <Compile Include="Template\Form\BaseFormDesignerTemplate.cs">
@@ -182,6 +203,31 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EditFormTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="Template\Form\ItemTableDesignerTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemTableDesignerTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Form\ItemTableTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemTableTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Form\SharedFormDesignerTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SharedFormDesignerTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Form\TableListFormDesignerTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TableListFormDesignerTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Form\TableListFormTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TableListFormTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Template\Form\ViewFormFactoryTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -207,15 +253,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SelectTableFormTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Template\Form\SharedFormDesignerGenerator.cs">
+    <Compile Include="Template\Form\SharedFormTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SharedFormDesignerGenerator.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Template\Form\SharedFormGenerator.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SharedFormGenerator.tt</DependentUpon>
+      <DependentUpon>SharedFormTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Template\Form\Template.cs" />
     <Compile Include="Template\Form\ViewDataFormDesignerTemplate.cs">
@@ -302,7 +343,7 @@
     </Compile>
     <Compile Include="Generator\Base\FileGenerator.cs" />
     <Compile Include="Generator\Base\Generator.cs" />
-    <Compile Include="Generator\Base\Result.cs" />
+    <Compile Include="Entities\Result.cs" />
     <Compile Include="Generator\Project\ProjectGenerator.cs" />
     <Compile Include="Generator\Project\SolutionGenerator.cs" />
     <Compile Include="Program.cs" />
@@ -356,6 +397,10 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ConfigControllerTemplate.cs</LastGenOutput>
     </Content>
+    <Content Include="Template\Entity\DatabaseLoaderTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DatabaseLoaderTemplate.cs</LastGenOutput>
+    </Content>
     <Content Include="Template\Entity\EditableObjectTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>EditableObjectTemplate.cs</LastGenOutput>
@@ -379,6 +424,14 @@
     <Content Include="Template\Entity\ModelTemplate3.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ModelTemplate3.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Entity\ClassTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ClassTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Entity\ResultTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ResultTemplate.cs</LastGenOutput>
     </Content>
     <Content Include="Template\Form\BaseFormDesignerTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -404,6 +457,26 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>EditFormTemplate.cs</LastGenOutput>
     </Content>
+    <Content Include="Template\Form\ItemTableDesignerTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ItemTableDesignerTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Form\ItemTableTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ItemTableTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Form\SharedFormDesignerTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>SharedFormDesignerTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Form\TableListFormDesignerTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>TableListFormDesignerTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Template\Form\TableListFormTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>TableListFormTemplate.cs</LastGenOutput>
+    </Content>
     <Content Include="Template\Form\ViewFormFactoryTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ViewFormFactoryTemplate.cs</LastGenOutput>
@@ -424,13 +497,9 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>SelectTableFormTemplate.cs</LastGenOutput>
     </Content>
-    <Content Include="Template\Form\SharedFormDesignerGenerator.tt">
+    <Content Include="Template\Form\SharedFormTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>SharedFormDesignerGenerator.cs</LastGenOutput>
-    </Content>
-    <Content Include="Template\Form\SharedFormGenerator.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>SharedFormGenerator.cs</LastGenOutput>
+      <LastGenOutput>SharedFormTemplate.cs</LastGenOutput>
     </Content>
     <Content Include="Template\Form\ViewDataFormDesignerTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

@@ -1,0 +1,112 @@
+﻿<#@ template language="C#" inherits="SharedFormDesignerTemplate" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+namespace <#=Generator.Namespace#>
+{
+    partial class ItemTableUserControl
+    {
+        /// <summary> 
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary> 
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Component Designer generated code
+
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.Title = new System.Windows.Forms.Label();
+            this.InsidePanel = new System.Windows.Forms.Panel();
+            this.Description = new System.Windows.Forms.Label();
+            this.InsidePanel.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // Title
+            // 
+            this.Title.BackColor = System.Drawing.Color.Transparent;
+            this.Title.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Title.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(11)))), ((int)(((byte)(11)))));
+            this.Title.Location = new System.Drawing.Point(0, 0);
+            this.Title.Name = "Title";
+            this.Title.Padding = new System.Windows.Forms.Padding(8);
+            this.Title.Size = new System.Drawing.Size(223, 152);
+            this.Title.TabIndex = 0;
+            this.Title.Text = "Giaovien";
+            this.Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnMouseDownPanel);
+            this.Title.MouseLeave += new System.EventHandler(this.OnMouseLeavePanel);
+            this.Title.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnMouseMovePanel);
+            // 
+            // InsidePanel
+            // 
+            this.InsidePanel.BackColor = System.Drawing.Color.White;
+            this.InsidePanel.Controls.Add(this.Description);
+            this.InsidePanel.Controls.Add(this.Title);
+            this.InsidePanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.InsidePanel.Location = new System.Drawing.Point(1, 1);
+            this.InsidePanel.Margin = new System.Windows.Forms.Padding(16);
+            this.InsidePanel.Name = "InsidePanel";
+            this.InsidePanel.Size = new System.Drawing.Size(223, 218);
+            this.InsidePanel.TabIndex = 1;
+            this.InsidePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnMouseDownPanel);
+            this.InsidePanel.MouseLeave += new System.EventHandler(this.OnMouseLeavePanel);
+            this.InsidePanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnMouseMovePanel);
+            // 
+            // Description
+            // 
+            this.Description.BackColor = System.Drawing.Color.Transparent;
+            this.Description.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Description.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.Description.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(11)))), ((int)(((byte)(11)))));
+            this.Description.Location = new System.Drawing.Point(0, 155);
+            this.Description.Name = "Description";
+            this.Description.Padding = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.Description.Size = new System.Drawing.Size(223, 63);
+            this.Description.TabIndex = 1;
+            this.Description.Text = "From table \"GIAOVIEN\"";
+            this.Description.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Description.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnMouseDownPanel);
+            this.Description.MouseLeave += new System.EventHandler(this.OnMouseLeavePanel);
+            this.Description.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnMouseMovePanel);
+            // 
+            // ItemTableUserControl
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.Controls.Add(this.InsidePanel);
+            this.ForeColor = System.Drawing.Color.White;
+            this.Margin = new System.Windows.Forms.Padding(16);
+            this.Name = "ItemTableUserControl";
+            this.Size = new System.Drawing.Size(225, 225);
+            this.InsidePanel.ResumeLayout(false);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label Title;
+        private System.Windows.Forms.Panel InsidePanel;
+        private System.Windows.Forms.Label Description;
+    }
+}

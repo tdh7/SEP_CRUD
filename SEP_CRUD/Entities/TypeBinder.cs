@@ -7,6 +7,7 @@ namespace SEP_CRUD.Entities
 {
     public class TypeBinder
     {
+  
         private static TypeBinder sTypeBinder;
         public static TypeBinder Instance
         {
@@ -20,7 +21,7 @@ namespace SEP_CRUD.Entities
             }
         }
 
-        public TypeBinder()
+        private TypeBinder()
         {
             Init();
         }

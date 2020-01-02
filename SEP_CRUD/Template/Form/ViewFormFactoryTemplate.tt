@@ -10,29 +10,131 @@ using System.Windows.Forms;
 
 namespace <#= _namespace #>
 {
-	public class ViewFormFactory
-	{
-		public static Form getFormByTableName(string TableName)
-		{
+	public class ViewFormFactory {
+        private static ViewFormFactory sFactory;
+        public static ViewFormFactory Instance
+        {
+            get
+            {
+                if (sFactory == null)
+                {
+                    sFactory = new ViewFormFactory();
+                }
+                return sFactory;
+            }
+        }
+
+        private ViewFormFactory()
+        {
+        }
+
+        public enum GeneratedForm : int
+        {
+            None = -1,
 <#
-    for (int i = 0; i < Tables.Count; i++)
+	int count = Tables.Count;
+	for(int i =0; i < count; i++)
     {
-		writeIfStatement(i);	 
+		if(i!=count-1)
+		WriteLine("            "+Tables[i].BindingName+" = "+i+",");
+		else WriteLine("            "+Tables[i].BindingName+" = "+i);
     }
 #>
-			return new Form();
+        }
+
+        public List<string> BindingNames { get; } = new List<string>
+        {
+<#
+	for(int i =0; i < count; i++)
+    {
+		if(i!=count-1)
+		WriteLine("            \""+Tables[i].BindingName+"\",");
+		else WriteLine("            \""+Tables[i].BindingName+"\"");
+    }
+#>
+        };
+
+        public List<string> DatabaseNames { get; } = new List<string>
+        {
+<#
+	for(int i =0; i < count; i++)
+    {
+		if(i!=count-1)
+		WriteLine("            \""+Tables[i].DatabaseName+"\",");
+		else WriteLine("            \""+Tables[i].DatabaseName+"\"");
+    }
+#>
+        };
+
+        public int Count
+        {
+            get
+            {
+                return BindingNames.Count;
+            }
+        }
+
+        
+        public Form FindForm(GeneratedForm f)
+		{
+            switch(f)
+            {
+<#
+	for(int i =0; i < count; i++)
+    {
+#>                case GeneratedForm.<#=Tables[i].BindingName#>:
+                    return new View<#=Tables[i].BindingName#>Form();
+
+<#
+    }
+#>
+                case GeneratedForm.None:
+                default:
+                    return null;
+            }
 		}
+
+        public GeneratedForm FindFormTypeByBindingName(string name)
+        {
+            if (name == null) return GeneratedForm.None;
+
+            int index = -1;
+            for (int i=0;i < Count; i++) {
+                if(name.Equals(BindingNames[i]))
+                {
+                    index = i;
+                    break;
+                }
+            }
+            return (GeneratedForm)index;
+        }
+
+        public GeneratedForm FindFormTypeByDatabaseName(string name)
+        {
+            if (name == null) return GeneratedForm.None;
+
+            int index = -1;
+            for (int i = 0; i < Count; i++)
+            {
+                if (name.Equals(DatabaseNames[i]))
+                {
+                    index = i;
+                    break;
+                }
+            }
+            return (GeneratedForm)index;
+        }
+
+        
+        public Form FindFormByBindingName(string name)
+        {
+            return FindForm(FindFormTypeByBindingName(name));
+        }
+
+        public Form FindFormByDatabaseName(string name)
+        {
+            return FindForm(FindFormTypeByDatabaseName(name));
+        }
+        
 	}
 }
-
-<#+ 
-private void writeIfStatement(int i)
-{
-	var tableName = Tables[i].DatabaseName;
-	var formName = "View" + Tables[i].BindingName + "Form";
-#>
-			if (TableName.Equals("<#= tableName #>"))
-				return new <#= formName #>();
-<#+
-}
-#>

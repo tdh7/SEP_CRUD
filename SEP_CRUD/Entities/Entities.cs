@@ -22,7 +22,6 @@ namespace SEP_CRUD.Entities
 
         private Entities()
         {
-
         }
 
         public Dictionary<int,Table> Tables = new Dictionary<int, Table>();

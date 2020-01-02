@@ -37,60 +37,73 @@
             // 
             // listBoxDBTableName
             // 
-            this.listBoxDBTableName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBoxDBTableName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBoxDBTableName.FormattingEnabled = true;
-            this.listBoxDBTableName.Location = new System.Drawing.Point(12, 74);
+            this.listBoxDBTableName.ItemHeight = 16;
+            this.listBoxDBTableName.Location = new System.Drawing.Point(0, 43);
+            this.listBoxDBTableName.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxDBTableName.Name = "listBoxDBTableName";
-            this.listBoxDBTableName.Size = new System.Drawing.Size(312, 420);
+            this.listBoxDBTableName.Size = new System.Drawing.Size(431, 512);
             this.listBoxDBTableName.TabIndex = 1;
+            this.listBoxDBTableName.SelectedIndexChanged += new System.EventHandler(this.listBoxDBTableName_SelectedIndexChanged);
             // 
             // buttonViewTable
             // 
             this.buttonViewTable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonViewTable.BackColor = System.Drawing.Color.White;
             this.buttonViewTable.Enabled = false;
-            this.buttonViewTable.Location = new System.Drawing.Point(249, 26);
+            this.buttonViewTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonViewTable.ForeColor = System.Drawing.Color.Black;
+            this.buttonViewTable.Location = new System.Drawing.Point(129, 574);
+            this.buttonViewTable.Margin = new System.Windows.Forms.Padding(4);
             this.buttonViewTable.Name = "buttonViewTable";
-            this.buttonViewTable.Size = new System.Drawing.Size(75, 22);
+            this.buttonViewTable.Size = new System.Drawing.Size(155, 48);
             this.buttonViewTable.TabIndex = 2;
             this.buttonViewTable.Text = "View Table";
-            this.buttonViewTable.UseVisualStyleBackColor = true;
+            this.buttonViewTable.UseVisualStyleBackColor = false;
             this.buttonViewTable.Click += new System.EventHandler(this.buttonViewTable_Click);
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.Color.White;
+            this.toolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonConnect});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Location = new System.Drawing.Point(21, -5);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(336, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(361, 44);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripButtonConnect
             // 
             this.toolStripButtonConnect.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonConnect.Image = global::DemoGeneratedProject.Properties.Resources.Connect_16x;
+            this.toolStripButtonConnect.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.toolStripButtonConnect.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonConnect.Name = "toolStripButtonConnect";
-            this.toolStripButtonConnect.Size = new System.Drawing.Size(123, 22);
-            this.toolStripButtonConnect.Text = "Connect to DB Server";
+            this.toolStripButtonConnect.Size = new System.Drawing.Size(349, 41);
+            this.toolStripButtonConnect.Text = "Connect to Database Server";
+            this.toolStripButtonConnect.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.toolStripButtonConnect.Click += new System.EventHandler(this.toolStripButtonConnect_Click);
             // 
-            // SelectDBTableForm
+            // SelectTableForm
             // 
             this.AcceptButton = this.buttonViewTable;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(336, 506);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(430, 635);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.buttonViewTable);
             this.Controls.Add(this.listBoxDBTableName);
-            this.Location = new System.Drawing.Point(0, 0);
-            this.Name = "SelectDBTableForm";
-            this.Text = "Select Table";
-            this.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.MaximumSize = new System.Drawing.Size(448, 682);
+            this.MinimumSize = new System.Drawing.Size(448, 682);
+            this.Name = "SelectTableForm";
+            this.ShowIcon = false;
+            this.Text = "Dashboard";
             this.Shown += new System.EventHandler(this.SelectDBTableForm_Shown);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

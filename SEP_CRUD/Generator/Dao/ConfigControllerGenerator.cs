@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SEP_CRUD.Generator.Model
+namespace SEP_CRUD.Generator.Dao
 {
     class ConfigControllerGenerator : ClassGenerator
     {

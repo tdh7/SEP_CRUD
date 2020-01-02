@@ -13,6 +13,8 @@ namespace SEP_CRUD.Generator.Base
             }
         }
 
+        public virtual string SubType => "Form";
+
         public FormGenerator AddToNamespace(string _namespace)
         {
             this[0].AddToNamespace(_namespace);

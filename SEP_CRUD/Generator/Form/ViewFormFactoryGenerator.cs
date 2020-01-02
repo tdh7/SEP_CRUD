@@ -15,7 +15,7 @@ namespace SEP_CRUD.Generator.Form
         private List<Table> tables;
 
         public ViewFormFactoryGenerator(ProjectGenerator p, List<Table> tables) 
-            : base(p, "FormFactory")
+            : base(p, "ViewFormFactory")
         {
             this.tables = tables;
             AddToNamespace(p.DefaultFormNamespace);

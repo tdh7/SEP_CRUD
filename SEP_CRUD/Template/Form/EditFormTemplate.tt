@@ -1,4 +1,4 @@
-﻿<#@ template language="C#" inherits="SharedFormGenerator" #>
+﻿<#@ template language="C#" inherits="SharedFormTemplate" #>
 <#@ assembly name="System.Core" #>
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>

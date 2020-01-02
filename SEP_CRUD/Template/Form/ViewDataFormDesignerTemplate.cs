@@ -18,9 +18,9 @@ namespace SEP_CRUD.Template.Form
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewDataFormDesignerTemplate.tt"
+    #line 1 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewDataFormDesignerTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public partial class ViewDataFormDesignerTemplate : SharedFormDesignerGenerator
+    public partial class ViewDataFormDesignerTemplate : SharedFormDesignerTemplate
     {
 #line hidden
         /// <summary>
@@ -30,154 +30,113 @@ namespace SEP_CRUD.Template.Form
         {
             this.Write("namespace ");
             
-            #line 6 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewDataFormDesignerTemplate.tt"
+            #line 6 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\ViewDataFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Generator.Namespace));
             
             #line default
             #line hidden
-            this.Write("\r\n{\r\n    abstract partial class ViewDataFrom<E>\r\n    {\r\n        /// <summary>\r\n  " +
-                    "      /// Required designer variable.\r\n        /// </summary>\r\n        private S" +
-                    "ystem.ComponentModel.IContainer components = null;\r\n\r\n        /// <summary>\r\n   " +
-                    "     /// Clean up any resources being used.\r\n        /// </summary>\r\n        ///" +
-                    " <param name=\"disposing\">true if managed resources should be disposed; otherwise" +
-                    ", false.</param>\r\n        protected override void Dispose(bool disposing)\r\n     " +
-                    "   {\r\n            if (disposing && (components != null))\r\n            {\r\n       " +
-                    "         components.Dispose();\r\n            }\r\n            base.Dispose(disposin" +
-                    "g);\r\n        }\r\n\r\n        #region Windows Form Designer generated code\r\n\r\n      " +
-                    "  /// <summary>\r\n        /// Required method for Designer support - do not modif" +
-                    "y\r\n        /// the contents of this method with the code editor.\r\n        /// </" +
-                    "summary>\r\n        private void InitializeComponent()\r\n        {\r\n            thi" +
-                    "s.components = new System.ComponentModel.Container();\r\n            this.dataGrid" +
-                    "View1 = new System.Windows.Forms.DataGridView();\r\n            this.contextMenuSt" +
-                    "ripDataGrid = new System.Windows.Forms.ContextMenuStrip(this.components);\r\n     " +
-                    "       this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem()" +
-                    ";\r\n            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStrip" +
-                    "MenuItem();\r\n            this.toolStrip1 = new System.Windows.Forms.ToolStrip();" +
-                    "\r\n            this.toolStripButtonNew = new System.Windows.Forms.ToolStripButton" +
-                    "();\r\n            this.toolStripButtonEdit = new System.Windows.Forms.ToolStripBu" +
-                    "tton();\r\n            this.toolStripButtonDelete = new System.Windows.Forms.ToolS" +
-                    "tripButton();\r\n            this.menuStrip1 = new System.Windows.Forms.MenuStrip(" +
-                    ");\r\n            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripM" +
-                    "enuItem();\r\n            this.exitToolStripMenuItem = new System.Windows.Forms.To" +
-                    "olStripMenuItem();\r\n            this.helpToolStripMenuItem = new System.Windows." +
-                    "Forms.ToolStripMenuItem();\r\n            this.aboutToolStripMenuItem = new System" +
-                    ".Windows.Forms.ToolStripMenuItem();\r\n            ((System.ComponentModel.ISuppor" +
-                    "tInitialize)(this.dataGridView1)).BeginInit();\r\n            this.contextMenuStri" +
-                    "pDataGrid.SuspendLayout();\r\n            this.toolStrip1.SuspendLayout();\r\n      " +
-                    "      this.menuStrip1.SuspendLayout();\r\n            this.SuspendLayout();\r\n     " +
-                    "       // \r\n            // dataGridView1\r\n            // \r\n            this.data" +
-                    "GridView1.AllowUserToAddRows = false;\r\n            this.dataGridView1.AllowUserT" +
-                    "oDeleteRows = false;\r\n            this.dataGridView1.Anchor = ((System.Windows.F" +
-                    "orms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Form" +
-                    "s.AnchorStyles.Left) \r\n            | System.Windows.Forms.AnchorStyles.Right)));" +
-                    "\r\n            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.Data" +
-                    "GridViewAutoSizeColumnsMode.Fill;\r\n            this.dataGridView1.ColumnHeadersH" +
-                    "eightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.Aut" +
-                    "oSize;\r\n            this.dataGridView1.ContextMenuStrip = this.contextMenuStripD" +
-                    "ataGrid;\r\n            this.dataGridView1.Location = new System.Drawing.Point(12," +
-                    " 67);\r\n            this.dataGridView1.Name = \"dataGridView1\";\r\n            this." +
-                    "dataGridView1.ReadOnly = true;\r\n            this.dataGridView1.Size = new System" +
-                    ".Drawing.Size(776, 342);\r\n            this.dataGridView1.TabIndex = 0;\r\n        " +
-                    "    this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewC" +
-                    "ellEventHandler(this.dataGridView1_CellDoubleClick);\r\n            // \r\n         " +
-                    "   // contextMenuStripDataGrid\r\n            // \r\n            this.contextMenuStr" +
-                    "ipDataGrid.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {\r\n          " +
-                    "  this.editToolStripMenuItem,\r\n            this.deleteToolStripMenuItem});\r\n    " +
-                    "        this.contextMenuStripDataGrid.Name = \"contextMenuStripDataGrid\";\r\n      " +
-                    "      this.contextMenuStripDataGrid.Size = new System.Drawing.Size(181, 70);\r\n  " +
-                    "          // \r\n            // editToolStripMenuItem\r\n            // \r\n          " +
-                    "  this.editToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDi" +
-                    "splayStyle.Text;\r\n            //this.editToolStripMenuItem.Image = global::DemoG" +
-                    "eneratedProject.Properties.Resources.Edit_16x;\r\n            this.editToolStripMe" +
-                    "nuItem.Name = \"editToolStripMenuItem\";\r\n            this.editToolStripMenuItem.S" +
-                    "ize = new System.Drawing.Size(180, 22);\r\n            this.editToolStripMenuItem." +
-                    "Text = \"Edit\";\r\n            // \r\n            // deleteToolStripMenuItem\r\n       " +
-                    "     // \r\n            this.deleteToolStripMenuItem.DisplayStyle = System.Windows" +
-                    ".Forms.ToolStripItemDisplayStyle.Text;\r\n            //this.deleteToolStripMenuIt" +
-                    "em.Image = global::DemoGeneratedProject.Properties.Resources.Cancel_16x;\r\n      " +
-                    "      this.deleteToolStripMenuItem.Name = \"deleteToolStripMenuItem\";\r\n          " +
-                    "  this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);\r\n       " +
-                    "     this.deleteToolStripMenuItem.Text = \"Delete\";\r\n            // \r\n           " +
-                    " // toolStrip1\r\n            // \r\n            this.toolStrip1.Items.AddRange(new " +
-                    "System.Windows.Forms.ToolStripItem[] {\r\n            this.toolStripButtonNew,\r\n  " +
-                    "          this.toolStripButtonEdit,\r\n            this.toolStripButtonDelete});\r\n" +
-                    "            this.toolStrip1.Location = new System.Drawing.Point(0, 24);\r\n       " +
-                    "     this.toolStrip1.Name = \"toolStrip1\";\r\n            this.toolStrip1.Size = ne" +
-                    "w System.Drawing.Size(800, 25);\r\n            this.toolStrip1.TabIndex = 2;\r\n    " +
-                    "        this.toolStrip1.Text = \"toolStrip1\";\r\n            // \r\n            // to" +
-                    "olStripButtonNew\r\n            // \r\n            this.toolStripButtonNew.DisplaySt" +
-                    "yle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;\r\n            //this.t" +
-                    "oolStripButtonNew.Image = global::DemoGeneratedProject.Properties.Resources.Add_" +
-                    "16x;\r\n            this.toolStripButtonNew.ImageTransparentColor = System.Drawing" +
-                    ".Color.Magenta;\r\n            this.toolStripButtonNew.Name = \"toolStripButtonNew\"" +
-                    ";\r\n            this.toolStripButtonNew.Size = new System.Drawing.Size(62, 22);\r\n" +
-                    "            this.toolStripButtonNew.Text = \"New Item\";\r\n            this.toolStr" +
-                    "ipButtonNew.Click += new System.EventHandler(this.toolStripButtonNew_Click);\r\n  " +
-                    "          // \r\n            // toolStripButtonEdit\r\n            // \r\n            " +
-                    "this.toolStripButtonEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDispla" +
-                    "yStyle.Text;\r\n            //this.toolStripButtonEdit.Image = global::DemoGenerat" +
-                    "edProject.Properties.Resources.Edit_16x;\r\n            this.toolStripButtonEdit.I" +
+            this.Write("\r\n{\r\n   abstract partial class ViewDataFrom<E>\r\n    {\r\n        /// <summary>\r\n   " +
+                    "     /// Required designer variable.\r\n        /// </summary>\r\n        private Sy" +
+                    "stem.ComponentModel.IContainer components = null;\r\n\r\n        /// <summary>\r\n    " +
+                    "    /// Clean up any resources being used.\r\n        /// </summary>\r\n        /// " +
+                    "<param name=\"disposing\">true if managed resources should be disposed; otherwise," +
+                    " false.</param>\r\n        protected override void Dispose(bool disposing)\r\n      " +
+                    "  {\r\n            if (disposing && (components != null))\r\n            {\r\n        " +
+                    "        components.Dispose();\r\n            }\r\n            base.Dispose(disposing" +
+                    ");\r\n        }\r\n\r\n        #region Windows Form Designer generated code\r\n\r\n       " +
+                    " /// <summary>\r\n        /// Required method for Designer support - do not modify" +
+                    "\r\n        /// the contents of this method with the code editor.\r\n        /// </s" +
+                    "ummary>\r\n        private void InitializeComponent()\r\n        {\r\n            this" +
+                    ".components = new System.ComponentModel.Container();\r\n            this.dataGridV" +
+                    "iew1 = new System.Windows.Forms.DataGridView();\r\n            this.contextMenuStr" +
+                    "ipDataGrid = new System.Windows.Forms.ContextMenuStrip(this.components);\r\n      " +
+                    "      this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();" +
+                    "\r\n            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripM" +
+                    "enuItem();\r\n            this.toolStrip1 = new System.Windows.Forms.ToolStrip();\r" +
+                    "\n            this.toolStripButtonNew = new System.Windows.Forms.ToolStripButton(" +
+                    ");\r\n            this.toolStripButtonEdit = new System.Windows.Forms.ToolStripBut" +
+                    "ton();\r\n            this.toolStripButtonDelete = new System.Windows.Forms.ToolSt" +
+                    "ripButton();\r\n            ((System.ComponentModel.ISupportInitialize)(this.dataG" +
+                    "ridView1)).BeginInit();\r\n            this.contextMenuStripDataGrid.SuspendLayout" +
+                    "();\r\n            this.toolStrip1.SuspendLayout();\r\n            this.SuspendLayou" +
+                    "t();\r\n            // \r\n            // dataGridView1\r\n            // \r\n          " +
+                    "  this.dataGridView1.AllowUserToAddRows = false;\r\n            this.dataGridView1" +
+                    ".AllowUserToDeleteRows = false;\r\n            this.dataGridView1.AutoSizeColumnsM" +
+                    "ode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;\r\n            th" +
+                    "is.dataGridView1.BackgroundColor = System.Drawing.Color.White;\r\n            this" +
+                    ".dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewCo" +
+                    "lumnHeadersHeightSizeMode.AutoSize;\r\n            this.dataGridView1.ContextMenuS" +
+                    "trip = this.contextMenuStripDataGrid;\r\n            this.dataGridView1.Dock = Sys" +
+                    "tem.Windows.Forms.DockStyle.Fill;\r\n            this.dataGridView1.Location = new" +
+                    " System.Drawing.Point(0, 0);\r\n            this.dataGridView1.Margin = new System" +
+                    ".Windows.Forms.Padding(4, 4, 4, 4);\r\n            this.dataGridView1.Name = \"data" +
+                    "GridView1\";\r\n            this.dataGridView1.ReadOnly = true;\r\n            this.d" +
+                    "ataGridView1.Size = new System.Drawing.Size(1067, 519);\r\n            this.dataGr" +
+                    "idView1.TabIndex = 0;\r\n            this.dataGridView1.CellDoubleClick += new Sys" +
+                    "tem.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClic" +
+                    "k);\r\n            // \r\n            // contextMenuStripDataGrid\r\n            // \r\n" +
+                    "            this.contextMenuStripDataGrid.ImageScalingSize = new System.Drawing." +
+                    "Size(20, 20);\r\n            this.contextMenuStripDataGrid.Items.AddRange(new Syst" +
+                    "em.Windows.Forms.ToolStripItem[] {\r\n            this.editToolStripMenuItem,\r\n   " +
+                    "         this.deleteToolStripMenuItem});\r\n            this.contextMenuStripDataG" +
+                    "rid.Name = \"contextMenuStripDataGrid\";\r\n            this.contextMenuStripDataGri" +
+                    "d.Size = new System.Drawing.Size(123, 52);\r\n            // \r\n            // edit" +
+                    "ToolStripMenuItem\r\n            // \r\n            this.editToolStripMenuItem.Displ" +
+                    "ayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;\r\n            this" +
+                    ".editToolStripMenuItem.Name = \"editToolStripMenuItem\";\r\n            this.editToo" +
+                    "lStripMenuItem.Size = new System.Drawing.Size(122, 24);\r\n            this.editTo" +
+                    "olStripMenuItem.Text = \"Edit\";\r\n            // \r\n            // deleteToolStripM" +
+                    "enuItem\r\n            // \r\n            this.deleteToolStripMenuItem.DisplayStyle " +
+                    "= System.Windows.Forms.ToolStripItemDisplayStyle.Text;\r\n            this.deleteT" +
+                    "oolStripMenuItem.Name = \"deleteToolStripMenuItem\";\r\n            this.deleteToolS" +
+                    "tripMenuItem.Size = new System.Drawing.Size(122, 24);\r\n            this.deleteTo" +
+                    "olStripMenuItem.Text = \"Delete\";\r\n            // \r\n            // toolStrip1\r\n  " +
+                    "          // \r\n            this.toolStrip1.BackColor = System.Drawing.Color.Whit" +
+                    "e;\r\n            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 2" +
+                    "0);\r\n            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStr" +
+                    "ipItem[] {\r\n            this.toolStripButtonNew,\r\n            this.toolStripButt" +
+                    "onEdit,\r\n            this.toolStripButtonDelete});\r\n            this.toolStrip1." +
+                    "Location = new System.Drawing.Point(0, 0);\r\n            this.toolStrip1.Name = \"" +
+                    "toolStrip1\";\r\n            this.toolStrip1.Size = new System.Drawing.Size(1067, 2" +
+                    "7);\r\n            this.toolStrip1.TabIndex = 2;\r\n            this.toolStrip1.Text" +
+                    " = \"toolStrip1\";\r\n            // \r\n            // toolStripButtonNew\r\n          " +
+                    "  // \r\n            this.toolStripButtonNew.DisplayStyle = System.Windows.Forms.T" +
+                    "oolStripItemDisplayStyle.Text;\r\n            this.toolStripButtonNew.ImageTranspa" +
+                    "rentColor = System.Drawing.Color.Magenta;\r\n            this.toolStripButtonNew.N" +
+                    "ame = \"toolStripButtonNew\";\r\n            this.toolStripButtonNew.Size = new Syst" +
+                    "em.Drawing.Size(90, 24);\r\n            this.toolStripButtonNew.Text = \"Create New" +
+                    "\";\r\n            this.toolStripButtonNew.Click += new System.EventHandler(this.to" +
+                    "olStripButtonNew_Click);\r\n            // \r\n            // toolStripButtonEdit\r\n " +
+                    "           // \r\n            this.toolStripButtonEdit.DisplayStyle = System.Windo" +
+                    "ws.Forms.ToolStripItemDisplayStyle.Text;\r\n            this.toolStripButtonEdit.I" +
                     "mageTransparentColor = System.Drawing.Color.Magenta;\r\n            this.toolStrip" +
                     "ButtonEdit.Name = \"toolStripButtonEdit\";\r\n            this.toolStripButtonEdit.S" +
-                    "ize = new System.Drawing.Size(58, 22);\r\n            this.toolStripButtonEdit.Tex" +
-                    "t = \"Edit Item\";\r\n            // \r\n            // toolStripButtonDelete\r\n       " +
-                    "     // \r\n            this.toolStripButtonDelete.DisplayStyle = System.Windows.F" +
-                    "orms.ToolStripItemDisplayStyle.Text;\r\n            //this.toolStripButtonDelete.I" +
-                    "mage = global::DemoGeneratedProject.Properties.Resources.Cancel_16x;\r\n          " +
-                    "  this.toolStripButtonDelete.ImageTransparentColor = System.Drawing.Color.Magent" +
-                    "a;\r\n            this.toolStripButtonDelete.Name = \"toolStripButtonDelete\";\r\n    " +
-                    "        this.toolStripButtonDelete.Size = new System.Drawing.Size(71, 22);\r\n    " +
-                    "        this.toolStripButtonDelete.Text = \"Delete Item\";\r\n            // \r\n     " +
-                    "       // menuStrip1\r\n            // \r\n            this.menuStrip1.Items.AddRang" +
-                    "e(new System.Windows.Forms.ToolStripItem[] {\r\n            this.fileToolStripMenu" +
-                    "Item,\r\n            this.helpToolStripMenuItem});\r\n            this.menuStrip1.Lo" +
-                    "cation = new System.Drawing.Point(0, 0);\r\n            this.menuStrip1.Name = \"me" +
-                    "nuStrip1\";\r\n            this.menuStrip1.Size = new System.Drawing.Size(800, 24);" +
-                    "\r\n            this.menuStrip1.TabIndex = 3;\r\n            this.menuStrip1.Text = " +
-                    "\"menuStrip1\";\r\n            // \r\n            // fileToolStripMenuItem\r\n          " +
-                    "  // \r\n            this.fileToolStripMenuItem.DropDownItems.AddRange(new System." +
-                    "Windows.Forms.ToolStripItem[] {\r\n            this.exitToolStripMenuItem});\r\n    " +
-                    "        this.fileToolStripMenuItem.Name = \"fileToolStripMenuItem\";\r\n            " +
-                    "this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);\r\n            " +
-                    "this.fileToolStripMenuItem.Text = \"File\";\r\n            // \r\n            // exitT" +
-                    "oolStripMenuItem\r\n            // \r\n            this.exitToolStripMenuItem.Name =" +
-                    " \"exitToolStripMenuItem\";\r\n            this.exitToolStripMenuItem.Size = new Sys" +
-                    "tem.Drawing.Size(93, 22);\r\n            this.exitToolStripMenuItem.Text = \"Exit\";" +
-                    "\r\n            // \r\n            // helpToolStripMenuItem\r\n            // \r\n      " +
-                    "      this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms" +
-                    ".ToolStripItem[] {\r\n            this.aboutToolStripMenuItem});\r\n            this" +
-                    ".helpToolStripMenuItem.Name = \"helpToolStripMenuItem\";\r\n            this.helpToo" +
-                    "lStripMenuItem.Size = new System.Drawing.Size(44, 20);\r\n            this.helpToo" +
-                    "lStripMenuItem.Text = \"Help\";\r\n            // \r\n            // aboutToolStripMen" +
-                    "uItem\r\n            // \r\n            this.aboutToolStripMenuItem.Name = \"aboutToo" +
-                    "lStripMenuItem\";\r\n            this.aboutToolStripMenuItem.Size = new System.Draw" +
-                    "ing.Size(107, 22);\r\n            this.aboutToolStripMenuItem.Text = \"About\";\r\n   " +
-                    "         // \r\n            // ViewDataFrom\r\n            // \r\n            this.Aut" +
-                    "oScaleDimensions = new System.Drawing.SizeF(6F, 13F);\r\n            this.ClientSi" +
-                    "ze = new System.Drawing.Size(800, 422);\r\n            this.Controls.Add(this.tool" +
-                    "Strip1);\r\n            this.Controls.Add(this.menuStrip1);\r\n            this.Cont" +
-                    "rols.Add(this.dataGridView1);\r\n            this.Location = new System.Drawing.Po" +
-                    "int(0, 0);\r\n            this.MainMenuStrip = this.menuStrip1;\r\n            this." +
-                    "Name = \"ViewDataFrom\";\r\n            this.Text = \"ViewForm\";\r\n            this.Lo" +
-                    "ad += new System.EventHandler(this.ViewDataFrom_Load);\r\n            ((System.Com" +
-                    "ponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();\r\n            thi" +
-                    "s.contextMenuStripDataGrid.ResumeLayout(false);\r\n            this.toolStrip1.Res" +
-                    "umeLayout(false);\r\n            this.toolStrip1.PerformLayout();\r\n            thi" +
-                    "s.menuStrip1.ResumeLayout(false);\r\n            this.menuStrip1.PerformLayout();\r" +
-                    "\n            this.ResumeLayout(false);\r\n            this.PerformLayout();\r\n\r\n   " +
-                    "     }\r\n\r\n        #endregion\r\n\r\n        private System.Windows.Forms.DataGridVie" +
-                    "w dataGridView1;\r\n        private System.Windows.Forms.ToolStrip toolStrip1;\r\n  " +
-                    "      private System.Windows.Forms.ToolStripButton toolStripButtonNew;\r\n        " +
-                    "private System.Windows.Forms.MenuStrip menuStrip1;\r\n        private System.Windo" +
-                    "ws.Forms.ToolStripMenuItem fileToolStripMenuItem;\r\n        private System.Window" +
-                    "s.Forms.ToolStripMenuItem exitToolStripMenuItem;\r\n        private System.Windows" +
-                    ".Forms.ToolStripMenuItem helpToolStripMenuItem;\r\n        private System.Windows." +
-                    "Forms.ToolStripMenuItem aboutToolStripMenuItem;\r\n        private System.Windows." +
-                    "Forms.ToolStripButton toolStripButtonEdit;\r\n        private System.Windows.Forms" +
-                    ".ToolStripButton toolStripButtonDelete;\r\n        private System.Windows.Forms.Co" +
-                    "ntextMenuStrip contextMenuStripDataGrid;\r\n        private System.Windows.Forms.T" +
-                    "oolStripMenuItem editToolStripMenuItem;\r\n        private System.Windows.Forms.To" +
-                    "olStripMenuItem deleteToolStripMenuItem;\r\n    }\r\n}\r\n");
+                    "ize = new System.Drawing.Size(62, 24);\r\n            this.toolStripButtonEdit.Tex" +
+                    "t = \"Update\";\r\n            // \r\n            // toolStripButtonDelete\r\n          " +
+                    "  // \r\n            this.toolStripButtonDelete.DisplayStyle = System.Windows.Form" +
+                    "s.ToolStripItemDisplayStyle.Text;\r\n            this.toolStripButtonDelete.ImageT" +
+                    "ransparentColor = System.Drawing.Color.Magenta;\r\n            this.toolStripButto" +
+                    "nDelete.Name = \"toolStripButtonDelete\";\r\n            this.toolStripButtonDelete." +
+                    "Size = new System.Drawing.Size(57, 24);\r\n            this.toolStripButtonDelete." +
+                    "Text = \"Delete\";\r\n            // \r\n            // ViewDataFrom\r\n            // \r" +
+                    "\n            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);\r\n    " +
+                    "        this.ClientSize = new System.Drawing.Size(1067, 519);\r\n            this." +
+                    "Controls.Add(this.toolStrip1);\r\n            this.Controls.Add(this.dataGridView1" +
+                    ");\r\n            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);\r\n   " +
+                    "         this.Name = \"ViewDataFrom\";\r\n            this.Text = \"Dashboard\";\r\n    " +
+                    "        this.Load += new System.EventHandler(this.ViewDataFrom_Load);\r\n         " +
+                    "   ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();\r\n" +
+                    "            this.contextMenuStripDataGrid.ResumeLayout(false);\r\n            this" +
+                    ".toolStrip1.ResumeLayout(false);\r\n            this.toolStrip1.PerformLayout();\r\n" +
+                    "            this.ResumeLayout(false);\r\n            this.PerformLayout();\r\n\r\n    " +
+                    "    }\r\n\r\n        #endregion\r\n        private System.Windows.Forms.ToolStrip tool" +
+                    "Strip1;\r\n        private System.Windows.Forms.ToolStripButton toolStripButtonNew" +
+                    ";\r\n        private System.Windows.Forms.ToolStripButton toolStripButtonEdit;\r\n  " +
+                    "      private System.Windows.Forms.ToolStripButton toolStripButtonDelete;\r\n     " +
+                    "   private System.Windows.Forms.ContextMenuStrip contextMenuStripDataGrid;\r\n    " +
+                    "    private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;\r\n     " +
+                    "   private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;\r\n    " +
+                    "    protected System.Windows.Forms.DataGridView dataGridView1;\r\n    }\r\n}\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

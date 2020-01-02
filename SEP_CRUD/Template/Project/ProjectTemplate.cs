@@ -19,7 +19,7 @@ namespace SEP_CRUD.Template.Project
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Project\ProjectTemplate.tt"
+    #line 1 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Project\ProjectTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ProjectTemplate : ProjectTemplateBase
     {
@@ -37,21 +37,21 @@ namespace SEP_CRUD.Template.Project
     <Platform Condition="" '$(Platform)' == '' "">AnyCPU</Platform>
     <ProjectGuid>{");
             
-            #line 13 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Project\ProjectTemplate.tt"
+            #line 13 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Project\ProjectTemplate.tt"
  Write(generator.Guid); 
             
             #line default
             #line hidden
             this.Write("}</ProjectGuid>\r\n    <OutputType>WinExe</OutputType>\r\n    <RootNamespace>");
             
-            #line 15 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Project\ProjectTemplate.tt"
+            #line 15 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Project\ProjectTemplate.tt"
  Write(generator.Name); 
             
             #line default
             #line hidden
             this.Write("</RootNamespace>\r\n    <AssemblyName>");
             
-            #line 16 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Project\ProjectTemplate.tt"
+            #line 16 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Project\ProjectTemplate.tt"
  Write(generator.Name); 
             
             #line default
@@ -77,34 +77,16 @@ namespace SEP_CRUD.Template.Project
                     " <Reference Include=\"System.Data\" />\r\n    <Reference Include=\"System.Deployment\"" +
                     " />\r\n    <Reference Include=\"System.Drawing\" />\r\n    <Reference Include=\"System." +
                     "Windows.Forms\" />\r\n    <Reference Include=\"System.Xml\" />\r\n  </ItemGroup>\r\n  <It" +
-                    "emGroup>\r\n  ");
+                    "emGroup>\r\n");
             
-            #line 57 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Project\ProjectTemplate.tt"
+            #line 57 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Project\ProjectTemplate.tt"
 
 	List<string> list = GetCompileItems();
 	int count = list.Count;
 	for(int i= 0;i<count; i++) {
 		WriteLine(list[i]);
 	}
-	  /*<Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-	*/
-	
+
             
             #line default
             #line hidden

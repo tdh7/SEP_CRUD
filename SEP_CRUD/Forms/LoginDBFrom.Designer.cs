@@ -34,13 +34,14 @@
             System.Windows.Forms.Label label3;
             this.comboBoxServerList = new System.Windows.Forms.ComboBox();
             this.loginInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textBoxLogin = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.buttonConnect = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxDBName = new System.Windows.Forms.ComboBox();
             this.buttonTestConnection = new System.Windows.Forms.Button();
+            this.linkLabelReset = new System.Windows.Forms.LinkLabel();
+            this.textBoxLogin = new System.Windows.Forms.TextBox();
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -87,15 +88,6 @@
             this.comboBoxServerList.Size = new System.Drawing.Size(222, 21);
             this.comboBoxServerList.TabIndex = 1;
             this.comboBoxServerList.DropDown += new System.EventHandler(this.comboBoxServerList_DropDown);
-            // 
-            // textBoxLogin
-            // 
-            this.textBoxLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxLogin.Location = new System.Drawing.Point(145, 69);
-            this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(222, 20);
-            this.textBoxLogin.TabIndex = 2;
             // 
             // textBoxPassword
             // 
@@ -157,11 +149,32 @@
             this.buttonTestConnection.UseVisualStyleBackColor = true;
             this.buttonTestConnection.Click += new System.EventHandler(this.buttonTestConnection_Click);
             // 
+            // linkLabelReset
+            // 
+            this.linkLabelReset.AutoSize = true;
+            this.linkLabelReset.Location = new System.Drawing.Point(332, 175);
+            this.linkLabelReset.Name = "linkLabelReset";
+            this.linkLabelReset.Size = new System.Drawing.Size(35, 13);
+            this.linkLabelReset.TabIndex = 9;
+            this.linkLabelReset.TabStop = true;
+            this.linkLabelReset.Text = "Reset";
+            this.linkLabelReset.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelReset_LinkClicked);
+            // 
+            // textBoxLogin
+            // 
+            this.textBoxLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxLogin.Location = new System.Drawing.Point(145, 69);
+            this.textBoxLogin.Name = "textBoxLogin";
+            this.textBoxLogin.Size = new System.Drawing.Size(222, 20);
+            this.textBoxLogin.TabIndex = 2;
+            // 
             // LoginDBFrom
             // 
             this.AcceptButton = this.buttonConnect;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(396, 244);
+            this.Controls.Add(this.linkLabelReset);
             this.Controls.Add(this.buttonTestConnection);
             this.Controls.Add(this.comboBoxDBName);
             this.Controls.Add(this.label4);
@@ -177,7 +190,8 @@
             this.MinimizeBox = false;
             this.Name = "LoginDBFrom";
             this.Text = "Login to DB Server";
-            this.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginDBFrom_FormClosing);
+            this.Load += new System.EventHandler(this.LoginDBFrom_Load);
             ((System.ComponentModel.ISupportInitialize)(this.loginInfoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -195,5 +209,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBoxDBName;
         private System.Windows.Forms.Button buttonTestConnection;
+        private System.Windows.Forms.LinkLabel linkLabelReset;
     }
 }

@@ -15,17 +15,11 @@ namespace SEP_CRUD.Forms
             InitializeComponent();
         }
 
-        private const int WS_SYSMENU = 0x80000;
+        public Action CloseAction { private get; set; }
 
-        protected override CreateParams CreateParams
+        private void WaitingForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            get
-            {
-                CreateParams cp = base.CreateParams;
-                cp.Style &= ~ WS_SYSMENU;
-                return cp;
-            }
-
+            CloseAction?.Invoke();
         }
     }
 }

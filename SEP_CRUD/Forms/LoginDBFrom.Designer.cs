@@ -42,6 +42,7 @@
             this.buttonTestConnection = new System.Windows.Forms.Button();
             this.linkLabelReset = new System.Windows.Forms.LinkLabel();
             this.textBoxLogin = new System.Windows.Forms.TextBox();
+            this.textBoxServerName = new System.Windows.Forms.TextBox();
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -87,6 +88,7 @@
             this.comboBoxServerList.Name = "comboBoxServerList";
             this.comboBoxServerList.Size = new System.Drawing.Size(222, 21);
             this.comboBoxServerList.TabIndex = 1;
+            this.comboBoxServerList.Visible = false;
             this.comboBoxServerList.DropDown += new System.EventHandler(this.comboBoxServerList_DropDown);
             // 
             // textBoxPassword
@@ -169,11 +171,19 @@
             this.textBoxLogin.Size = new System.Drawing.Size(222, 20);
             this.textBoxLogin.TabIndex = 2;
             // 
+            // textBoxServerName
+            // 
+            this.textBoxServerName.Location = new System.Drawing.Point(145, 42);
+            this.textBoxServerName.Name = "textBoxServerName";
+            this.textBoxServerName.Size = new System.Drawing.Size(222, 20);
+            this.textBoxServerName.TabIndex = 10;
+            // 
             // LoginDBFrom
             // 
             this.AcceptButton = this.buttonConnect;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(396, 244);
+            this.Controls.Add(this.textBoxServerName);
             this.Controls.Add(this.linkLabelReset);
             this.Controls.Add(this.buttonTestConnection);
             this.Controls.Add(this.comboBoxDBName);
@@ -210,5 +220,6 @@
         private System.Windows.Forms.ComboBox comboBoxDBName;
         private System.Windows.Forms.Button buttonTestConnection;
         private System.Windows.Forms.LinkLabel linkLabelReset;
+        private System.Windows.Forms.TextBox textBoxServerName;
     }
 }

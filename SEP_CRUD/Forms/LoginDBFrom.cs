@@ -27,6 +27,7 @@ namespace SEP_CRUD.Forms
             // binding ui control to SqlConnectionStringBuilder
             loginInfoBindingSource.DataSource = new SqlConnectionStringBuilder();
             comboBoxServerList.DataBindings.Add("SelectedItem", loginInfoBindingSource, "DataSource",true,DataSourceUpdateMode.OnValidation);
+            textBoxServerName.DataBindings.Add("Text", loginInfoBindingSource, "DataSource", true, DataSourceUpdateMode.OnValidation);
             textBoxLogin.DataBindings.Add("Text", loginInfoBindingSource, "UserID", true, DataSourceUpdateMode.OnValidation);
             textBoxPassword.DataBindings.Add("Text", loginInfoBindingSource, "Password", true, DataSourceUpdateMode.OnValidation);
             comboBoxDBName.DataBindings.Add("SelectedItem", loginInfoBindingSource, "InitialCatalog", true, DataSourceUpdateMode.OnValidation);
@@ -228,6 +229,7 @@ namespace SEP_CRUD.Forms
         {
             Settings.Default.Reload();
             DbInstanceList.Add(Settings.Default.ServerName);
+            textBoxServerName.Text = Settings.Default.ServerName;
             DBNameList.Add(Settings.Default.DatabaseName);
             textBoxLogin.Text = Settings.Default.UserName;
             textBoxPassword.Text = Settings.Default.Password;

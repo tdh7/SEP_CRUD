@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Windows.Forms;
 
 namespace DemoGeneratedProject.Forms
 {
@@ -19,9 +15,9 @@ namespace DemoGeneratedProject.Forms
             InitializeComponent();
         }
 
-        private void OnLoginSuccessHandler(object sender, string e)
+        private void OnLoginSuccess()
         {
-            this.connectionStr = e;
+            this.connectionStr = "";
 
             listBoxDBTableName.DataSource = getTableName();
             listBoxDBTableName.DisplayMember = "TABLE_NAME";
@@ -47,27 +43,52 @@ namespace DemoGeneratedProject.Forms
 
         private void buttonViewTable_Click(object sender, EventArgs e)
         {
-            string tableName = (string) listBoxDBTableName.SelectedValue;
+            ShowSelectedTable();
+        }
 
-            ViewSinhVienForm form = new ViewSinhVienForm();
-            form.Show();
+        private void ShowSelectedTable()
+        {
+            string tableName = null;
+            try
+            {
+                tableName = (string)listBoxDBTableName.SelectedValue;
+            }
+            catch (Exception) { }
+
+            if(tableName!=null)
+            {
+                ViewSinhVienForm form = new ViewSinhVienForm();
+                form.Show();
+            }
         }
 
         private void SelectDBTableForm_Shown(object sender, EventArgs e)
         {
+            new TableListForm().Show();
             OpenLoginForm();
         }
 
         private void OpenLoginForm()
         {
             LoginForm form = new LoginForm();
-            form.OnLoginSuccessHandler = OnLoginSuccessHandler;
+            form.LoginResultHandler = OnLoginResult;
+            Hide();
             form.ShowDialog(); // Force user focus on login form
+        }
+
+        private void OnLoginResult(object sender, bool e)
+        {
+            this.Show();
         }
 
         private void toolStripButtonConnect_Click(object sender, EventArgs e)
         {
               OpenLoginForm();
+        }
+
+        private void listBoxDBTableName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            buttonViewTable_Click(sender, e);
         }
     }
 }

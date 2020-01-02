@@ -18,7 +18,7 @@ namespace SEP_CRUD.Template.Form
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\FormTemplate.tt"
+    #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\FormTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class FormTemplate : FormTemplateBase
     {
@@ -30,21 +30,21 @@ namespace SEP_CRUD.Template.Form
         {
             this.Write("using System;\r\nusing System.Windows.Forms;\r\n\r\nnamespace ");
             
-            #line 9 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\FormTemplate.tt"
+            #line 9 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\FormTemplate.tt"
  Write(generator.Namespace); 
             
             #line default
             #line hidden
             this.Write("{\r\n    public partial class ");
             
-            #line 11 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\FormTemplate.tt"
+            #line 11 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\FormTemplate.tt"
  Write(generator.Name); 
             
             #line default
             #line hidden
             this.Write(" : Form\r\n    {\r\n        public ");
             
-            #line 13 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\FormTemplate.tt"
+            #line 13 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\FormTemplate.tt"
  Write(generator.Name); 
             
             #line default

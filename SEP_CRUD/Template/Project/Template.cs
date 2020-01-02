@@ -1,4 +1,5 @@
 ﻿using SEP_CRUD.Generator.Base;
+using SEP_CRUD.Generator.Form;
 using SEP_CRUD.Generator.Project;
 using System;
 using System.Collections.Generic;
@@ -54,11 +55,11 @@ namespace SEP_CRUD.Template.Project
             if (f is FormGenerator)
             {
                 list.Add(string.Format(@"<Compile Include=""{0}"">
-      <SubType>Form</SubType>
+      <SubType>{3}</SubType>
     </Compile>
     <Compile Include = ""{1}"" >
       <DependentUpon>{2}</DependentUpon>
-    </Compile> ", NormalizeRelativeFilePath(f), NormalizeRelativeFilePath(f.GetItem(0)), f.GetFileName()));
+    </Compile> ", NormalizeRelativeFilePath(f), NormalizeRelativeFilePath(f.GetItem(0)), f.GetFileName(),((FormGenerator)f).SubType));
             }
             else if (f is ClassGenerator)
             {

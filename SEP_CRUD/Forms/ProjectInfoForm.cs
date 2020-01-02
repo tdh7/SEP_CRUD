@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using SEP_CRUD.Entities;
 using SEP_CRUD.Entities.Loader;
 using SEP_CRUD.Generator.Base;
+using SEP_CRUD.Generator.Dao;
 using SEP_CRUD.Generator.Form;
 using SEP_CRUD.Generator.Model;
 using SEP_CRUD.Generator.Project;
@@ -156,7 +157,8 @@ namespace SEP_CRUD.Forms
             project.Add(new LoginFormGenerator(project, builder.InitialCatalog));
             project.Add(new WaitingFormGenerator(project));
             project.Add(new ViewFormFactoryGenerator(project, listTable));
-            project.AddAsStartupForm(new SelectTableFormGenerator(project));
+            //project.AddAsStartupForm(new SelectTableFormGenerator(project));
+            project.AddAsStartupForm(new TableListGenerator(project));
 
             // generate model for all tables
             foreach(var t in entities.Tables)
@@ -174,6 +176,7 @@ namespace SEP_CRUD.Forms
                 project.Add(new ViewFormGenerator(project, table));
                 project.Add(new ModelDAOGenerator(project, table));
             }
+            project.Add(new MustHaveDaoClassesGenerator(project));
 
             solutionGenerator.Add(project);
             Result result = solutionGenerator.ExportToFiles(projectInfo.SolutionPath);

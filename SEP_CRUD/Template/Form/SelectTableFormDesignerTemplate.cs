@@ -18,9 +18,9 @@ namespace SEP_CRUD.Template.Form
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\SelectTableFormDesignerTemplate.tt"
+    #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\SelectTableFormDesignerTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public partial class SelectTableFormDesignerTemplate : SharedFormDesignerGenerator
+    public partial class SelectTableFormDesignerTemplate : SharedFormDesignerTemplate
     {
 #line hidden
         /// <summary>
@@ -30,7 +30,7 @@ namespace SEP_CRUD.Template.Form
         {
             this.Write("namespace ");
             
-            #line 6 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\SelectTableFormDesignerTemplate.tt"
+            #line 6 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\SelectTableFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Generator.Namespace));
             
             #line default
@@ -52,55 +52,66 @@ namespace SEP_CRUD.Template.Form
                     "em.Windows.Forms.ToolStrip();\r\n            this.toolStripButtonConnect = new Sys" +
                     "tem.Windows.Forms.ToolStripButton();\r\n            this.toolStrip1.SuspendLayout(" +
                     ");\r\n            this.SuspendLayout();\r\n            // \r\n            // listBoxDB" +
-                    "TableName\r\n            // \r\n            this.listBoxDBTableName.Anchor = ((Syste" +
-                    "m.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System." +
-                    "Windows.Forms.AnchorStyles.Bottom) \r\n            | System.Windows.Forms.AnchorSt" +
-                    "yles.Left) \r\n            | System.Windows.Forms.AnchorStyles.Right)));\r\n        " +
-                    "    this.listBoxDBTableName.FormattingEnabled = true;\r\n            this.listBoxD" +
-                    "BTableName.Location = new System.Drawing.Point(12, 74);\r\n            this.listBo" +
-                    "xDBTableName.Name = \"listBoxDBTableName\";\r\n            this.listBoxDBTableName.S" +
-                    "ize = new System.Drawing.Size(312, 420);\r\n            this.listBoxDBTableName.Ta" +
-                    "bIndex = 1;\r\n            // \r\n            // buttonViewTable\r\n            // \r\n " +
-                    "           this.buttonViewTable.Anchor = ((System.Windows.Forms.AnchorStyles)(((" +
-                    "System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom" +
-                    ") \r\n            | System.Windows.Forms.AnchorStyles.Right)));\r\n            this." +
-                    "buttonViewTable.Enabled = false;\r\n            this.buttonViewTable.Location = ne" +
-                    "w System.Drawing.Point(249, 26);\r\n            this.buttonViewTable.Name = \"butto" +
-                    "nViewTable\";\r\n            this.buttonViewTable.Size = new System.Drawing.Size(75" +
-                    ", 22);\r\n            this.buttonViewTable.TabIndex = 2;\r\n            this.buttonV" +
-                    "iewTable.Text = \"View Table\";\r\n            this.buttonViewTable.UseVisualStyleBa" +
-                    "ckColor = true;\r\n            this.buttonViewTable.Click += new System.EventHandl" +
-                    "er(this.buttonViewTable_Click);\r\n            // \r\n            // toolStrip1\r\n   " +
-                    "         // \r\n            this.toolStrip1.Items.AddRange(new System.Windows.Form" +
-                    "s.ToolStripItem[] {\r\n            this.toolStripButtonConnect});\r\n            thi" +
-                    "s.toolStrip1.Location = new System.Drawing.Point(0, 0);\r\n            this.toolSt" +
-                    "rip1.Name = \"toolStrip1\";\r\n            this.toolStrip1.Size = new System.Drawing" +
-                    ".Size(336, 25);\r\n            this.toolStrip1.TabIndex = 3;\r\n            this.too" +
-                    "lStrip1.Text = \"toolStrip1\";\r\n            // \r\n            // toolStripButtonCon" +
-                    "nect\r\n            // \r\n            this.toolStripButtonConnect.DisplayStyle = Sy" +
-                    "stem.Windows.Forms.ToolStripItemDisplayStyle.Text;\r\n            //this.toolStrip" +
-                    "ButtonConnect.Image = global::DemoGeneratedProject.Properties.Resources.Connect_" +
-                    "16x;\r\n            this.toolStripButtonConnect.ImageTransparentColor = System.Dra" +
-                    "wing.Color.Magenta;\r\n            this.toolStripButtonConnect.Name = \"toolStripBu" +
-                    "ttonConnect\";\r\n            this.toolStripButtonConnect.Size = new System.Drawing" +
-                    ".Size(123, 22);\r\n            this.toolStripButtonConnect.Text = \"Connect to DB S" +
-                    "erver\";\r\n            this.toolStripButtonConnect.Click += new System.EventHandle" +
-                    "r(this.toolStripButtonConnect_Click);\r\n            // \r\n            // SelectDBT" +
-                    "ableForm\r\n            // \r\n            this.AcceptButton = this.buttonViewTable;" +
-                    "\r\n            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);\r\n   " +
-                    "         this.ClientSize = new System.Drawing.Size(336, 506);\r\n            this." +
-                    "Controls.Add(this.toolStrip1);\r\n            this.Controls.Add(this.buttonViewTab" +
-                    "le);\r\n            this.Controls.Add(this.listBoxDBTableName);\r\n            this." +
-                    "Location = new System.Drawing.Point(0, 0);\r\n            this.Name = \"SelectDBTab" +
-                    "leForm\";\r\n            this.Text = \"Select Table\";\r\n            this.WindowState " +
-                    "= System.Windows.Forms.FormWindowState.Normal;\r\n            this.Shown += new Sy" +
-                    "stem.EventHandler(this.SelectDBTableForm_Shown);\r\n            this.toolStrip1.Re" +
-                    "sumeLayout(false);\r\n            this.toolStrip1.PerformLayout();\r\n            th" +
-                    "is.ResumeLayout(false);\r\n            this.PerformLayout();\r\n\r\n        }\r\n\r\n     " +
-                    "   #endregion\r\n\r\n        private System.Windows.Forms.ListBox listBoxDBTableName" +
-                    ";\r\n        private System.Windows.Forms.Button buttonViewTable;\r\n        private" +
-                    " System.Windows.Forms.ToolStrip toolStrip1;\r\n        private System.Windows.Form" +
-                    "s.ToolStripButton toolStripButtonConnect;\r\n    }\r\n}\r\n\r\n");
+                    "TableName\r\n            // \r\n            this.listBoxDBTableName.BorderStyle = Sy" +
+                    "stem.Windows.Forms.BorderStyle.None;\r\n            this.listBoxDBTableName.Format" +
+                    "tingEnabled = true;\r\n            this.listBoxDBTableName.ItemHeight = 16;\r\n     " +
+                    "       this.listBoxDBTableName.Location = new System.Drawing.Point(0, 43);\r\n    " +
+                    "        this.listBoxDBTableName.Margin = new System.Windows.Forms.Padding(4, 4, " +
+                    "4, 4);\r\n            this.listBoxDBTableName.Name = \"listBoxDBTableName\";\r\n      " +
+                    "      this.listBoxDBTableName.Size = new System.Drawing.Size(431, 512);\r\n       " +
+                    "     this.listBoxDBTableName.TabIndex = 1;\r\n            // \r\n            // butt" +
+                    "onViewTable\r\n            // \r\n            this.buttonViewTable.Anchor = ((System" +
+                    ".Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Wi" +
+                    "ndows.Forms.AnchorStyles.Bottom) \r\n            | System.Windows.Forms.AnchorStyl" +
+                    "es.Right)));\r\n            this.buttonViewTable.BackColor = System.Drawing.Color." +
+                    "White;\r\n            this.buttonViewTable.Enabled = false;\r\n            this.butt" +
+                    "onViewTable.Font = new System.Drawing.Font(\"Microsoft Sans Serif\", 11.25F, Syste" +
+                    "m.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));\r\n " +
+                    "           this.buttonViewTable.ForeColor = System.Drawing.Color.Black;\r\n       " +
+                    "     this.buttonViewTable.Location = new System.Drawing.Point(129, 574);\r\n      " +
+                    "      this.buttonViewTable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4)" +
+                    ";\r\n            this.buttonViewTable.Name = \"buttonViewTable\";\r\n            this." +
+                    "buttonViewTable.Size = new System.Drawing.Size(155, 48);\r\n            this.butto" +
+                    "nViewTable.TabIndex = 2;\r\n            this.buttonViewTable.Text = \"View Table\";\r" +
+                    "\n            this.buttonViewTable.UseVisualStyleBackColor = false;\r\n            " +
+                    "this.buttonViewTable.Click += new System.EventHandler(this.buttonViewTable_Click" +
+                    ");\r\n            // \r\n            // toolStrip1\r\n            // \r\n            thi" +
+                    "s.toolStrip1.BackColor = System.Drawing.Color.White;\r\n            this.toolStrip" +
+                    "1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;\r\n            th" +
+                    "is.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);\r\n            t" +
+                    "his.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {\r\n      " +
+                    "      this.toolStripButtonConnect});\r\n            this.toolStrip1.Location = new" +
+                    " System.Drawing.Point(0, 0);\r\n            this.toolStrip1.Name = \"toolStrip1\";\r\n" +
+                    "            this.toolStrip1.Size = new System.Drawing.Size(430, 44);\r\n          " +
+                    "  this.toolStrip1.TabIndex = 3;\r\n            this.toolStrip1.Text = \"toolStrip1\"" +
+                    ";\r\n            // \r\n            // toolStripButtonConnect\r\n            // \r\n    " +
+                    "        this.toolStripButtonConnect.DisplayStyle = System.Windows.Forms.ToolStri" +
+                    "pItemDisplayStyle.Text;\r\n            this.toolStripButtonConnect.Font = new Syst" +
+                    "em.Drawing.Font(\"Segoe UI\", 16F);\r\n            this.toolStripButtonConnect.Image" +
+                    "TransparentColor = System.Drawing.Color.Magenta;\r\n            this.toolStripButt" +
+                    "onConnect.Name = \"toolStripButtonConnect\";\r\n            this.toolStripButtonConn" +
+                    "ect.Size = new System.Drawing.Size(349, 41);\r\n            this.toolStripButtonCo" +
+                    "nnect.Text = \"Connect to Database Server\";\r\n            this.toolStripButtonConn" +
+                    "ect.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;\r" +
+                    "\n            this.toolStripButtonConnect.Click += new System.EventHandler(this.t" +
+                    "oolStripButtonConnect_Click);\r\n            // \r\n            // SelectTableForm\r\n" +
+                    "            // \r\n            this.AcceptButton = this.buttonViewTable;\r\n        " +
+                    "    this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);\r\n            t" +
+                    "his.BackColor = System.Drawing.Color.White;\r\n            this.ClientSize = new S" +
+                    "ystem.Drawing.Size(430, 635);\r\n            this.Controls.Add(this.toolStrip1);\r\n" +
+                    "            this.Controls.Add(this.buttonViewTable);\r\n            this.Controls." +
+                    "Add(this.listBoxDBTableName);\r\n            this.Margin = new System.Windows.Form" +
+                    "s.Padding(5, 5, 5, 5);\r\n            this.MaximumSize = new System.Drawing.Size(4" +
+                    "48, 682);\r\n            this.MinimumSize = new System.Drawing.Size(448, 682);\r\n  " +
+                    "          this.Name = \"SelectTableForm\";\r\n            this.ShowIcon = false;\r\n  " +
+                    "          this.Text = \"Dashboard\";\r\n            this.Shown += new System.EventHa" +
+                    "ndler(this.SelectDBTableForm_Shown);\r\n            this.toolStrip1.ResumeLayout(f" +
+                    "alse);\r\n            this.toolStrip1.PerformLayout();\r\n            this.ResumeLay" +
+                    "out(false);\r\n            this.PerformLayout();\r\n\r\n        }\r\n\r\n        #endregio" +
+                    "n\r\n\r\n        private System.Windows.Forms.ListBox listBoxDBTableName;\r\n        p" +
+                    "rivate System.Windows.Forms.Button buttonViewTable;\r\n        private System.Wind" +
+                    "ows.Forms.ToolStrip toolStrip1;\r\n        private System.Windows.Forms.ToolStripB" +
+                    "utton toolStripButtonConnect;\r\n    }\r\n}\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

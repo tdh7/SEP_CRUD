@@ -18,9 +18,9 @@ namespace SEP_CRUD.Template.Form
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\LoginFormTemplate.tt"
+    #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\LoginFormTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public partial class LoginFormTemplate : SharedFormGenerator
+    public partial class LoginFormTemplate : SharedFormTemplate
     {
 #line hidden
         /// <summary>
@@ -30,85 +30,87 @@ namespace SEP_CRUD.Template.Form
         {
             this.Write("using System;\r\nusing System.Collections;\r\nusing System.Collections.Generic;\r\nusin" +
                     "g System.Data;\r\nusing System.Data.Sql;\r\nusing System.ComponentModel;\r\nusing Syst" +
-                    "em.Data.SqlClient;\r\nusing System.Windows.Forms;\r\n\r\nnamespace ");
+                    "em.Data.SqlClient;\r\nusing System.Windows.Forms;\r\nusing ");
             
-            #line 15 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\LoginFormTemplate.tt"
+            #line 14 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\LoginFormTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Generator.ProjectOwner.Name));
+            
+            #line default
+            #line hidden
+            this.Write(".DAO;\r\n\r\nnamespace ");
+            
+            #line 16 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\LoginFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Generator.Namespace));
             
             #line default
             #line hidden
-            this.Write(@"
-{
-    public partial class LoginForm : BaseForm
-    {
-        private WaitingForm waitForm = new WaitingForm();
-        private IList<string> DbInstanceList = new List<string>();
-        private DataTable DBNameTable;
-
-        public EventHandler<string> OnLoginSuccessHandler;
-
-        public LoginForm()
-        {
-            InitializeComponent();
-
-            // binding ui control to SqlConnectionStringBuilder
-            loginInfoBindingSource.DataSource = new SqlConnectionStringBuilder();
-            comboBoxServerList.DataBindings.Add(""Text"", loginInfoBindingSource, ""DataSource"");
-            textBoxLogin.DataBindings.Add(""Text"", loginInfoBindingSource, ""UserID"");
-            textBoxPassword.DataBindings.Add(""Text"", loginInfoBindingSource, ""Password"");
-        }
-
-        #region All control event
-        private void comboBoxServerList_DropDown(object sender, EventArgs e)
-        {
-            RetrieveAllDbInstanceIfEmpty();
-        }
-
-        private void buttonConnect_Click(object sender, EventArgs e)
-        {
-            var connectionStringBuilder = loginInfoBindingSource.Current as SqlConnectionStringBuilder;
-            connectionStringBuilder.InitialCatalog = """);
-            
-            #line 45 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\LoginFormTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(DBName));
-            
-            #line default
-            #line hidden
-            this.Write("\";\r\n            if (TestDBConnection(connectionStringBuilder))\r\n            {\r\n  " +
-                    "              var connectionString = connectionStringBuilder.ConnectionString;\r\n" +
-                    "                OnLoginSuccessHandler?.Invoke(this, connectionString);\r\n        " +
-                    "        this.Close();\r\n            }\r\n            else\r\n            {\r\n         " +
-                    "       MessageBox.Show(\"Connection failed\");\r\n            }\r\n\r\n        }\r\n\r\n    " +
-                    "    private void buttonCancel_Click(object sender, EventArgs e)\r\n        {\r\n    " +
-                    "        this.Close();\r\n        }\r\n\r\n        #endregion\r\n\r\n        private void R" +
-                    "etrieveAllDbInstanceIfEmpty()\r\n        {\r\n            if (DbInstanceList.Count =" +
-                    "= 0)\r\n            {\r\n                BackgroundWorker bgWorker = new BackgroundW" +
-                    "orker();\r\n                bgWorker.DoWork += BgWorker_RetrieveDbInstance;\r\n     " +
-                    "           bgWorker.RunWorkerCompleted += BgWorker_RetrieveDbInstanceCompleted;\r" +
-                    "\n                bgWorker.RunWorkerAsync();\r\n                waitForm.ShowDialog" +
-                    "();\r\n            }\r\n        }\r\n\r\n        private void BgWorker_RetrieveDbInstanc" +
-                    "eCompleted(object sender, RunWorkerCompletedEventArgs e)\r\n        {\r\n           " +
-                    " waitForm.Close();\r\n\r\n            DataTable dbInstanceTable = e.Result as DataTa" +
-                    "ble;\r\n            ConvertTableToList(dbInstanceTable, DbInstanceList);\r\n        " +
-                    "    InitComboboxServerList();\r\n        }\r\n\r\n        private void BgWorker_Retrie" +
-                    "veDbInstance(object sender, DoWorkEventArgs e)\r\n        {\r\n            SqlDataSo" +
-                    "urceEnumerator instance = SqlDataSourceEnumerator.Instance;\r\n            DataTab" +
-                    "le table = instance.GetDataSources();\r\n            e.Result = table;\r\n        }\r" +
-                    "\n\r\n        private bool TestDBConnection(SqlConnectionStringBuilder builder)\r\n  " +
-                    "      {\r\n            bool connectable = true;\r\n            try\r\n            {\r\n " +
-                    "               var connectionString = builder.ConnectionString;\r\n               " +
-                    " using (SqlConnection connection = new SqlConnection(connectionString))\r\n       " +
-                    "         {\r\n                    connection.Open();\r\n                }\r\n         " +
-                    "   }\r\n            catch (Exception e)\r\n            {\r\n                Console.Wr" +
-                    "iteLine(e);\r\n                connectable = false;\r\n            }\r\n\r\n            " +
-                    "return connectable;\r\n        }\r\n\r\n        private void ConvertTableToList(DataTa" +
-                    "ble dbInstanceTable, IList<string> serverInstances)\r\n        {\r\n            if (" +
-                    "dbInstanceTable == null)\r\n                return;\r\n\r\n            foreach (DataRo" +
-                    "w row in dbInstanceTable.Rows)\r\n            {\r\n                serverInstances.A" +
-                    "dd($@\"{row[\"ServerName\"]}\\{row[\"InstanceName\"]}\");\r\n            }\r\n        }\r\n\r\n" +
-                    "        private void InitComboboxServerList()\r\n        {\r\n            comboBoxSe" +
-                    "rverList.DataSource = DbInstanceList;\r\n            comboBoxServerList.SelectedIn" +
-                    "dex = -1;\r\n        }\r\n    }\r\n}\r\n");
+            this.Write("\r\n{\r\n    public partial class LoginForm : BaseForm\r\n    {\r\n        private Waitin" +
+                    "gForm waitForm = new WaitingForm();\r\n        private IList<string> DbInstanceLis" +
+                    "t = new List<string>();\r\n        private DataTable DBNameTable;\r\n\r\n        publi" +
+                    "c EventHandler<bool> LoginResultHandler;\r\n\r\n        public LoginForm()\r\n        " +
+                    "{\r\n            InitializeComponent();\r\n\r\n            // binding ui control to Sq" +
+                    "lConnectionStringBuilder\r\n            SqlConnectionStringBuilder builder = new S" +
+                    "qlConnectionStringBuilder();\r\n       \r\n\r\n            loginInfoBindingSource.Data" +
+                    "Source = builder;\r\n            comboBoxServerList.DataBindings.Add(\"Text\", login" +
+                    "InfoBindingSource, \"DataSource\");\r\n            textBoxLogin.DataBindings.Add(\"Te" +
+                    "xt\", loginInfoBindingSource, \"UserID\");\r\n            textBoxPassword.DataBinding" +
+                    "s.Add(\"Text\", loginInfoBindingSource, \"Password\");\r\n\r\n            builder.DataSo" +
+                    "urce = DatabaseLoader.Instance.DataSource;\r\n            builder.UserID = Databas" +
+                    "eLoader.Instance.Username;\r\n            builder.Password = DatabaseLoader.Instan" +
+                    "ce.Password;\r\n            builder.InitialCatalog = DatabaseLoader.Instance.Datab" +
+                    "aseName;\r\n        }\r\n\r\n        #region All control event\r\n        private void c" +
+                    "omboBoxServerList_DropDown(object sender, EventArgs e)\r\n        {\r\n            R" +
+                    "etrieveAllDbInstanceIfEmpty();\r\n        }\r\n\r\n        private bool result = false" +
+                    ";\r\n\r\n        private void buttonConnect_Click(object sender, EventArgs e)\r\n     " +
+                    "   {\r\n            var connectionStringBuilder = loginInfoBindingSource.Current a" +
+                    "s SqlConnectionStringBuilder;\r\n            Result r = Connect(connectionStringBu" +
+                    "ilder);\r\n            if (r.OK)\r\n            {\r\n                var connectionStr" +
+                    "ing = connectionStringBuilder.ConnectionString;\r\n                \r\n             " +
+                    "   result = true;\r\n                this.Close();\r\n            }\r\n            els" +
+                    "e\r\n            {\r\n                result = false;\r\n                MessageBox.Sh" +
+                    "ow(r.Message, \"Connection failed\");\r\n            }\r\n\r\n        }\r\n\r\n        priva" +
+                    "te void buttonCancel_Click(object sender, EventArgs e)\r\n        {\r\n            t" +
+                    "his.Close();\r\n        }\r\n\r\n        #endregion\r\n\r\n\t\tprivate void RetrieveAllDbIns" +
+                    "tanceIfEmpty()\r\n        {\r\n            if (DbInstanceList.Count == 0)\r\n         " +
+                    "   {\r\n                BackgroundWorker bgWorker = new BackgroundWorker();\r\n     " +
+                    "           bgWorker.DoWork += BgWorker_RetrieveDbInstance;\r\n                bgWo" +
+                    "rker.RunWorkerCompleted += BgWorker_RetrieveDbInstanceCompleted;\r\n              " +
+                    "  bgWorker.RunWorkerAsync();\r\n                waitForm.ShowDialog();\r\n          " +
+                    "  }\r\n        }\r\n\r\n         private void BgWorker_RetrieveDbInstanceCompleted(obj" +
+                    "ect sender, RunWorkerCompletedEventArgs e)\r\n        {\r\n            waitForm.Clos" +
+                    "e();\r\n\r\n            DataTable dbInstanceTable = e.Result as DataTable;\r\n        " +
+                    "    ConvertTableToList(dbInstanceTable, DbInstanceList);\r\n            InitCombob" +
+                    "oxServerList();\r\n        }\r\n\r\n        private void BgWorker_RetrieveDbInstance(o" +
+                    "bject sender, DoWorkEventArgs e)\r\n        {\r\n            SqlDataSourceEnumerator" +
+                    " instance = SqlDataSourceEnumerator.Instance;\r\n            DataTable table = ins" +
+                    "tance.GetDataSources();\r\n            e.Result = table;\r\n        }\r\n\r\n        pri" +
+                    "vate Result Connect(SqlConnectionStringBuilder builder)\r\n        {\r\n            " +
+                    "DatabaseLoader loader = DatabaseLoader.Instance;\r\n            Result r = Result." +
+                    "Create(true);\r\n            try\r\n            {\r\n                loader.DataSource" +
+                    " = builder.DataSource;\r\n                loader.Username = builder.UserID;\r\n     " +
+                    "           loader.Password = builder.Password;\r\n                r = loader.Conne" +
+                    "ct();\r\n            }\r\n            catch (Exception e)\r\n            {\r\n          " +
+                    "      r = Result.Create(\"Failed with message\\\"\" + e.Message + \"\\\"\");\r\n          " +
+                    "  }\r\n\r\n            if (r.OK) r = DatabaseMatching();\r\n            return r;\r\n   " +
+                    "     }\r\n\r\n        private Result DatabaseMatching()\r\n        {\r\n            retu" +
+                    "rn DatabaseLoader.Instance.DatabaseMatching();\r\n        }\r\n\r\n        private boo" +
+                    "l TestDBConnection(SqlConnectionStringBuilder builder)\r\n        {\r\n            b" +
+                    "ool connectable = true;\r\n            try\r\n            {\r\n                var con" +
+                    "nectionString = builder.ConnectionString;\r\n                using (SqlConnection " +
+                    "connection = new SqlConnection(connectionString))\r\n                {\r\n          " +
+                    "          connection.Open();\r\n                }\r\n            }\r\n            catc" +
+                    "h (Exception e)\r\n            {\r\n                Console.WriteLine(e);\r\n         " +
+                    "       connectable = false;\r\n            }\r\n\r\n            return connectable;\r\n " +
+                    "       }\r\n\r\n        private void ConvertTableToList(DataTable dbInstanceTable, I" +
+                    "List<string> serverInstances)\r\n        {\r\n            if (dbInstanceTable == nul" +
+                    "l)\r\n                return;\r\n\r\n            foreach (DataRow row in dbInstanceTab" +
+                    "le.Rows)\r\n            {\r\n                serverInstances.Add($@\"{row[\"ServerName" +
+                    "\"]}\\{row[\"InstanceName\"]}\");\r\n            }\r\n        }\r\n\r\n        private void I" +
+                    "nitComboboxServerList()\r\n        {\r\n            comboBoxServerList.DataSource = " +
+                    "DbInstanceList;\r\n            comboBoxServerList.SelectedIndex = -1;\r\n        }\r\n" +
+                    "\r\n        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e" +
+                    ")\r\n        {\r\n            LoginResultHandler?.Invoke(this, result);\r\n        }\r\n" +
+                    "    }\r\n}\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

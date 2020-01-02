@@ -20,7 +20,7 @@ namespace SEP_CRUD.Template.Form
     
     #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewDataFormTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public partial class ViewDataFormTemplate : SharedFormGenerator
+    public partial class ViewDataFormTemplate : SharedFormTemplate
     {
 #line hidden
         /// <summary>

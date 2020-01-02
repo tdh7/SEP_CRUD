@@ -16,9 +16,9 @@ namespace SEP_CRUD.Template.Form
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\SharedFormDesignerGenerator.tt"
+    #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\SharedFormTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public partial class SharedFormDesignerGenerator : SharedFormDesignerGeneratorBase
+    public partial class SharedFormTemplate : SharedFormTemplateBase
     {
 #line hidden
         /// <summary>
@@ -29,9 +29,9 @@ namespace SEP_CRUD.Template.Form
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 3 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\SharedFormDesignerGenerator.tt"
+        #line 3 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\SharedFormTemplate.tt"
  
-public ClassGenerator Generator;
+public FormGenerator Generator;
 
         
         #line default
@@ -45,7 +45,7 @@ public ClassGenerator Generator;
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public class SharedFormDesignerGeneratorBase
+    public class SharedFormTemplateBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

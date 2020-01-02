@@ -16,17 +16,25 @@ namespace DemoGeneratedProject.Forms
         private IList<string> DbInstanceList = new List<string>();
         private DataTable DBNameTable;
 
-        public EventHandler<string> OnLoginSuccessHandler;
+        public EventHandler<bool> LoginResultHandler;
 
         public LoginForm()
         {
             InitializeComponent();
 
             // binding ui control to SqlConnectionStringBuilder
-            loginInfoBindingSource.DataSource = new SqlConnectionStringBuilder();
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+       
+
+            loginInfoBindingSource.DataSource = builder;
             comboBoxServerList.DataBindings.Add("Text", loginInfoBindingSource, "DataSource");
             textBoxLogin.DataBindings.Add("Text", loginInfoBindingSource, "UserID");
             textBoxPassword.DataBindings.Add("Text", loginInfoBindingSource, "Password");
+
+            builder.DataSource = DatabaseLoader.Instance.DataSource;
+            builder.UserID = DatabaseLoader.Instance.Username;
+            builder.Password = DatabaseLoader.Instance.Password;
+            builder.InitialCatalog = DatabaseLoader.Instance.DatabaseName;
         }
 
         #region All control event
@@ -35,20 +43,23 @@ namespace DemoGeneratedProject.Forms
             RetrieveAllDbInstanceIfEmpty();
         }
 
+        private bool result = false;
+
         private void buttonConnect_Click(object sender, EventArgs e)
         {
             var connectionStringBuilder = loginInfoBindingSource.Current as SqlConnectionStringBuilder;
-            connectionStringBuilder.InitialCatalog = "QL_SINH_VIEN";
-            if (TestDBConnection(connectionStringBuilder))
+            Result r = Connect(connectionStringBuilder);
+            if (r.OK)
             {
                 var connectionString = connectionStringBuilder.ConnectionString;
-                ConfigController.Instance.ConnectionString = connectionString;
-                OnLoginSuccessHandler?.Invoke(this, connectionString);
+                
+                result = true;
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Connection failed");
+                result = false;
+                MessageBox.Show(r.Message, "Connection failed");
             }
 
         }
@@ -62,7 +73,7 @@ namespace DemoGeneratedProject.Forms
 
         private void RetrieveAllDbInstanceIfEmpty()
         {
-            if (DbInstanceList.isEmpty())
+            if (DbInstanceList.Count == 0)
             {
                 BackgroundWorker bgWorker = new BackgroundWorker();
                 bgWorker.DoWork += BgWorker_RetrieveDbInstance;
@@ -87,6 +98,31 @@ namespace DemoGeneratedProject.Forms
             SqlDataSourceEnumerator instance = SqlDataSourceEnumerator.Instance;
             DataTable table = instance.GetDataSources();
             e.Result = table;
+        }
+
+        private Result Connect(SqlConnectionStringBuilder builder)
+        {
+            DatabaseLoader loader = DatabaseLoader.Instance;
+            Result r = Result.Create(true);
+            try
+            {
+                loader.DataSource = builder.DataSource;
+                loader.Username = builder.UserID;
+                loader.Password = builder.Password;
+                r = loader.Connect();
+            }
+            catch (Exception e)
+            {
+                r = Result.Create("Failed with message\"" + e.Message + "\"");
+            }
+
+            if (r.OK) r = DatabaseMatching();
+            return r;
+        }
+
+        private Result DatabaseMatching()
+        {
+            return DatabaseLoader.Instance.DatabaseMatching();
         }
 
         private bool TestDBConnection(SqlConnectionStringBuilder builder)
@@ -124,6 +160,11 @@ namespace DemoGeneratedProject.Forms
         {
             comboBoxServerList.DataSource = DbInstanceList;
             comboBoxServerList.SelectedIndex = -1;
+        }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            LoginResultHandler?.Invoke(this, result);
         }
     }
 }

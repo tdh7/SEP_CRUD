@@ -19,9 +19,9 @@ namespace SEP_CRUD.Template.Form
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+    #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public partial class EditFormTemplate : SharedFormGenerator
+    public partial class EditFormTemplate : SharedFormTemplate
     {
 #line hidden
         /// <summary>
@@ -30,7 +30,7 @@ namespace SEP_CRUD.Template.Form
         public override string TransformText()
         {
             
-            #line 7 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+            #line 7 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
  var EntityName = Table.BindingName; 
             
             #line default
@@ -39,35 +39,35 @@ namespace SEP_CRUD.Template.Form
                     "sing System.Data;\r\nusing System.Drawing;\r\nusing System.Runtime.CompilerServices;" +
                     "\r\nusing System.Text;\r\nusing System.Windows.Forms;\r\nusing ");
             
-            #line 16 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+            #line 16 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Generator.ProjectOwner.DefaultModelNamespaces));
             
             #line default
             #line hidden
             this.Write(";\r\n\r\nnamespace ");
             
-            #line 18 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+            #line 18 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
  Write(Generator.Namespace); 
             
             #line default
             #line hidden
             this.Write("{\r\n    public partial class Edit");
             
-            #line 20 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+            #line 20 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(EntityName));
             
             #line default
             #line hidden
             this.Write("Form : Edit");
             
-            #line 20 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+            #line 20 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(EntityName));
             
             #line default
             #line hidden
             this.Write("FormBase\r\n    {\r\n        public Edit");
             
-            #line 22 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+            #line 22 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(EntityName));
             
             #line default
@@ -75,14 +75,14 @@ namespace SEP_CRUD.Template.Form
             this.Write("Form()\r\n        {\r\n            InitializeComponent();\r\n        }\r\n\r\n\t\t protected " +
                     "override void InitBinder(");
             
-            #line 27 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+            #line 27 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(EntityName));
             
             #line default
             #line hidden
             this.Write(" entity)\r\n        {\r\n            base.InitBinder(entity);\r\n");
             
-            #line 30 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+            #line 30 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
 
     for (int i = 0; i < Table.Count; i++)
     {
@@ -95,7 +95,7 @@ namespace SEP_CRUD.Template.Form
             this.Write("\t\t\t\r\n        }\r\n\r\n        protected override void OnFormLoaded(object sender, For" +
                     "mType e)\r\n        {\r\n            if (e == FormType.FormAdd)\r\n            {\r\n");
             
-            #line 42 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+            #line 42 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
 
     for (int i = 0; i < Table.Count; i++)
     {
@@ -109,7 +109,7 @@ namespace SEP_CRUD.Template.Form
             #line hidden
             this.Write("\r\n            }\r\n            else if (e == FormType.FormUpdate)\r\n            {\r\n");
             
-            #line 54 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+            #line 54 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
 
     for (int i = 0; i < Table.Count; i++)
     {
@@ -125,21 +125,21 @@ namespace SEP_CRUD.Template.Form
                     " to avoid a WinForms bug,\r\n    // which does not allow using generic classes as " +
                     "base classes for forms and uer controls.\r\n\t\r\n    public class Edit");
             
-            #line 69 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+            #line 69 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(EntityName));
             
             #line default
             #line hidden
             this.Write("FormBase: EditDataForm<");
             
-            #line 69 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+            #line 69 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(EntityName));
             
             #line default
             #line hidden
             this.Write(", Edit");
             
-            #line 69 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+            #line 69 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(EntityName));
             
             #line default
@@ -148,7 +148,7 @@ namespace SEP_CRUD.Template.Form
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 71 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+        #line 71 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
  
 private void WriteDataBinding(Column c)
 {
@@ -160,42 +160,42 @@ private void WriteDataBinding(Column c)
         #line default
         #line hidden
         
-        #line 77 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+        #line 77 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
 this.Write("\t\t\ttextBox");
 
         
         #line default
         #line hidden
         
-        #line 78 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+        #line 78 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(name));
 
         
         #line default
         #line hidden
         
-        #line 78 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+        #line 78 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
 this.Write(".DataBindings.Add(\"Text\", bindingSourceItem, \"");
 
         
         #line default
         #line hidden
         
-        #line 78 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+        #line 78 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(name));
 
         
         #line default
         #line hidden
         
-        #line 78 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+        #line 78 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
 this.Write("\", true, DataSourceUpdateMode.OnValidation, string.Empty);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 79 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+        #line 79 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
  
     }
 
@@ -206,42 +206,42 @@ this.Write("\", true, DataSourceUpdateMode.OnValidation, string.Empty);\r\n");
         #line default
         #line hidden
         
-        #line 84 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+        #line 84 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
 this.Write("\t\t\tdateTimePicker");
 
         
         #line default
         #line hidden
         
-        #line 85 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+        #line 85 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(name));
 
         
         #line default
         #line hidden
         
-        #line 85 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+        #line 85 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
 this.Write(".DataBindings.Add(\"Value\", bindingSourceItem, \"");
 
         
         #line default
         #line hidden
         
-        #line 85 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+        #line 85 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(name));
 
         
         #line default
         #line hidden
         
-        #line 85 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+        #line 85 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
 this.Write("\", true, DataSourceUpdateMode.OnValidation, DateTime.Now);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 86 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+        #line 86 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
  }
 }
 
@@ -249,7 +249,7 @@ this.Write("\", true, DataSourceUpdateMode.OnValidation, DateTime.Now);\r\n");
         #line default
         #line hidden
         
-        #line 89 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+        #line 89 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
 
 void setReadOnlyTextBox(string name, string b)
 {
@@ -258,42 +258,42 @@ void setReadOnlyTextBox(string name, string b)
         #line default
         #line hidden
         
-        #line 92 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+        #line 92 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
 this.Write("\t\t\t\ttextBox");
 
         
         #line default
         #line hidden
         
-        #line 93 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+        #line 93 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(name));
 
         
         #line default
         #line hidden
         
-        #line 93 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+        #line 93 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
 this.Write(".ReadOnly = ");
 
         
         #line default
         #line hidden
         
-        #line 93 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+        #line 93 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(b));
 
         
         #line default
         #line hidden
         
-        #line 93 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+        #line 93 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
 this.Write(";\r\n");
 
         
         #line default
         #line hidden
         
-        #line 94 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+        #line 94 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
 
 } 
 

@@ -2,13 +2,7 @@
 using SEP_CRUD.Generator.Base;
 using SEP_CRUD.Generator.Project;
 using SEP_CRUD.Template.Entity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SEP_CRUD.Generator.Model
+namespace SEP_CRUD.Generator.Dao
 {
     class ModelDAOGenerator : ClassGenerator
     {

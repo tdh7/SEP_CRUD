@@ -7,18 +7,21 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace SEP_CRUD.Template.Form
+namespace SEP_CRUD.Template.Entity
 {
-    using SEP_CRUD.Generator.Base;
+    using System.Linq;
+    using System.Text;
+    using System.Collections.Generic;
+    using SEP_CRUD.Entities;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\SharedFormGenerator.tt"
+    #line 1 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Entity\DatabaseLoaderTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public partial class SharedFormGenerator : SharedFormGeneratorBase
+    public partial class DatabaseLoaderTemplate : DatabaseLoaderTemplateBase
     {
 #line hidden
         /// <summary>
@@ -26,16 +29,169 @@ namespace SEP_CRUD.Template.Form
         /// </summary>
         public virtual string TransformText()
         {
-            return this.GenerationEnvironment.ToString();
+            this.Write("using System;\r\nusing System.Collections.Generic;\r\nusing System.Data.SqlClient;\r\nu" +
+                    "sing System.Linq;\r\nusing System.Text;\r\n\r\nnamespace ");
+            
+            #line 13 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Entity\DatabaseLoaderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(generator.Namespace));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n{\r\n    public class DatabaseLoader\r\n    {\r\n\t public List<string> SavedTableBind" +
+                    "ingNames { get; } = new List<string>\r\n        {\r\n");
+            
+            #line 19 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Entity\DatabaseLoaderTemplate.tt"
+
+Entities entities = Entities.Instance;
+Table table;
+int count = entities.Tables.Count;
+int i = 0;
+foreach (var t in entities.Tables)
+{
+	table = t.Value;
+	if(i!=count-1) 
+	WriteLine("		\""+table.BindingName+"\",");
+	else 
+	WriteLine("		\""+table.BindingName+"\"");
+	i++;
+}
+		
+            
+            #line default
+            #line hidden
+            this.Write("        };\r\n\r\n        public List<string> SavedTableDatabaseNames { get; } = new " +
+                    "List<string>\r\n        {\r\n");
+            
+            #line 38 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Entity\DatabaseLoaderTemplate.tt"
+
+i = 0;
+foreach (var t in entities.Tables)
+{
+	table = t.Value;
+	if(i!=count-1) 
+	WriteLine("		\""+table.DatabaseName+"\",");
+	else 
+	WriteLine("		\""+table.DatabaseName+"\"");
+	i++;
+}
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t};\r\n\r\n\t\t public string FindSavedTableDatabaseNameByBindingName(string name)\r\n  " +
+                    "      {\r\n            int index = SavedTableBindingNames.IndexOf(name);\r\n        " +
+                    "    if (index != -1) return SavedTableDatabaseNames[index];\r\n            return " +
+                    "null;\r\n        }\r\n\r\n        public string FindSavedTableBindingNameByDatabaseNam" +
+                    "e(string name)\r\n        {\r\n            int index = SavedTableDatabaseNames.Index" +
+                    "Of(name);\r\n            if (index != -1) return SavedTableBindingNames[index];\r\n " +
+                    "           return null;\r\n        }\r\n\r\n        public Result DatabaseMatching()\r\n" +
+                    "        {\r\n            Result r = Result.Create(true);\r\n            if (!Connect" +
+                    "ed) r = Result.Create(\"Database is not connected\");\r\n            \r\n            i" +
+                    "f(r.OK)\r\n            {\r\n                try\r\n                {\r\n                " +
+                    "    List<string> latestTables = LoadTableNames();\r\n                    List<stri" +
+                    "ng> savedTables = SavedTableDatabaseNames;\r\n                    foreach (string " +
+                    "s in savedTables)\r\n                    {\r\n                        if(!latestTabl" +
+                    "es.Contains(s))\r\n                        {\r\n                            r = Resu" +
+                    "lt.Create(\"Database doesn\'t match records (Database misses the table\\\"\"+s+\"\\\"\");" +
+                    "\r\n                            break;\r\n                        }\r\n               " +
+                    "     }\r\n                } catch( Exception e)\r\n                {\r\n              " +
+                    "      r = Result.Create(\"Error: \" + e.Message);\r\n                }\r\n            " +
+                    "}\r\n            return r;\r\n        }\r\n\r\n        private static DatabaseLoader sIn" +
+                    "stance = null;\r\n        public static DatabaseLoader Instance\r\n        {\r\n      " +
+                    "      get\r\n            {\r\n                if (sInstance == null)\r\n              " +
+                    "  {\r\n                    sInstance = new DatabaseLoader();\r\n                }\r\n " +
+                    "               return sInstance;\r\n            }\r\n        }\r\n\r\n        public sta" +
+                    "tic void Dispose()\r\n        {\r\n            if (sInstance != null) sInstance.Dest" +
+                    "roy();\r\n            sInstance = null;\r\n        }\r\n\r\n        public List<string> " +
+                    "LoadTableNames()\r\n        {\r\n            List<string> list = new List<string>();" +
+                    "\r\n            SqlCommand command = new SqlCommand(@\"");
+            
+            #line 115 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Entity\DatabaseLoaderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(generator.LoadTablesSqlQuery));
+            
+            #line default
+            #line hidden
+            this.Write(@""" , SqlConnection);
+            command.CommandType = System.Data.CommandType.Text;
+
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                string name = """";
+                while (reader.Read())
+                {
+                    try
+                    {
+                        name = reader.GetString(0);
+                    } catch(Exception) {
+                        name = """";
+                    }
+                    if (name != null && name.Length != 0) list.Add(name); 
+                }
+            }
+            return list;
         }
-        
-        #line 3 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\SharedFormGenerator.tt"
- 
-public FormGenerator Generator;
+
+        public void Destroy()
+        {
+            Disconnect();
+        }
 
         
-        #line default
-        #line hidden
+
+        public string DataSource { get; set; } = @""");
+            
+            #line 142 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Entity\DatabaseLoaderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(generator.DataSource));
+            
+            #line default
+            #line hidden
+            this.Write("\";\r\n        public string DatabaseName { get; set; } = @\"");
+            
+            #line 143 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Entity\DatabaseLoaderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(generator.DatabaseName));
+            
+            #line default
+            #line hidden
+            this.Write("\";\r\n        public string Username { get; set; } = @\"");
+            
+            #line 144 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Entity\DatabaseLoaderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(generator.Username));
+            
+            #line default
+            #line hidden
+            this.Write("\";\r\n        public string Password { get; set; } = \"\";\r\n        public bool Conne" +
+                    "cted = false;\r\n\r\n        private SqlConnection SqlConnection { get; set; }\r\n\r\n  " +
+                    "      public Result CheckValid()\r\n        {\r\n            if (DataSource == null " +
+                    "|| DataSource.Equals(\"\")) return Result.Create(\"Data source is empty\");\r\n       " +
+                    "     if (Username == null) return Result.Create(\"Username is undefined\");\r\n     " +
+                    "       if (Password == null) return Result.Create(\"Password is undefined\");\r\n   " +
+                    "         return Result.Create(true);\r\n        }\r\n        public bool Valid\r\n    " +
+                    "    { get\r\n            {\r\n                return CheckValid().GetResult();\r\n    " +
+                    "        }\r\n        }\r\n\r\n        public string ConnectionString\r\n        {\r\n     " +
+                    "       get\r\n            {\r\n                if (!Valid) return \"\";\r\n             " +
+                    "   if (Username.Equals(\"\") && Password.Equals(\"\"))\r\n                    return @" +
+                    "\"Data Source=\" + DataSource + \";Initial Catalog=\"\r\n                         + Da" +
+                    "tabaseName + \";Persist Security Info=True\";\r\n                return @\"Data Sourc" +
+                    "e=\" + DataSource + \";Initial Catalog=\"\r\n                         + DatabaseName " +
+                    "+ \";Persist Security Info=True;User ID=\" + Username + \";Password=\" + Password;\r\n" +
+                    "            }\r\n        }\r\n\r\n        public SqlCommand LoadCommand(string query)\r" +
+                    "\n        {\r\n            SqlCommand c = new SqlCommand(query, SqlConnection);\r\n  " +
+                    "          c.CommandType = System.Data.CommandType.Text;\r\n            return c;\r\n" +
+                    "        }\r\n\r\n        public Result Connect()\r\n        {\r\n            Result resu" +
+                    "lt = CheckValid();\r\n            if (!result.GetResult()) return result;\r\n\r\n     " +
+                    "       try\r\n            {\r\n                SqlConnection = new SqlConnection(Con" +
+                    "nectionString);\r\n            } catch(Exception e)\r\n            {\r\n              " +
+                    "  result = Result.Create(\"Exception: \" + e.Message);\r\n            }\r\n\r\n         " +
+                    "   if(result.OK)\r\n            {\r\n                try\r\n                {\r\n       " +
+                    "             SqlConnection.Open();\r\n                } catch(Exception e)\r\n      " +
+                    "          {\r\n                    result = Result.Create(\"Exception: \" + e.Messag" +
+                    "e);\r\n                }\r\n            }\r\n\r\n            Connected = result.OK;\r\n   " +
+                    "         return result;\r\n        }\r\n\r\n        public void Disconnect()\r\n        " +
+                    "{\r\n            if(SqlConnection!=null)\r\n            try\r\n            {\r\n        " +
+                    "            SqlConnection.Close();\r\n            } catch (Exception) { }\r\n       " +
+                    " }\r\n    }\r\n}\r\n");
+            return this.GenerationEnvironment.ToString();
+        }
     }
     
     #line default
@@ -45,7 +201,7 @@ public FormGenerator Generator;
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public class SharedFormGeneratorBase
+    public class DatabaseLoaderTemplateBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

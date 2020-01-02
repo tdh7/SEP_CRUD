@@ -52,6 +52,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\SinhVienBUS.cs" />
+    <Compile Include="DAO\DatabaseLoader.cs" />
+    <Compile Include="DAO\Result.cs" />
     <Compile Include="DAO\SinhVienDAO.cs" />
     <Compile Include="DTO\BaseModel.cs" />
     <Compile Include="DTO\EditableObject.cs" />
@@ -81,6 +83,13 @@
     <Compile Include="Forms\EditSinhVienForm.Designer.cs">
       <DependentUpon>EditSinhVienForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormFactory.cs" />
+    <Compile Include="Forms\ItemTableUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ItemTableUserControl.Designer.cs">
+      <DependentUpon>ItemTableUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +107,12 @@
     </Compile>
     <Compile Include="Forms\SelectTableForm.Designer.cs">
       <DependentUpon>SelectTableForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TableListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TableListForm.Designer.cs">
+      <DependentUpon>TableListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ViewDataFrom.cs">
       <SubType>Form</SubType>
@@ -129,6 +144,9 @@
     <EmbeddedResource Include="Forms\EditSinhVienForm.resx">
       <DependentUpon>EditSinhVienForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ItemTableUserControl.resx">
+      <DependentUpon>ItemTableUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SelectTableForm.resx">
       <DependentUpon>SelectTableForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TableListForm.resx">
+      <DependentUpon>TableListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ViewDataFrom.resx">
       <DependentUpon>ViewDataFrom.cs</DependentUpon>

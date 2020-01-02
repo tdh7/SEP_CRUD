@@ -18,7 +18,7 @@ namespace SEP_CRUD.Template.Form
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+    #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ViewFormFactoryTemplate : ViewFormFactoryTemplateBase
     {
@@ -31,81 +31,167 @@ namespace SEP_CRUD.Template.Form
             this.Write("using System;\r\nusing System.Collections.Generic;\r\nusing System.Text;\r\nusing Syste" +
                     "m.Windows.Forms;\r\n\r\nnamespace ");
             
-            #line 11 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+            #line 11 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_namespace));
             
             #line default
             #line hidden
-            this.Write("\r\n{\r\n\tpublic class ViewFormFactory\r\n\t{\r\n\t\tpublic static Form getFormByTableName(s" +
-                    "tring TableName)\r\n\t\t{\r\n");
-            
-            #line 17 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+            this.Write(@"
+{
+	public class ViewFormFactory {
+        private static ViewFormFactory sFactory;
+        public static ViewFormFactory Instance
+        {
+            get
+            {
+                if (sFactory == null)
+                {
+                    sFactory = new ViewFormFactory();
+                }
+                return sFactory;
+            }
+        }
 
-    for (int i = 0; i < Tables.Count; i++)
+        private ViewFormFactory()
+        {
+        }
+
+        public enum GeneratedForm : int
+        {
+            None = -1,
+");
+            
+            #line 34 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+
+	int count = Tables.Count;
+	for(int i =0; i < count; i++)
     {
-		writeIfStatement(i);	 
+		if(i!=count-1)
+		WriteLine("            "+Tables[i].BindingName+" = "+i+",");
+		else WriteLine("            "+Tables[i].BindingName+" = "+i);
     }
 
             
             #line default
             #line hidden
-            this.Write("\t\t\treturn new Form();\r\n\t\t}\r\n\t}\r\n}\r\n\r\n");
-            return this.GenerationEnvironment.ToString();
+            this.Write("        }\r\n\r\n        public List<string> BindingNames { get; } = new List<string>" +
+                    "\r\n        {\r\n");
+            
+            #line 47 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+
+	for(int i =0; i < count; i++)
+    {
+		if(i!=count-1)
+		WriteLine("            \""+Tables[i].BindingName+"\",");
+		else WriteLine("            \""+Tables[i].BindingName+"\"");
+    }
+
+            
+            #line default
+            #line hidden
+            this.Write("        };\r\n\r\n        public List<string> DatabaseNames { get; } = new List<strin" +
+                    "g>\r\n        {\r\n");
+            
+            #line 59 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+
+	for(int i =0; i < count; i++)
+    {
+		if(i!=count-1)
+		WriteLine("            \""+Tables[i].DatabaseName+"\",");
+		else WriteLine("            \""+Tables[i].DatabaseName+"\"");
+    }
+
+            
+            #line default
+            #line hidden
+            this.Write("        };\r\n\r\n        public int Count\r\n        {\r\n            get\r\n            {" +
+                    "\r\n                return BindingNames.Count;\r\n            }\r\n        }\r\n\r\n      " +
+                    "  \r\n        public Form FindForm(GeneratedForm f)\r\n\t\t{\r\n            switch(f)\r\n " +
+                    "           {\r\n");
+            
+            #line 82 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+
+	for(int i =0; i < count; i++)
+    {
+
+            
+            #line default
+            #line hidden
+            this.Write("                case GeneratedForm.");
+            
+            #line 85 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Tables[i].BindingName));
+            
+            #line default
+            #line hidden
+            this.Write(":\r\n                    return new View");
+            
+            #line 86 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Tables[i].BindingName));
+            
+            #line default
+            #line hidden
+            this.Write("Form();\r\n\r\n");
+            
+            #line 88 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
+
+    }
+
+            
+            #line default
+            #line hidden
+            this.Write(@"                case GeneratedForm.None:
+                default:
+                    return null;
+            }
+		}
+
+        public GeneratedForm FindFormTypeByBindingName(string name)
+        {
+            if (name == null) return GeneratedForm.None;
+
+            int index = -1;
+            for (int i=0;i < Count; i++) {
+                if(name.Equals(BindingNames[i]))
+                {
+                    index = i;
+                    break;
+                }
+            }
+            return (GeneratedForm)index;
+        }
+
+        public GeneratedForm FindFormTypeByDatabaseName(string name)
+        {
+            if (name == null) return GeneratedForm.None;
+
+            int index = -1;
+            for (int i = 0; i < Count; i++)
+            {
+                if (name.Equals(DatabaseNames[i]))
+                {
+                    index = i;
+                    break;
+                }
+            }
+            return (GeneratedForm)index;
+        }
+
+        
+        public Form FindFormByBindingName(string name)
+        {
+            return FindForm(FindFormTypeByBindingName(name));
+        }
+
+        public Form FindFormByDatabaseName(string name)
+        {
+            return FindForm(FindFormTypeByDatabaseName(name));
         }
         
-        #line 28 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
- 
-private void writeIfStatement(int i)
-{
-	var tableName = Tables[i].DatabaseName;
-	var formName = "View" + Tables[i].BindingName + "Form";
-
-        
-        #line default
-        #line hidden
-        
-        #line 33 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
-this.Write("\t\t\tif (TableName.Equals(\"");
-
-        
-        #line default
-        #line hidden
-        
-        #line 34 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(tableName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 34 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
-this.Write("\"))\r\n\t\t\t\treturn new ");
-
-        
-        #line default
-        #line hidden
-        
-        #line 35 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(formName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 35 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
-this.Write("();\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 36 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormFactoryTemplate.tt"
-
-}
-
-        
-        #line default
-        #line hidden
+	}
+}");
+            return this.GenerationEnvironment.ToString();
+        }
     }
     
     #line default

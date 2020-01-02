@@ -1,9 +1,28 @@
 ﻿using SEP_CRUD.Entities;
 using SEP_CRUD.Generator.Base;
+using SEP_CRUD.Generator.Dao;
 using SEP_CRUD.Generator.Model;
 
 namespace SEP_CRUD.Template.Entity
 {
+    public partial class DatabaseLoaderTemplate
+    {
+        protected DatabaseLoaderGenerator generator;
+        public DatabaseLoaderTemplate(DatabaseLoaderGenerator g)
+        {
+            generator = g;
+        }
+    }
+
+    public partial class ResultTemplate
+    {
+        protected string _namespace;
+        public ResultTemplate(string _namespace)
+        {
+            this._namespace = _namespace;
+        }
+    }
+
     public partial class ModelTemplate
     {
         ModelGenerator generator;

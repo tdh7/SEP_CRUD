@@ -1,4 +1,4 @@
-﻿<#@ template language="C#" inherits="SharedFormGenerator"#>
+﻿<#@ template language="C#" inherits="SharedFormTemplate"#>
 <#@ assembly name="System.Core" #>
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
@@ -11,6 +11,7 @@ using System.Data.Sql;
 using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using <#=Generator.ProjectOwner.Name#>.DAO;
 
 namespace <#= Generator.Namespace #>
 {
@@ -20,17 +21,25 @@ namespace <#= Generator.Namespace #>
         private IList<string> DbInstanceList = new List<string>();
         private DataTable DBNameTable;
 
-        public EventHandler<string> OnLoginSuccessHandler;
+        public EventHandler<bool> LoginResultHandler;
 
         public LoginForm()
         {
             InitializeComponent();
 
             // binding ui control to SqlConnectionStringBuilder
-            loginInfoBindingSource.DataSource = new SqlConnectionStringBuilder();
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+       
+
+            loginInfoBindingSource.DataSource = builder;
             comboBoxServerList.DataBindings.Add("Text", loginInfoBindingSource, "DataSource");
             textBoxLogin.DataBindings.Add("Text", loginInfoBindingSource, "UserID");
             textBoxPassword.DataBindings.Add("Text", loginInfoBindingSource, "Password");
+
+            builder.DataSource = DatabaseLoader.Instance.DataSource;
+            builder.UserID = DatabaseLoader.Instance.Username;
+            builder.Password = DatabaseLoader.Instance.Password;
+            builder.InitialCatalog = DatabaseLoader.Instance.DatabaseName;
         }
 
         #region All control event
@@ -39,19 +48,23 @@ namespace <#= Generator.Namespace #>
             RetrieveAllDbInstanceIfEmpty();
         }
 
+        private bool result = false;
+
         private void buttonConnect_Click(object sender, EventArgs e)
         {
             var connectionStringBuilder = loginInfoBindingSource.Current as SqlConnectionStringBuilder;
-            connectionStringBuilder.InitialCatalog = "<#= DBName #>";
-            if (TestDBConnection(connectionStringBuilder))
+            Result r = Connect(connectionStringBuilder);
+            if (r.OK)
             {
                 var connectionString = connectionStringBuilder.ConnectionString;
-                OnLoginSuccessHandler?.Invoke(this, connectionString);
+                
+                result = true;
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Connection failed");
+                result = false;
+                MessageBox.Show(r.Message, "Connection failed");
             }
 
         }
@@ -63,7 +76,7 @@ namespace <#= Generator.Namespace #>
 
         #endregion
 
-        private void RetrieveAllDbInstanceIfEmpty()
+		private void RetrieveAllDbInstanceIfEmpty()
         {
             if (DbInstanceList.Count == 0)
             {
@@ -75,7 +88,7 @@ namespace <#= Generator.Namespace #>
             }
         }
 
-        private void BgWorker_RetrieveDbInstanceCompleted(object sender, RunWorkerCompletedEventArgs e)
+         private void BgWorker_RetrieveDbInstanceCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             waitForm.Close();
 
@@ -89,6 +102,31 @@ namespace <#= Generator.Namespace #>
             SqlDataSourceEnumerator instance = SqlDataSourceEnumerator.Instance;
             DataTable table = instance.GetDataSources();
             e.Result = table;
+        }
+
+        private Result Connect(SqlConnectionStringBuilder builder)
+        {
+            DatabaseLoader loader = DatabaseLoader.Instance;
+            Result r = Result.Create(true);
+            try
+            {
+                loader.DataSource = builder.DataSource;
+                loader.Username = builder.UserID;
+                loader.Password = builder.Password;
+                r = loader.Connect();
+            }
+            catch (Exception e)
+            {
+                r = Result.Create("Failed with message\"" + e.Message + "\"");
+            }
+
+            if (r.OK) r = DatabaseMatching();
+            return r;
+        }
+
+        private Result DatabaseMatching()
+        {
+            return DatabaseLoader.Instance.DatabaseMatching();
         }
 
         private bool TestDBConnection(SqlConnectionStringBuilder builder)
@@ -126,6 +164,11 @@ namespace <#= Generator.Namespace #>
         {
             comboBoxServerList.DataSource = DbInstanceList;
             comboBoxServerList.SelectedIndex = -1;
+        }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            LoginResultHandler?.Invoke(this, result);
         }
     }
 }

@@ -134,6 +134,7 @@
             // 
             // comboBoxDBName
             // 
+            this.comboBoxDBName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDBName.FormattingEnabled = true;
             this.comboBoxDBName.Location = new System.Drawing.Point(145, 142);
             this.comboBoxDBName.Name = "comboBoxDBName";

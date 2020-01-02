@@ -25,7 +25,7 @@ namespace DemoGeneratedProject.Forms
 
         protected override IList<SinhVien> initList()
         {
-//            return sinhVienDao.readAll();
+            return sinhVienDao.readAll();
             return new List<SinhVien>();
         }
 
@@ -34,7 +34,7 @@ namespace DemoGeneratedProject.Forms
             EditSinhVienForm.Add(delegate(SinhVien sv)
             {
                 bindingList.Add(sv);
-//                sinhVienDao.Insert(sv);
+                sinhVienDao.Insert(sv);
             });
         }
 
@@ -42,14 +42,20 @@ namespace DemoGeneratedProject.Forms
         {
             EditSinhVienForm.Edit(item, delegate(SinhVien sv)
             {
-//                sinhVienDao.Update(sv);
+                sinhVienDao.Update(sv);
             });
         }
 
         protected override void Delete(SinhVien item)
         {
-//            sinhVienDao.Delete(item);
-            bindingList.Remove(item);
+            var dialogResult = MessageBox.Show("Are you sure to delete this item? This action can't undo.", "Warning", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                sinhVienDao.Delete(item);
+                bindingList.Remove(item);
+            }
         }
 
         protected override void ViewDataFrom_Load(object sender, EventArgs e)

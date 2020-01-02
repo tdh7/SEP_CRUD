@@ -31,6 +31,7 @@ namespace DemoGeneratedProject.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.toolStripButtonRefresh = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.contextMenuStripDataGrid = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +50,14 @@ namespace DemoGeneratedProject.Forms
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // toolStripButtonRefresh
+            // 
+            this.toolStripButtonRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonRefresh.Name = "toolStripButtonRefresh";
+            this.toolStripButtonRefresh.Size = new System.Drawing.Size(50, 22);
+            this.toolStripButtonRefresh.Text = "Refresh";
             // 
             // dataGridView1
             // 
@@ -95,7 +104,8 @@ namespace DemoGeneratedProject.Forms
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonNew,
             this.toolStripButtonEdit,
-            this.toolStripButtonDelete});
+            this.toolStripButtonDelete,
+            this.toolStripButtonRefresh});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
@@ -110,7 +120,6 @@ namespace DemoGeneratedProject.Forms
             this.toolStripButtonNew.Name = "toolStripButtonNew";
             this.toolStripButtonNew.Size = new System.Drawing.Size(62, 22);
             this.toolStripButtonNew.Text = "New Item";
-            this.toolStripButtonNew.Click += new System.EventHandler(this.toolStripButtonNew_Click);
             // 
             // toolStripButtonEdit
             // 
@@ -205,5 +214,6 @@ namespace DemoGeneratedProject.Forms
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         protected System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonRefresh;
     }
 }

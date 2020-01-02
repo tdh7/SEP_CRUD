@@ -52,7 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\SinhVienBUS.cs" />
-    <Compile Include="ConfigController.cs" />
     <Compile Include="DAO\SinhVienDAO.cs" />
     <Compile Include="DTO\BaseModel.cs" />
     <Compile Include="DTO\EditableObject.cs" />

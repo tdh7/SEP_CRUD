@@ -6,6 +6,7 @@ using System.Data.Sql;
 using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using SQLHibernate.DAO;
 
 namespace DemoGeneratedProject.Forms
 {
@@ -41,6 +42,7 @@ namespace DemoGeneratedProject.Forms
             if (TestDBConnection(connectionStringBuilder))
             {
                 var connectionString = connectionStringBuilder.ConnectionString;
+                ConfigController.Instance.ConnectionString = connectionString;
                 OnLoginSuccessHandler?.Invoke(this, connectionString);
                 this.Close();
             }

@@ -24,6 +24,9 @@ namespace DemoGeneratedProject.Forms
 
             deleteToolStripMenuItem.Click += DeleteDataItem;
             toolStripButtonDelete.Click += DeleteDataItem;
+
+            toolStripButtonNew.Click += NewDataItem;
+            toolStripButtonRefresh.Click += RefreshDataItems;
         }
 
         protected virtual void ViewDataFrom_Load(object sender, EventArgs e)
@@ -44,11 +47,6 @@ namespace DemoGeneratedProject.Forms
             Edit((E) item);
         }
 
-        protected virtual void toolStripButtonNew_Click(object sender, EventArgs e)
-        {
-            Add();
-        }
-
         protected abstract void Add();
         protected abstract void Edit(E item);
 
@@ -64,6 +62,23 @@ namespace DemoGeneratedProject.Forms
         {
             var item = dataGridView1.CurrentRow.DataBoundItem;
             Delete((E)item);
+        }
+
+        protected virtual void RefreshDataItems(object sender, EventArgs e)
+        {
+            BindingList<E> bindingList = dataGridView1.DataSource as BindingList<E>;
+            IList<E> iList = initList();
+
+            bindingList.Clear();
+            foreach (var model in iList)
+            {
+                bindingList.Add(model);
+            }
+        }
+
+        protected virtual void NewDataItem(object sender, EventArgs e)
+        {
+            Add();
         }
     }
 }

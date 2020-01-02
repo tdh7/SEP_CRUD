@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SQLHibernate.DAO
 {
-    class ConfigController
+    public class ConfigController
     {
         private static ConfigController instance = new ConfigController();
         private string connectionString;

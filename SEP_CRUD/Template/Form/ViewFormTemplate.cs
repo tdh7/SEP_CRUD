@@ -154,17 +154,26 @@ namespace SEP_CRUD.Template.Form
             
             #line default
             #line hidden
-            this.Write(" item)\r\n        {\r\n\t\t\t// TODO: update data to BUS here\r\n\t\t\t");
+            this.Write(@" item)
+        {
+			// TODO: update data to BUS here
+			
+            var dialogResult = MessageBox.Show(""Are you sure to delete this item? This action can't undo."", ""Warning"", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+				");
             
-            #line 56 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 62 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
-            this.Write("DAO.Instance.Delete(item);\r\n            bindingList.Remove(item);\r\n        }\r\n\r\n " +
-                    "       protected override void ViewDataFrom_Load(object sender, EventArgs e)\r\n  " +
-                    "      {\r\n            base.ViewDataFrom_Load(sender, e);\r\n\r\n        }\r\n    }\r\n}\r\n" +
-                    "");
+            this.Write("DAO.Instance.Delete(item);\r\n\t\t\t\tbindingList.Remove(item);\r\n            }\r\n       " +
+                    " }\r\n\r\n        protected override void ViewDataFrom_Load(object sender, EventArgs" +
+                    " e)\r\n        {\r\n            base.ViewDataFrom_Load(sender, e);\r\n\r\n        }\r\n   " +
+                    " }\r\n}\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

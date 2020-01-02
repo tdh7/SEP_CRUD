@@ -18,7 +18,7 @@ namespace SEP_CRUD.Template.Form
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewDataFormTemplate.tt"
+    #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewDataFormTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ViewDataFormTemplate : SharedFormGenerator
     {
@@ -32,14 +32,14 @@ namespace SEP_CRUD.Template.Form
                     "sing System.Data;\r\nusing System.Drawing;\r\nusing System.Text;\r\nusing System.Windo" +
                     "ws.Forms;\r\nusing ");
             
-            #line 13 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewDataFormTemplate.tt"
+            #line 13 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewDataFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Generator.ProjectOwner.DefaultModelNamespaces));
             
             #line default
             #line hidden
             this.Write(";\r\n\r\nnamespace ");
             
-            #line 15 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewDataFormTemplate.tt"
+            #line 15 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewDataFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Generator.Namespace));
             
             #line default
@@ -49,22 +49,28 @@ namespace SEP_CRUD.Template.Form
                     "DataFrom()\r\n        {\r\n            InitializeComponent();\r\n\r\n            editToo" +
                     "lStripMenuItem.Click += EditDataItem;\r\n            toolStripButtonEdit.Click += " +
                     "EditDataItem;\r\n\r\n            deleteToolStripMenuItem.Click += DeleteDataItem;\r\n " +
-                    "           toolStripButtonDelete.Click += DeleteDataItem;\r\n        }\r\n\r\n        " +
-                    "protected virtual void ViewDataFrom_Load(object sender, EventArgs e)\r\n        {\r" +
-                    "\n            IList<E> list = initList();\r\n            bindingList = new BindingL" +
-                    "ist<E>(list);\r\n            dataGridView1.DataSource = bindingList;\r\n        }\r\n\r" +
-                    "\n        protected abstract IList<E> initList();\r\n\r\n        protected virtual vo" +
-                    "id dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)\r\n  " +
+                    "           toolStripButtonDelete.Click += DeleteDataItem;\r\n\r\n            toolStr" +
+                    "ipButtonNew.Click += NewDataItem;\r\n            toolStripButtonRefresh.Click += R" +
+                    "efreshDataItems;\r\n        }\r\n\r\n        protected virtual void ViewDataFrom_Load(" +
+                    "object sender, EventArgs e)\r\n        {\r\n            IList<E> list = initList();\r" +
+                    "\n            bindingList = new BindingList<E>(list);\r\n            dataGridView1." +
+                    "DataSource = bindingList;\r\n        }\r\n\r\n        protected abstract IList<E> init" +
+                    "List();\r\n\r\n        protected virtual void dataGridView1_CellDoubleClick(object s" +
+                    "ender, DataGridViewCellEventArgs e)\r\n        {\r\n            var item = dataGridV" +
+                    "iew1.CurrentRow.DataBoundItem;\r\n            Edit((E) item);\r\n        }\r\n\r\n      " +
+                    "  protected abstract void Add();\r\n        protected abstract void Edit(E item);\r" +
+                    "\n\r\n        protected abstract void Delete(E item);\r\n\r\n        protected virtual " +
+                    "void EditDataItem(object sender, EventArgs e)\r\n        {\r\n            var item =" +
+                    " dataGridView1.CurrentRow.DataBoundItem;\r\n            Edit((E)item);\r\n        }\r" +
+                    "\n\r\n        protected virtual void DeleteDataItem(object sender, EventArgs e)\r\n  " +
                     "      {\r\n            var item = dataGridView1.CurrentRow.DataBoundItem;\r\n       " +
-                    "     Edit((E) item);\r\n        }\r\n\r\n        protected virtual void toolStripButto" +
-                    "nNew_Click(object sender, EventArgs e)\r\n        {\r\n            Add();\r\n        }" +
-                    "\r\n\r\n        protected abstract void Add();\r\n        protected abstract void Edit" +
-                    "(E item);\r\n\r\n        protected abstract void Delete(E item);\r\n\r\n        protecte" +
-                    "d virtual void EditDataItem(object sender, EventArgs e)\r\n        {\r\n            " +
-                    "var item = dataGridView1.CurrentRow.DataBoundItem;\r\n            Edit((E)item);\r\n" +
-                    "        }\r\n\r\n        protected virtual void DeleteDataItem(object sender, EventA" +
-                    "rgs e)\r\n        {\r\n            var item = dataGridView1.CurrentRow.DataBoundItem" +
-                    ";\r\n            Delete((E)item);\r\n        }\r\n    }\r\n}");
+                    "     Delete((E)item);\r\n        }\r\n\r\n        protected virtual void RefreshDataIt" +
+                    "ems(object sender, EventArgs e)\r\n        {\r\n            BindingList<E> bindingLi" +
+                    "st = dataGridView1.DataSource as BindingList<E>;\r\n            IList<E> iList = i" +
+                    "nitList();\r\n\r\n            bindingList.Clear();\r\n            foreach (var model i" +
+                    "n iList)\r\n            {\r\n                bindingList.Add(model);\r\n            }\r" +
+                    "\n        }\r\n\r\n        protected virtual void NewDataItem(object sender, EventArg" +
+                    "s e)\r\n        {\r\n            Add();\r\n        }\r\n    }\r\n}");
             return this.GenerationEnvironment.ToString();
         }
     }

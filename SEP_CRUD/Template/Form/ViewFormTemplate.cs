@@ -18,7 +18,7 @@ namespace SEP_CRUD.Template.Form
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+    #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ViewFormTemplate : SharedFormGenerator
     {
@@ -29,7 +29,7 @@ namespace SEP_CRUD.Template.Form
         public override string TransformText()
         {
             
-            #line 6 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 6 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
  var entityName = Table.BindingName; 
             
             #line default
@@ -38,35 +38,42 @@ namespace SEP_CRUD.Template.Form
                     "sing System.Data;\r\nusing System.Drawing;\r\nusing System.Text;\r\nusing System.Windo" +
                     "ws.Forms;\r\nusing ");
             
-            #line 14 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 14 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Generator.ProjectOwner.DefaultModelNamespaces));
+            
+            #line default
+            #line hidden
+            this.Write(";\r\nusing ");
+            
+            #line 15 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Generator.ProjectOwner.DefaultDAONamespaces));
             
             #line default
             #line hidden
             this.Write(";\r\n\r\nnamespace ");
             
-            #line 16 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 17 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Generator.Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n    public partial class View");
             
-            #line 18 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 19 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("Form: ViewDataFrom<");
             
-            #line 18 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 19 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write(">\r\n    {\r\n\r\n        public View");
             
-            #line 21 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 22 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
@@ -74,79 +81,90 @@ namespace SEP_CRUD.Template.Form
             this.Write("Form()\r\n        {\r\n            InitializeComponent();\r\n        }\r\n\r\n\t\t// TODO: re" +
                     "trieve data from BUS and return result here\r\n        protected override IList<");
             
-            #line 27 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 28 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
-            this.Write("> initList()\r\n        {\r\n\t\t\treturn new List<");
+            this.Write("> initList()\r\n        {\r\n\t\t\treturn ");
             
-            #line 29 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 30 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
-            this.Write(">();   \r\n        }\r\n\r\n        protected override void Add()\r\n        {\r\n         " +
-                    "   Edit");
+            this.Write("DAO.Instance.readAll();\r\n        }\r\n\r\n        protected override void Add()\r\n    " +
+                    "    {\r\n            Edit");
             
-            #line 34 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 35 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("Form.Add(delegate(");
             
-            #line 34 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 35 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
-            this.Write(" sv)\r\n            {\r\n                bindingList.Add(sv);\r\n\t\t\t\t// TODO: update da" +
-                    "ta to BUS here\r\n                \r\n            });\r\n        }\r\n\r\n        protecte" +
-                    "d override void Edit(");
+            this.Write(" newItem)\r\n            {\r\n                bindingList.Add(newItem);\r\n\t\t\t\t// TODO:" +
+                    " update data to BUS here\r\n\t\t\t\t");
             
-            #line 42 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 39 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
+            
+            #line default
+            #line hidden
+            this.Write("DAO.Instance.Insert(newItem);\r\n                \r\n            });\r\n        }\r\n\r\n  " +
+                    "      protected override void Edit(");
+            
+            #line 44 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write(" item)\r\n        {\r\n            Edit");
             
-            #line 44 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 46 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
             this.Write("Form.Edit(item, delegate(");
             
-            #line 44 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 46 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
-            this.Write(" sv)\r\n            {\r\n                // TODO: update data to BUS here\r\n          " +
-                    "  });\r\n        }\r\n\r\n        protected override void Delete(");
+            this.Write(" editedItem)\r\n            {\r\n                // TODO: update data to BUS here\r\n\t\t" +
+                    "\t\t");
             
-            #line 50 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            #line 49 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
             
             #line default
             #line hidden
-            this.Write(@" item)
-        {
-			// TODO: update data to BUS here
-
-            bindingList.Remove(item);
-        }
-
-        protected override void ViewDataFrom_Load(object sender, EventArgs e)
-        {
-            base.ViewDataFrom_Load(sender, e);
-
-        }
-    }
-}
-");
+            this.Write("DAO.Instance.Update(editedItem);\r\n            });\r\n        }\r\n\r\n        protected" +
+                    " override void Delete(");
+            
+            #line 53 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
+            
+            #line default
+            #line hidden
+            this.Write(" item)\r\n        {\r\n\t\t\t// TODO: update data to BUS here\r\n\t\t\t");
+            
+            #line 56 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\ViewFormTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entityName));
+            
+            #line default
+            #line hidden
+            this.Write("DAO.Instance.Delete(item);\r\n            bindingList.Remove(item);\r\n        }\r\n\r\n " +
+                    "       protected override void ViewDataFrom_Load(object sender, EventArgs e)\r\n  " +
+                    "      {\r\n            base.ViewDataFrom_Load(sender, e);\r\n\r\n        }\r\n    }\r\n}\r\n" +
+                    "");
             return this.GenerationEnvironment.ToString();
         }
     }

@@ -18,7 +18,7 @@ namespace SEP_CRUD.Template.Entity
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
+    #line 1 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ModelDAOTemplate : ModelDAOTemplateBase
     {
@@ -29,14 +29,14 @@ namespace SEP_CRUD.Template.Entity
         public virtual string TransformText()
         {
             
-            #line 6 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
+            #line 6 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
  var EntityName = Table.BindingName; 
             
             #line default
             #line hidden
             this.Write("using ");
             
-            #line 7 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
+            #line 7 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(generator.ProjectOwner.DefaultModelNamespaces));
             
             #line default
@@ -55,72 +55,55 @@ using System.Threading.Tasks;
 
 namespace ");
             
-            #line 19 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
+            #line 19 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(generator.Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n    class ");
             
-            #line 21 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
+            #line 21 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(EntityName));
             
             #line default
             #line hidden
             this.Write("DAO : AbstractDAO<");
             
-            #line 21 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
+            #line 21 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(EntityName));
             
             #line default
             #line hidden
             this.Write(">\r\n    {\r\n\t\tprivate static ");
             
-            #line 23 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
+            #line 23 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(EntityName));
             
             #line default
             #line hidden
             this.Write("DAO instance = new ");
             
-            #line 23 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
+            #line 23 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(EntityName));
             
             #line default
             #line hidden
-            this.Write("DAO();\r\n\r\n\t\tprivate string connectionString;\r\n\r\n        public ");
+            this.Write("DAO();\r\n\r\n        private ");
             
-            #line 27 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
+            #line 25 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(EntityName));
             
             #line default
             #line hidden
-            this.Write("DAO() : base() {\r\n            connectionString = ConfigController.Instance.Connec" +
-                    "tionString;\r\n        }\r\n\r\n        public static ");
+            this.Write("DAO() : base() {   }\r\n\r\n        public static ");
             
-            #line 31 "F:\Library\IT\Subject\Design Pattern\SEP_CRUD2\SEP_CRUD\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
+            #line 27 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Entity\ModelDAOTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(EntityName));
             
             #line default
             #line hidden
-            this.Write(@"DAO Instance
-        {
-            get
-            {
-                return instance;
-            }
-        }
-
-        protected override string ConnectionString
-        {
-            get
-            {
-                return connectionString;
-            }
-        }
-    }
-}
-");
+            this.Write("DAO Instance\r\n        {\r\n            get\r\n            {\r\n                return i" +
+                    "nstance;\r\n            }\r\n        }\r\n    }\r\n}\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

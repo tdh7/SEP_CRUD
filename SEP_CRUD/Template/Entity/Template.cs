@@ -39,12 +39,6 @@ namespace SEP_CRUD.Template.Entity
         public Table Table;
     }
 
-    public partial class ConfigControllerTemplate
-    {
-        public ClassGenerator Generator;
-        public string ConnectionString;
-    }
-
     public partial class ModelTemplate3
     {
         ModelGenerator generator;

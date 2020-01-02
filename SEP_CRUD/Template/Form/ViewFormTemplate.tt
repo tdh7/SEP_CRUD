@@ -12,6 +12,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using <#= Generator.ProjectOwner.DefaultModelNamespaces #>;
+using <#= Generator.ProjectOwner.DefaultDAONamespaces #>;
 
 namespace <#= Generator.Namespace #>
 {
@@ -26,31 +27,33 @@ namespace <#= Generator.Namespace #>
 		// TODO: retrieve data from BUS and return result here
         protected override IList<<#= entityName #>> initList()
         {
-			return new List<<#= entityName #>>();   
+			return <#= entityName #>DAO.Instance.readAll();
         }
 
         protected override void Add()
         {
-            Edit<#= entityName #>Form.Add(delegate(<#= entityName #> sv)
+            Edit<#= entityName #>Form.Add(delegate(<#= entityName #> newItem)
             {
-                bindingList.Add(sv);
+                bindingList.Add(newItem);
 				// TODO: update data to BUS here
+				<#= entityName #>DAO.Instance.Insert(newItem);
                 
             });
         }
 
         protected override void Edit(<#= entityName #> item)
         {
-            Edit<#= entityName #>Form.Edit(item, delegate(<#= entityName #> sv)
+            Edit<#= entityName #>Form.Edit(item, delegate(<#= entityName #> editedItem)
             {
                 // TODO: update data to BUS here
+				<#= entityName #>DAO.Instance.Update(editedItem);
             });
         }
 
         protected override void Delete(<#= entityName #> item)
         {
 			// TODO: update data to BUS here
-
+			<#= entityName #>DAO.Instance.Delete(item);
             bindingList.Remove(item);
         }
 

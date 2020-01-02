@@ -192,6 +192,8 @@
             // 
             // buttonCancel
             // 
+            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonCancel.Enabled = false;
             this.buttonCancel.Location = new System.Drawing.Point(514, 416);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
@@ -204,6 +206,7 @@
             // 
             this.AcceptButton = this.buttonStart;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(684, 461);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.checkBoxCreateDirectoryForSln);

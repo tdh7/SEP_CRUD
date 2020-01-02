@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\AbstractDAO.cs" />
+    <Compile Include="DAO\ConfigController.cs" />
     <Compile Include="Define\HAttribute\AttributesTableDefinitionBuilder.cs" />
     <Compile Include="Define\HAttribute\FieldAttribute.cs" />
     <Compile Include="Define\HAttribute\TableAttribute.cs" />
@@ -68,8 +69,6 @@
     <Compile Include="Define\SQLServer\SqlDatabase.cs" />
     <Compile Include="Define\SQLServer\SqlField.cs" />
     <Compile Include="Define\SQLServer\SqlTable.cs" />
-    <Compile Include="DTO\Firm.cs" />
-    <Compile Include="DTO\FirmDao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

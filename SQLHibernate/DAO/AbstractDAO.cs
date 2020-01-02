@@ -15,8 +15,6 @@ namespace SQLHibernate.DAO
         //private string connectionString = "Data Source=DESKTOP-G7ODJ9B\\SQLEXPRESS;Initial Catalog=ManagementSystem;Integrated Security=True";
         Type clazz = typeof(T);
 
-        protected abstract string ConnectionString { get; }
-
         public AbstractDAO()
         {
         }
@@ -24,7 +22,7 @@ namespace SQLHibernate.DAO
         private void updateDatabase()
         {
             if(database == null)
-                database = new SqlDatabase(ConnectionString);
+                database = new SqlDatabase(ConfigController.Instance.ConnectionString);
         }
 
         public IList<T> readAll()

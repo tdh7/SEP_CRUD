@@ -174,8 +174,6 @@ namespace SEP_CRUD.Forms
                 project.Add(new ViewFormGenerator(project, table));
                 project.Add(new ModelDAOGenerator(project, table));
             }
-            project.Add(new ConfigControllerGenerator(project, builder.ConnectionString));
-
 
             solutionGenerator.Add(project);
             Result result = solutionGenerator.ExportToFiles(projectInfo.SolutionPath);

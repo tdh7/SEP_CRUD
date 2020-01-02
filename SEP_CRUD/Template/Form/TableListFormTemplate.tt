@@ -6,6 +6,8 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using <#=Generator.ProjectOwner.Name#>.DAO;
+using SQLHibernate.DAO;
 
 namespace <#=Generator.Namespace#>
 {
@@ -55,6 +57,7 @@ namespace <#=Generator.Namespace#>
 
             if (Result)
             {
+                ConfigController.Instance.ConnectionString = DatabaseLoader.Instance.ConnectionString;
                 FlowListPanel.Controls.Add(Title);
 
                 ViewFormFactory factory = ViewFormFactory.Instance;

@@ -28,10 +28,17 @@ namespace SEP_CRUD.Template.Form
         /// </summary>
         public override string TransformText()
         {
-            this.Write("using System;\r\nusing System.Collections.Generic;\r\nusing System.Windows.Forms;\r\n\r\n" +
-                    "namespace ");
+            this.Write("using System;\r\nusing System.Collections.Generic;\r\nusing System.Windows.Forms;\r\nus" +
+                    "ing ");
             
-            #line 10 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\TableListFormTemplate.tt"
+            #line 9 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\TableListFormTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Generator.ProjectOwner.Name));
+            
+            #line default
+            #line hidden
+            this.Write(".DAO;\r\nusing SQLHibernate.DAO;\r\n\r\nnamespace ");
+            
+            #line 12 "C:\Users\trung\source\repos\SEP_CRUD\SEP_CRUD\Template\Form\TableListFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Generator.Namespace));
             
             #line default
@@ -52,14 +59,16 @@ namespace SEP_CRUD.Template.Form
                     "temTableUserControl> ItemTableUserControls = new List<ItemTableUserControl>();\r\n" +
                     "\r\n        private void RefreshData()\r\n        {\r\n            ItemTableUserContro" +
                     "ls.Clear();\r\n            FlowListPanel.Controls.Clear();\r\n\r\n            if (Resu" +
-                    "lt)\r\n            {\r\n                FlowListPanel.Controls.Add(Title);\r\n\r\n      " +
-                    "          ViewFormFactory factory = ViewFormFactory.Instance;\r\n                i" +
-                    "nt count = factory.Count;\r\n\r\n                ItemTableUserControl c;\r\n          " +
-                    "      for(int i = 0; i < count; i++)\r\n                {\r\n                    c =" +
-                    " new ItemTableUserControl(i, factory.BindingNames[i], factory.DatabaseNames[i]);" +
-                    "\r\n\t\t\t\t\tFlowListPanel.Controls.Add(c);\r\n                    ItemTableUserControls" +
-                    ".Add(c);\r\n                }\r\n            } else\r\n            {\r\n                " +
-                    "FlowListPanel.Controls.Add(Notification);\r\n            }\r\n        }\r\n    }\r\n}\r\n");
+                    "lt)\r\n            {\r\n                ConfigController.Instance.ConnectionString =" +
+                    " DatabaseLoader.Instance.ConnectionString;\r\n                FlowListPanel.Contro" +
+                    "ls.Add(Title);\r\n\r\n                ViewFormFactory factory = ViewFormFactory.Inst" +
+                    "ance;\r\n                int count = factory.Count;\r\n\r\n                ItemTableUs" +
+                    "erControl c;\r\n                for(int i = 0; i < count; i++)\r\n                {\r" +
+                    "\n                    c = new ItemTableUserControl(i, factory.BindingNames[i], fa" +
+                    "ctory.DatabaseNames[i]);\r\n\t\t\t\t\tFlowListPanel.Controls.Add(c);\r\n                 " +
+                    "   ItemTableUserControls.Add(c);\r\n                }\r\n            } else\r\n       " +
+                    "     {\r\n                FlowListPanel.Controls.Add(Notification);\r\n            }" +
+                    "\r\n        }\r\n    }\r\n}\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

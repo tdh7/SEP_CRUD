@@ -88,11 +88,11 @@ namespace SEP_CRUD.Template.Form
                     "nsions = new System.Drawing.SizeF(8F, 16F);\r\n            this.AutoScaleMode = Sy" +
                     "stem.Windows.Forms.AutoScaleMode.Font;\r\n            this.BackColor = System.Draw" +
                     "ing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte" +
-                    ")(250)))));\r\n            this.ClientSize = new System.Drawing.Size(1067, 607);\r\n" +
+                    ")(250)))));\r\n            this.ClientSize = new System.Drawing.Size(1100, 607);\r\n" +
                     "            this.Controls.Add(this.FlowListPanel);\r\n            this.ForeColor =" +
                     " System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((i" +
-                    "nt)(((byte)(64)))));\r\n            this.MaximumSize = new System.Drawing.Size(108" +
-                    "5, 654);\r\n            this.MinimumSize = new System.Drawing.Size(1085, 654);\r\n  " +
+                    "nt)(((byte)(64)))));\r\n            this.MaximumSize = new System.Drawing.Size(110" +
+                    "0, 654);\r\n            this.MinimumSize = new System.Drawing.Size(1100, 654);\r\n  " +
                     "          this.Name = \"TableListForm\";\r\n            this.ShowIcon = false;\r\n    " +
                     "        this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen" +
                     ";\r\n            this.Text = \"Dashboard\";\r\n            this.FlowListPanel.ResumeLa" +

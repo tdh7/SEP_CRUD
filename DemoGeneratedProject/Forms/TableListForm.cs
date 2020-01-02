@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using DemoGeneratedProject.DAO;
+using SQLHibernate.DAO;
+
 
 namespace DemoGeneratedProject.Forms
 {
@@ -50,6 +53,7 @@ namespace DemoGeneratedProject.Forms
 
             if (Result)
             {
+                ConfigController.Instance.ConnectionString = DatabaseLoader.Instance.ConnectionString;
                 FlowListPanel.Controls.Add(Title);
                 /*
                 for (int i = 0; i < 7; i++)

@@ -1,4 +1,4 @@
-﻿using SQLHibernate.DTO;
+﻿//using SQLHibernate.DTO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,12 +12,12 @@ namespace SQLHibernate
     {
         static void Main(string[] args)
         {
-            IList<Firm> firms = FirmDAO.Instance.readAll();
-            foreach (Firm firm in firms)
-            {
-                Console.WriteLine(firm.NameFirm);
-            }
-            Console.WriteLine(firms.Count);
+//            IList<Firm> firms = FirmDAO.Instance.readAll();
+//            foreach (Firm firm in firms)
+//            {
+//                Console.WriteLine(firm.NameFirm);
+//            }
+//            Console.WriteLine(firms.Count);
             //Firm f = firms[8] as Firm;
             //f.NameFirm = "def";
             //Console.WriteLine(FirmDAO.Instance.Update(f));

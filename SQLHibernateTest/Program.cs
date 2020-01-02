@@ -10,6 +10,7 @@ namespace SQLHibernateTest
     {
         static void Main(string[] args)
         {
+            
             IList<Firm> firms = FirmDAO.Instance.readAll();
             foreach (Firm firm in firms)
             {

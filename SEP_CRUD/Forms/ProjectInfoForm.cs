@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -40,13 +41,11 @@ namespace SEP_CRUD.Forms
         {
             this.builder = e;
 
+            foreach (Control control in this.Controls)
+            {
+                control.Enabled = true;
+            }
             toolStripButtonConnect.Enabled = false;
-            buttonStart.Enabled = true;
-            listBoxDBTableName.Enabled = true;
-            textBoxSlnName.Enabled = true;
-            textBoxPrjName.Enabled = true;
-            textBoxPath.Enabled = true;
-            buttonBrowser.Enabled = true;
 
             SqlStringBuilderToDatabaseLoader.Convert(builder, entitiesLoader);
             Result loadResult = entitiesLoader.CheckValid();
@@ -70,7 +69,8 @@ namespace SEP_CRUD.Forms
                 {
                     ProjectName = entities.BindingName,
                     SolutionName = entities.BindingName,
-                    Path = folderBrowserDialog.SelectedPath
+                    Path = folderBrowserDialog.SelectedPath,
+                    DirectoryForSolution = true
                 };
             }
         }
@@ -114,11 +114,35 @@ namespace SEP_CRUD.Forms
                 Console.WriteLine(table.DatabaseName);
             }
 
-            startGenerate(projectInfo);
-            MessageBox.Show("Done");
+            Result result = startGenerate(projectInfo);
+            ShowMessageBox(result);
         }
 
-        private void startGenerate(ProjectInfo projectInfo)
+        private void ShowMessageBox(Result result)
+        {
+            if (! result.OK)
+            {
+                MessageBox.Show(result.Message, 
+                    "Error Occur", 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
+
+                return;
+            }
+
+            ProjectInfo projectInfo = projectInfoBindingSource.Current as ProjectInfo;
+            var dialogResult = MessageBox.Show("Do you want open project folder?", 
+                "Project generated successful",
+                MessageBoxButtons.YesNo, 
+                MessageBoxIcon.Question);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                Process.Start("explorer.exe", projectInfo.SolutionPath);
+            }
+        }
+
+        private Result startGenerate(ProjectInfo projectInfo)
         {
             var listTable = listBoxDBTableName.SelectedItems.Cast<Table>().ToList();
             SolutionGenerator solutionGenerator = new SolutionGenerator(projectInfo.SolutionName);
@@ -154,11 +178,11 @@ namespace SEP_CRUD.Forms
             }
             project.Add(new MustHaveDaoClassesGenerator(project));
 
-
             solutionGenerator.Add(project);
-            Result result = solutionGenerator.ExportToFiles(projectInfo.Path);
+            Result result = solutionGenerator.ExportToFiles(projectInfo.SolutionPath);
             Console.WriteLine("write " + result.GetResult() + " with message " + result.Message);
-            CopyDLLToGeneratedProject(projectInfo.Path, project.Name);
+            CopyDLLToGeneratedProject(projectInfo.SolutionPath, project.Name);
+            return result;
         }
 
         private void CopyDLLToGeneratedProject(string path, string projectName)
@@ -180,10 +204,15 @@ namespace SEP_CRUD.Forms
             if (result == DialogResult.OK)
             {
                 textBoxPath.Text = folderBrowserDialog.SelectedPath;
-                textBoxPath.Focus();
+                ValidateChildren();
                 Console.Write("Selected Folder: ");
                 Console.WriteLine(folderBrowserDialog.SelectedPath);
             }
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 
@@ -195,6 +224,13 @@ namespace SEP_CRUD.Forms
         public string SolutionName { get; set; }
 
         public string Path { get; set; }
+
+        public bool DirectoryForSolution { get; set; }
+
+        public string SolutionPath =>
+            DirectoryForSolution 
+                ? System.IO.Path.Combine(Path, SolutionName) 
+                : Path;
 
         public override string ToString()
         {

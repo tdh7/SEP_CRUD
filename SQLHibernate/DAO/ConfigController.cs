@@ -1,23 +1,17 @@
-﻿<#@ template language="C#" #>
-<#@ assembly name="System.Core" #>
-<#@ import namespace="System.Linq" #>
-<#@ import namespace="System.Text" #>
-<#@ import namespace="System.Collections.Generic" #>
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace <#= Generator.Namespace #>
+namespace SQLHibernate.DAO
 {
-    class ConfigController
+    public class ConfigController
     {
         private static ConfigController instance = new ConfigController();
-        private string connectionString = @"<#= ConnectionString #>";
+        private string connectionString;
 
-        public ConfigController()
+        private ConfigController()
         {
         }
 

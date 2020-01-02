@@ -54,7 +54,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Please wait";
-            this.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.WaitingForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -15,7 +15,6 @@ namespace SEP_CRUD.Generator.Dao
 
             Add(new QuickClassGenerator(p, "Result",new ResultTemplate(ns)).AddToNamespace("DAO"));
             Add(new DatabaseLoaderGenerator(p).AddToNamespace("DAO"));
-            Add(new ConfigControllerGenerator(p, EntitiesLoader.Instance.ConnectionString));
             Add(new ItemTableGenerator(p));
         }
         public override string GetFileName()

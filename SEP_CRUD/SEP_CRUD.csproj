@@ -111,7 +111,6 @@
     <Compile Include="Generator\Form\WaitingFormDesignerGenerator.cs" />
     <Compile Include="Generator\Form\WaitingFormGenerator.cs" />
     <Compile Include="Generator\Model\BaseModelGenerator.cs" />
-    <Compile Include="Generator\Dao\ConfigControllerGenerator.cs" />
     <Compile Include="Generator\Dao\DatabaseLoaderGenerator.cs" />
     <Compile Include="Generator\Model\EditableObjectGenerator.cs" />
     <Compile Include="Generator\Dao\ModelDAOGenerator.cs" />
@@ -125,11 +124,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BaseModelTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Template\Entity\ConfigControllerTemplate.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ConfigControllerTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Template\Entity\Constant.cs" />
     <Compile Include="Template\Entity\DatabaseLoaderTemplate.cs">
@@ -392,10 +386,6 @@
     <Content Include="Template\Entity\BaseModelTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>BaseModelTemplate.cs</LastGenOutput>
-    </Content>
-    <Content Include="Template\Entity\ConfigControllerTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ConfigControllerTemplate.cs</LastGenOutput>
     </Content>
     <Content Include="Template\Entity\DatabaseLoaderTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

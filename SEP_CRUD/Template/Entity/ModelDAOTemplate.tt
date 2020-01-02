@@ -22,25 +22,13 @@ namespace <#= generator.Namespace #>
     {
 		private static <#= EntityName #>DAO instance = new <#= EntityName #>DAO();
 
-		private string connectionString;
-
-        public <#= EntityName #>DAO() : base() {
-            connectionString = ConfigController.Instance.ConnectionString;
-        }
+        private <#= EntityName #>DAO() : base() {   }
 
         public static <#= EntityName #>DAO Instance
         {
             get
             {
                 return instance;
-            }
-        }
-
-        protected override string ConnectionString
-        {
-            get
-            {
-                return connectionString;
             }
         }
     }

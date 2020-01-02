@@ -11,6 +11,7 @@ namespace SEP_CRUD.Generator.Project
 
         public string DefaultFormNamespace { get; set; } = "Forms";
         public string DefaultModelNamespace { get; set; } = "Models";
+        public string DefaultDAONamespace { get; set; } = "DAO";
         public string DefaultFormNamespaces
         {
             get { return Name + "." + DefaultFormNamespace; }
@@ -19,6 +20,11 @@ namespace SEP_CRUD.Generator.Project
         public string DefaultModelNamespaces
         {
             get { return Name + "." + DefaultModelNamespace; }
+        }
+
+        public string DefaultDAONamespaces
+        {
+            get { return Name + "." + DefaultDAONamespace; }
         }
 
         public string Guid { get; }

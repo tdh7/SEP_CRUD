@@ -71,8 +71,10 @@ namespace SEP_CRUD.Template.Form
                     "oid toolStripButtonSave_Click(object sender, EventArgs e)\r\n        {\r\n\t\t\tValidat" +
                     "e();\r\n            SaveChange();\r\n            this.Close();\r\n        }\r\n\r\n       " +
                     " private void toolStripButtonUndo_Click(object sender, EventArgs e)\r\n        {\r\n" +
-                    "            UndoChange();\r\n        }\r\n    }\r\n\r\n    public enum FormType\r\n    {\r\n" +
-                    "        FormAdd,\r\n        FormUpdate\r\n    }\r\n}");
+                    "            UndoChange();\r\n        }\r\n\r\n        private void EditDataForm_FormCl" +
+                    "osing(object sender, FormClosingEventArgs e)\r\n        {\r\n            UndoChange(" +
+                    ");\r\n        }\r\n    }\r\n\r\n    public enum FormType\r\n    {\r\n        FormAdd,\r\n     " +
+                    "   FormUpdate\r\n    }\r\n}");
             return this.GenerationEnvironment.ToString();
         }
     }

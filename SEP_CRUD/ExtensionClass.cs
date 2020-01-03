@@ -71,5 +71,12 @@ namespace SEP_CRUD
 
             return primitiveType.Equals(BindingType.DATE_TIME);
         }
+
+        public static bool IsAbleBindingToCheckbox(this Column column)
+        {
+            string primitiveType = column.BindingType;
+
+            return primitiveType.Equals(BindingType.BOOL);
+        }
     }
 }

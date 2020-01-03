@@ -37,6 +37,7 @@ namespace SEP_CRUD.Template.Form
         private static Size labelSize = new Size(55, controlHeight);
         private static Size textBoxSize = new Size(130, controlHeight);
         private static Size dateTimePickerSize = new Size(130, controlHeight);
+        private static Size checkBoxSize = new Size(15, controlHeight);
     }
 
     public partial class EditFormTemplate

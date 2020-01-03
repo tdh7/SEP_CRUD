@@ -179,34 +179,55 @@ namespace SEP_CRUD.Template.Form
             
             #line default
             #line hidden
+            
+            #line 57 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+   if (Table[i].IsAbleBindingToCheckbox()) 
+     { 
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\tthis.checkBox");
+            
+            #line 59 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
+            
+            #line default
+            #line hidden
+            this.Write(" = new System.Windows.Forms.CheckBox();\r\n");
+            
+            #line 60 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+   } 
+            
+            #line default
+            #line hidden
             this.Write("\t \r\n");
             
-            #line 58 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 61 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
  } 
             
             #line default
             #line hidden
             this.Write("            \r\n");
             
-            #line 59 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 62 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
  /*										   */ 
             
             #line default
             #line hidden
             
-            #line 60 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 63 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
  /*										   */ 
             
             #line default
             #line hidden
             
-            #line 61 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 64 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
  /*label1 = new System.Windows.Forms.Label();*/ 
             
             #line default
             #line hidden
             
-            #line 62 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 65 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
  for (int i = 0; i < Table.Count; i++)
    { 
             
@@ -214,21 +235,21 @@ namespace SEP_CRUD.Template.Form
             #line hidden
             this.Write("\t\t\tlabel");
             
-            #line 64 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 67 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(i + 1));
             
             #line default
             #line hidden
             this.Write(" = new System.Windows.Forms.Label();\r\n");
             
-            #line 65 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 68 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
  } 
             
             #line default
             #line hidden
             this.Write("            this.SuspendLayout();\r\n");
             
-            #line 67 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 70 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
 /*
 			//
 			// label2
@@ -252,111 +273,111 @@ namespace SEP_CRUD.Template.Form
             #line hidden
             this.Write("\t\t\t// \r\n\t\t\t// ");
             
-            #line 86 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 89 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(label));
             
             #line default
             #line hidden
             this.Write("\r\n\t\t\t// \r\n\t\t\t");
             
-            #line 88 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 91 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(label));
             
             #line default
             #line hidden
             this.Write(".Anchor = System.Windows.Forms.AnchorStyles.Left;\r\n\t\t\t");
             
-            #line 89 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 92 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(label));
             
             #line default
             #line hidden
             this.Write(".AutoSize = true;\r\n\t\t\t");
             
-            #line 90 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 93 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(label));
             
             #line default
             #line hidden
             this.Write(".Location = new System.Drawing.Point(");
             
-            #line 90 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 93 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(x));
             
             #line default
             #line hidden
             this.Write(", ");
             
-            #line 90 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 93 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(y));
             
             #line default
             #line hidden
             this.Write(");\r\n\t\t\t");
             
-            #line 91 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 94 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(label));
             
             #line default
             #line hidden
             this.Write(".Name = \"");
             
-            #line 91 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 94 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(label));
             
             #line default
             #line hidden
             this.Write("\";\r\n\t\t\t");
             
-            #line 92 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 95 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(label));
             
             #line default
             #line hidden
             this.Write(".Size = new System.Drawing.Size(");
             
-            #line 92 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 95 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(labelSize.Width));
             
             #line default
             #line hidden
             this.Write(", ");
             
-            #line 92 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 95 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(labelSize.Height));
             
             #line default
             #line hidden
             this.Write(");\r\n\t\t\t");
             
-            #line 93 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 96 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(label));
             
             #line default
             #line hidden
             this.Write(".TabIndex = 1;\r\n\t\t\t");
             
-            #line 94 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 97 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(label));
             
             #line default
             #line hidden
             this.Write(".Text = \"");
             
-            #line 94 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 97 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
             
             #line default
             #line hidden
             this.Write("\"; \r\n");
             
-            #line 95 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 98 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
  } 
             
             #line default
             #line hidden
             
-            #line 96 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 99 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
 /*        // 
             // textBoxHoTen
             // 
@@ -371,7 +392,7 @@ namespace SEP_CRUD.Template.Form
             #line hidden
             this.Write("          \r\n");
             
-            #line 105 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 108 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
  for (int i = 0; i < Table.Count; i++)
    { 
 	 if (Table[i].IsAbleBindingToTextBoxControl())
@@ -384,90 +405,90 @@ namespace SEP_CRUD.Template.Form
             #line hidden
             this.Write("\t\t\t// \r\n            // textBox");
             
-            #line 113 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 116 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
             
             #line default
             #line hidden
             this.Write("\r\n            // \r\n\t\t\tthis.textBox");
             
-            #line 115 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 118 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
             
             #line default
             #line hidden
             this.Write(".Anchor = System.Windows.Forms.AnchorStyles.Right;\r\n            this.textBox");
             
-            #line 116 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 119 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
             
             #line default
             #line hidden
             this.Write(".Location = new System.Drawing.Point(");
             
-            #line 116 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 119 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(x));
             
             #line default
             #line hidden
             this.Write(", ");
             
-            #line 116 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 119 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(y));
             
             #line default
             #line hidden
             this.Write(");\r\n            this.textBox");
             
-            #line 117 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 120 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
             
             #line default
             #line hidden
             this.Write(".Name = \"textBox");
             
-            #line 117 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 120 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
             
             #line default
             #line hidden
             this.Write("\";\r\n            this.textBox");
             
-            #line 118 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 121 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
             
             #line default
             #line hidden
             this.Write(".Size = new System.Drawing.Size(130, ");
             
-            #line 118 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 121 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(controlHeight));
             
             #line default
             #line hidden
             this.Write(");\r\n            this.textBox");
             
-            #line 119 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 122 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
             
             #line default
             #line hidden
             this.Write(".TabIndex = ");
             
-            #line 119 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 122 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(i + 1));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 120 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 123 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
   } 
             
             #line default
             #line hidden
             
-            #line 121 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 124 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
  if (Table[i].IsAbleBindingToDateTimePicker()) 
 	{ 
 		var x = TEXT_BOX_MARGIN_LEFT;
@@ -476,9 +497,16 @@ namespace SEP_CRUD.Template.Form
             
             #line default
             #line hidden
-            this.Write("\t\t\tthis.dateTimePicker");
+            this.Write("\t\t\t// \r\n            // dateTimePicker");
             
-            #line 126 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 130 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n            // \r\n\t\t\tthis.dateTimePicker");
+            
+            #line 132 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
             
             #line default
@@ -486,83 +514,199 @@ namespace SEP_CRUD.Template.Form
             this.Write(".Anchor = System.Windows.Forms.AnchorStyles.Right;\r\n            this.dateTimePick" +
                     "er");
             
-            #line 127 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 133 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
+            
+            #line default
+            #line hidden
+            this.Write(".CustomFormat = \"dd-MM-yyyy\";\r\n            this.dateTimePicker");
+            
+            #line 134 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
+            
+            #line default
+            #line hidden
+            this.Write(".Format = System.Windows.Forms.DateTimePickerFormat.Custom;            \r\n\t\t\tthis." +
+                    "dateTimePicker");
+            
+            #line 135 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
             
             #line default
             #line hidden
             this.Write(".Location = new System.Drawing.Point(");
             
-            #line 127 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 135 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(x));
             
             #line default
             #line hidden
             this.Write(", ");
             
-            #line 127 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 135 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(y));
             
             #line default
             #line hidden
             this.Write(");\r\n            this.dateTimePicker");
             
-            #line 128 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 136 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
             
             #line default
             #line hidden
             this.Write(".Name = \"dateTimePicker");
             
-            #line 128 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 136 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
             
             #line default
             #line hidden
             this.Write("\";\r\n            this.dateTimePicker");
             
-            #line 129 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 137 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
             
             #line default
             #line hidden
             this.Write(".Size = new System.Drawing.Size(130, ");
             
-            #line 129 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 137 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(controlHeight));
             
             #line default
             #line hidden
             this.Write(");\r\n            this.dateTimePicker");
             
-            #line 130 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 138 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
             
             #line default
             #line hidden
             this.Write(".TabIndex = ");
             
-            #line 130 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 138 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(i + 1));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 131 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 139 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
   } 
             
             #line default
             #line hidden
             
-            #line 132 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 140 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+ if (Table[i].IsAbleBindingToCheckbox()) 
+	{ 
+		var x = TEXT_BOX_MARGIN_LEFT;
+		var y = ComputeControlYLocation(i, checkBoxSize);	
+
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\t// \r\n            // checkBox");
+            
+            #line 146 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n            // \r\n\t\t\tthis.checkBox");
+            
+            #line 148 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
+            
+            #line default
+            #line hidden
+            this.Write(".AutoSize = true;\r\n\t\t\tthis.checkBox");
+            
+            #line 149 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
+            
+            #line default
+            #line hidden
+            this.Write(".Anchor = System.Windows.Forms.AnchorStyles.Right;\r\n            this.checkBox");
+            
+            #line 150 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
+            
+            #line default
+            #line hidden
+            this.Write(".Location = new System.Drawing.Point(");
+            
+            #line 150 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(x));
+            
+            #line default
+            #line hidden
+            this.Write(", ");
+            
+            #line 150 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(y));
+            
+            #line default
+            #line hidden
+            this.Write(");\r\n            this.checkBox");
+            
+            #line 151 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
+            
+            #line default
+            #line hidden
+            this.Write(".Name = \"checkBox");
+            
+            #line 151 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
+            
+            #line default
+            #line hidden
+            this.Write("\";\r\n            this.checkBox");
+            
+            #line 152 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
+            
+            #line default
+            #line hidden
+            this.Write(".Size = new System.Drawing.Size(15, 14);\r\n            this.checkBox");
+            
+            #line 153 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
+            
+            #line default
+            #line hidden
+            this.Write(".TabIndex = ");
+            
+            #line 153 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(i + 1));
+            
+            #line default
+            #line hidden
+            this.Write(";\r\n\t\t\tthis.checkBox");
+            
+            #line 154 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
+            
+            #line default
+            #line hidden
+            this.Write(".UseVisualStyleBackColor = true;\r\n");
+            
+            #line 155 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+  } 
+            
+            #line default
+            #line hidden
+            
+            #line 156 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
  } 
             
             #line default
             #line hidden
             this.Write("            // \r\n            // Edit");
             
-            #line 134 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 158 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Table.BindingName));
             
             #line default
@@ -570,28 +714,28 @@ namespace SEP_CRUD.Template.Form
             this.Write("Form\r\n            // \r\n            this.AutoScaleDimensions = new System.Drawing." +
                     "SizeF(6F, 13F);\r\n            this.ClientSize = new System.Drawing.Size(");
             
-            #line 137 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 161 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ComputeFormWidth()));
             
             #line default
             #line hidden
             this.Write(", ");
             
-            #line 137 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 161 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ComputeFormHeight()));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 138 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 162 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
  for (int i = 0; i < Table.Count; i++)
    {  
             
             #line default
             #line hidden
             
-            #line 140 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 164 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
 	 if (Table[i].IsAbleBindingToTextBoxControl())
 	 {	
             
@@ -599,21 +743,21 @@ namespace SEP_CRUD.Template.Form
             #line hidden
             this.Write("\t\t\tthis.Controls.Add(this.textBox");
             
-            #line 142 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 166 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 143 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 167 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
 	 }  
             
             #line default
             #line hidden
             this.Write("\t\t\t\r\n");
             
-            #line 144 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 168 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
    if (Table[i].IsAbleBindingToDateTimePicker()) 
      {  
             
@@ -621,27 +765,48 @@ namespace SEP_CRUD.Template.Form
             #line hidden
             this.Write("\t\t\tthis.Controls.Add(this.dateTimePicker");
             
-            #line 146 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 170 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 147 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 171 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
    }  
             
             #line default
             #line hidden
             this.Write(" \r\n");
             
-            #line 148 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 172 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+   if (Table[i].IsAbleBindingToCheckbox()) 
+     {  
+            
+            #line default
+            #line hidden
+            this.Write("\t\t\tthis.Controls.Add(this.checkBox");
+            
+            #line 174 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
+            
+            #line default
+            #line hidden
+            this.Write(");\r\n");
+            
+            #line 175 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+   }  
+            
+            #line default
+            #line hidden
+            
+            #line 176 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
  } 
             
             #line default
             #line hidden
             
-            #line 149 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 177 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
  for (int i = 0; i < Table.Count; i++)
    { 
             
@@ -649,28 +814,28 @@ namespace SEP_CRUD.Template.Form
             #line hidden
             this.Write("\t\t\tthis.Controls.Add(label");
             
-            #line 151 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 179 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(i + 1));
             
             #line default
             #line hidden
             this.Write("); \r\n");
             
-            #line 152 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 180 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
  } 
             
             #line default
             #line hidden
             this.Write("            this.Name = \"Edit");
             
-            #line 153 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 181 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Table.BindingName));
             
             #line default
             #line hidden
             this.Write("Form\";\r\n            this.Text = \"Edit");
             
-            #line 154 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 182 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Table.BindingName));
             
             #line default
@@ -678,14 +843,14 @@ namespace SEP_CRUD.Template.Form
             this.Write("Form\";\r\n            this.ResumeLayout(false);\r\n            this.PerformLayout();\r" +
                     "\n\r\n        }\r\n\r\n        #endregion\r\n");
             
-            #line 161 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 189 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
  for (int i = 0; i < Table.Count; i++)
    { 
             
             #line default
             #line hidden
             
-            #line 163 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 191 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
 	 if (Table[i].IsAbleBindingToTextBoxControl())
 	 {	
             
@@ -693,20 +858,20 @@ namespace SEP_CRUD.Template.Form
             #line hidden
             this.Write("\t\tprivate System.Windows.Forms.TextBox textBox");
             
-            #line 165 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 193 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 166 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 194 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
    }  
             
             #line default
             #line hidden
             
-            #line 167 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 195 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
    if (Table[i].IsAbleBindingToDateTimePicker()) 
 	 {  
             
@@ -714,20 +879,41 @@ namespace SEP_CRUD.Template.Form
             #line hidden
             this.Write("\t\tprivate System.Windows.Forms.DateTimePicker dateTimePicker");
             
-            #line 169 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 197 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 170 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 198 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
    }  
             
             #line default
             #line hidden
             
-            #line 171 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            #line 199 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+   if (Table[i].IsAbleBindingToCheckbox()) 
+	 {  
+            
+            #line default
+            #line hidden
+            this.Write("\t\tprivate System.Windows.Forms.CheckBox checkBox");
+            
+            #line 201 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Table[i].BindingName));
+            
+            #line default
+            #line hidden
+            this.Write(";\r\n");
+            
+            #line 202 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+   }  
+            
+            #line default
+            #line hidden
+            
+            #line 203 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
  } 
             
             #line default
@@ -736,7 +922,7 @@ namespace SEP_CRUD.Template.Form
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 174 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
+        #line 206 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormDesignerTemplate.tt"
    // Start of class feature block
 private int ComputeControlYLocation(int i, Size size)
 {

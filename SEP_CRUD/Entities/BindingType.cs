@@ -21,5 +21,7 @@ namespace SEP_CRUD.Entities
         public static readonly string FLOAT = "float";
 
         public static readonly string DOUBLE = "double";
+
+        public static readonly string BOOL = "bool";
     }
 }

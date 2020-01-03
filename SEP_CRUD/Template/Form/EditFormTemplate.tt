@@ -84,6 +84,12 @@ private void WriteDataBinding(Column c)
 #>
 			dateTimePicker<#= name #>.DataBindings.Add("Value", bindingSourceItem, "<#= name #>", true, DataSourceUpdateMode.OnValidation, DateTime.Now);
 <#+ }
+
+	if (c.IsAbleBindingToCheckbox())
+	{
+#>
+            checkBox<#= name #>.DataBindings.Add("Checked", bindingSourceItem, "<#= name #>", false, DataSourceUpdateMode.OnPropertyChanged, false);
+<#+	}
 }
 #>
 <#+

@@ -243,13 +243,58 @@ this.Write("\", true, DataSourceUpdateMode.OnValidation, DateTime.Now);\r\n");
         
         #line 86 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
  }
+
+	if (c.IsAbleBindingToCheckbox())
+	{
+
+        
+        #line default
+        #line hidden
+        
+        #line 90 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+this.Write("            checkBox");
+
+        
+        #line default
+        #line hidden
+        
+        #line 91 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(name));
+
+        
+        #line default
+        #line hidden
+        
+        #line 91 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+this.Write(".DataBindings.Add(\"Checked\", bindingSourceItem, \"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 91 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(name));
+
+        
+        #line default
+        #line hidden
+        
+        #line 91 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+this.Write("\", false, DataSourceUpdateMode.OnPropertyChanged, false);\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 92 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+	}
 }
 
         
         #line default
         #line hidden
         
-        #line 89 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+        #line 95 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
 
 void setReadOnlyTextBox(string name, string b)
 {
@@ -258,42 +303,42 @@ void setReadOnlyTextBox(string name, string b)
         #line default
         #line hidden
         
-        #line 92 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+        #line 98 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
 this.Write("\t\t\t\ttextBox");
 
         
         #line default
         #line hidden
         
-        #line 93 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+        #line 99 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(name));
 
         
         #line default
         #line hidden
         
-        #line 93 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+        #line 99 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
 this.Write(".ReadOnly = ");
 
         
         #line default
         #line hidden
         
-        #line 93 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+        #line 99 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(b));
 
         
         #line default
         #line hidden
         
-        #line 93 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+        #line 99 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
 this.Write(";\r\n");
 
         
         #line default
         #line hidden
         
-        #line 94 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
+        #line 100 "C:\Users\Kim Ninh\Documents\Visual Studio 2017\Projects\sep_crud\SEP_CRUD\Template\Form\EditFormTemplate.tt"
 
 } 
 

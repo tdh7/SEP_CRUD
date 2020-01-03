@@ -98,6 +98,7 @@ namespace SEP_CRUD.Template.Form
             this.Controls.Add(this.toolStrip1);
             this.Name = ""EditDataForm"";
             this.Text = ""EditDataForm"";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditDataForm_FormClosing);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);

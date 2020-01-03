@@ -54,7 +54,10 @@ namespace <# Write(Generator.Namespace); #>
      { #>
 			this.dateTimePicker<#= Table[i].BindingName #> = new System.Windows.Forms.DateTimePicker();
 <#   } #>
-	 
+<#   if (Table[i].IsAbleBindingToCheckbox()) 
+     { #>
+			this.checkBox<#= Table[i].BindingName #> = new System.Windows.Forms.CheckBox();
+<#   } #>	 
 <# } #>            
 <# /*										   */ #>
 <# /*										   */ #>
@@ -123,11 +126,32 @@ namespace <# Write(Generator.Namespace); #>
 		var x = TEXT_BOX_MARGIN_LEFT;
 		var y = ComputeControlYLocation(i, dateTimePickerSize);	
 #>
+			// 
+            // dateTimePicker<#= Table[i].BindingName #>
+            // 
 			this.dateTimePicker<#= Table[i].BindingName #>.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.dateTimePicker<#= Table[i].BindingName #>.Location = new System.Drawing.Point(<#= x #>, <#= y #>);
+            this.dateTimePicker<#= Table[i].BindingName #>.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePicker<#= Table[i].BindingName #>.Format = System.Windows.Forms.DateTimePickerFormat.Custom;            
+			this.dateTimePicker<#= Table[i].BindingName #>.Location = new System.Drawing.Point(<#= x #>, <#= y #>);
             this.dateTimePicker<#= Table[i].BindingName #>.Name = "dateTimePicker<#= Table[i].BindingName #>";
             this.dateTimePicker<#= Table[i].BindingName #>.Size = new System.Drawing.Size(130, <#= controlHeight #>);
             this.dateTimePicker<#= Table[i].BindingName #>.TabIndex = <#= i + 1 #>;
+<#  } #>
+<# if (Table[i].IsAbleBindingToCheckbox()) 
+	{ 
+		var x = TEXT_BOX_MARGIN_LEFT;
+		var y = ComputeControlYLocation(i, checkBoxSize);	
+#>
+			// 
+            // checkBox<#= Table[i].BindingName #>
+            // 
+			this.checkBox<#= Table[i].BindingName #>.AutoSize = true;
+			this.checkBox<#= Table[i].BindingName #>.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.checkBox<#= Table[i].BindingName #>.Location = new System.Drawing.Point(<#= x #>, <#= y #>);
+            this.checkBox<#= Table[i].BindingName #>.Name = "checkBox<#= Table[i].BindingName #>";
+            this.checkBox<#= Table[i].BindingName #>.Size = new System.Drawing.Size(15, 14);
+            this.checkBox<#= Table[i].BindingName #>.TabIndex = <#= i + 1 #>;
+			this.checkBox<#= Table[i].BindingName #>.UseVisualStyleBackColor = true;
 <#  } #>
 <# } #>
             // 
@@ -145,6 +169,10 @@ namespace <# Write(Generator.Namespace); #>
      {  #>
 			this.Controls.Add(this.dateTimePicker<#= Table[i].BindingName #>);
 <#   }  #> 
+<#   if (Table[i].IsAbleBindingToCheckbox()) 
+     {  #>
+			this.Controls.Add(this.checkBox<#= Table[i].BindingName #>);
+<#   }  #>
 <# } #>
 <# for (int i = 0; i < Table.Count; i++)
    { #>
@@ -167,6 +195,10 @@ namespace <# Write(Generator.Namespace); #>
 <#   if (Table[i].IsAbleBindingToDateTimePicker()) 
 	 {  #>
 		private System.Windows.Forms.DateTimePicker dateTimePicker<#= Table[i].BindingName #>;
+<#   }  #>
+<#   if (Table[i].IsAbleBindingToCheckbox()) 
+	 {  #>
+		private System.Windows.Forms.CheckBox checkBox<#= Table[i].BindingName #>;
 <#   }  #>
 <# } #>
     }

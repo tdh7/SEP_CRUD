@@ -97,6 +97,11 @@ namespace DemoGeneratedProject.Forms
         {
             UndoChange();
         }
+
+        private void EditDataForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            UndoChange();
+        }
     }
 
     public enum FormType

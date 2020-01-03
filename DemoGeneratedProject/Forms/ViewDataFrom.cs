@@ -80,5 +80,17 @@ namespace DemoGeneratedProject.Forms
         {
             Add();
         }
+
+        protected void ShowErrorMessageIfNeed(Action action)
+        {
+            try
+            {
+                action();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Error occur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

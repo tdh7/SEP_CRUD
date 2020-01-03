@@ -18,9 +18,35 @@ namespace DemoGeneratedProject.Forms
 
         private SinhVienDAO sinhVienDao = SinhVienDAO.Instance;
 
+        private Func<FormType, SinhVien, bool> saveAction;
+
         public ViewSinhVienForm()
         {
             InitializeComponent();
+            saveAction = SaveAction;
+        }
+
+        private bool SaveAction(FormType formMode, SinhVien item)
+        {
+            bool saveSuccess = false;
+            Action action = () =>
+            {
+                if (formMode == FormType.FormAdd)
+                {
+                    sinhVienDao.Insert(item);
+                    bindingList.Add(item);
+                }
+
+                if (formMode == FormType.FormUpdate)
+                {
+                    sinhVienDao.Update(item);
+                }
+
+                saveSuccess = true;
+            };
+
+            ShowErrorMessageIfNeed(action);
+            return saveSuccess;
         }
 
         protected override IList<SinhVien> initList()
@@ -31,19 +57,12 @@ namespace DemoGeneratedProject.Forms
 
         protected override void Add()
         {
-            EditSinhVienForm.Add(delegate(SinhVien sv)
-            {
-                bindingList.Add(sv);
-                sinhVienDao.Insert(sv);
-            });
+            EditSinhVienForm.Add(saveAction);
         }
 
         protected override void Edit(SinhVien item)
         {
-            EditSinhVienForm.Edit(item, delegate(SinhVien sv)
-            {
-                sinhVienDao.Update(sv);
-            });
+            EditSinhVienForm.Edit(item, saveAction);
         }
 
         protected override void Delete(SinhVien item)
@@ -53,8 +72,11 @@ namespace DemoGeneratedProject.Forms
 
             if (dialogResult == DialogResult.Yes)
             {
-                sinhVienDao.Delete(item);
-                bindingList.Remove(item);
+                ShowErrorMessageIfNeed((() =>
+                {
+                    sinhVienDao.Delete(item);
+                    bindingList.Remove(item);
+                }));
             }
         }
 

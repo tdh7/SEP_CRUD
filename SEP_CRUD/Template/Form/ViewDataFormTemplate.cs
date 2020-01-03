@@ -70,7 +70,11 @@ namespace SEP_CRUD.Template.Form
                     "nitList();\r\n\r\n            bindingList.Clear();\r\n            foreach (var model i" +
                     "n iList)\r\n            {\r\n                bindingList.Add(model);\r\n            }\r" +
                     "\n        }\r\n\r\n        protected virtual void NewDataItem(object sender, EventArg" +
-                    "s e)\r\n        {\r\n            Add();\r\n        }\r\n    }\r\n}");
+                    "s e)\r\n        {\r\n            Add();\r\n        }\r\n\r\n        protected void ShowErr" +
+                    "orMessageIfNeed(Action action)\r\n        {\r\n            try\r\n            {\r\n     " +
+                    "           action();\r\n            }\r\n            catch (Exception e)\r\n          " +
+                    "  {\r\n                MessageBox.Show(e.Message, \"Error occur\", MessageBoxButtons" +
+                    ".OK, MessageBoxIcon.Error);\r\n            }\r\n        }\r\n    }\r\n}");
             return this.GenerationEnvironment.ToString();
         }
     }

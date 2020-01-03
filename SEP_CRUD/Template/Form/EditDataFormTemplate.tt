@@ -19,36 +19,40 @@ namespace <#= Generator.Namespace #>
         where E: BaseModel, new()
         where F: EditDataForm<E, F>, new()
     {
-        private Action<E> _saveAction;
+        private Func<FormType, E, bool> _saveAction;
         protected BindingSource bindingSourceItem = new BindingSource();
-
-        public EditDataForm()
+        private FormType currentMode;
+		
+		public EditDataForm()
         {
             InitializeComponent();
         }
 
-        private static F SetUpForm(E entity, Action<E> saveAction)
+        private static F SetUpForm(E entity, Func<FormType, E, bool> saveAction)
         {
             if (entity == null)
                 entity = new E();
 
             F f = new F();
+			entity.BeginEdit();
             f.InitBinder(entity);
             f._saveAction = saveAction;
 			return f;
         }
 
-        public static void Edit(E entity, Action<E> saveAction)
+        public static void Edit(E entity, Func<FormType, E, bool> saveAction)
         {
             F f = SetUpForm(entity, saveAction);
-			f.OnFormLoaded(f, FormType.FormUpdate);
+			f.currentMode = FormType.FormUpdate;
+            f.OnFormLoaded(f, f.currentMode);
             f.ShowDialog();
         }
 
-        public static void Add(Action<E> saveAction)
+        public static void Add(Func<FormType, E, bool> saveAction)
         {
             F f = SetUpForm(null, saveAction);
-            f.OnFormLoaded(f, FormType.FormAdd);
+            f.currentMode = FormType.FormAdd;
+            f.OnFormLoaded(f, f.currentMode);
             f.ShowDialog();
         }
 
@@ -64,8 +68,16 @@ namespace <#= Generator.Namespace #>
         private void SaveChange()
         {
             var item = bindingSourceItem.Current as E;
-            item.EndEdit();
-            _saveAction.Invoke(item);
+            var success = _saveAction.Invoke(currentMode, item);
+
+			if (success)
+			{
+				item.EndEdit();
+			}
+			else
+			{
+				item.CancelEdit();
+			}
         }
 
         private void UndoChange()

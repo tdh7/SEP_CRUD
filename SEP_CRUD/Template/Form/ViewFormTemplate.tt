@@ -18,10 +18,36 @@ namespace <#= Generator.Namespace #>
 {
     public partial class View<#= entityName #>Form: ViewDataFrom<<#= entityName #>>
     {
+		
+		private Func<FormType, <#= entityName #>, bool> saveAction;
 
         public View<#= entityName #>Form()
         {
             InitializeComponent();
+			saveAction = SaveAction;
+        }
+
+        private bool SaveAction(FormType formMode, <#= entityName #> item)
+        {
+			bool saveSuccess = false;
+            Action action = () =>
+            {
+                if (formMode == FormType.FormAdd)
+                {
+                    <#= entityName #>DAO.Instance.Insert(item);
+                    bindingList.Add(item);
+                }
+
+                if (formMode == FormType.FormUpdate)
+                {
+                    <#= entityName #>DAO.Instance.Update(item);
+                }
+
+				saveSuccess = true;
+            };
+
+            ShowErrorMessageIfNeed(action);
+			return saveSuccess;
         }
 
 		// TODO: retrieve data from BUS and return result here
@@ -32,22 +58,12 @@ namespace <#= Generator.Namespace #>
 
         protected override void Add()
         {
-            Edit<#= entityName #>Form.Add(delegate(<#= entityName #> newItem)
-            {
-                bindingList.Add(newItem);
-				// TODO: update data to BUS here
-				<#= entityName #>DAO.Instance.Insert(newItem);
-                
-            });
+			Edit<#= entityName #>Form.Add(saveAction);
         }
 
         protected override void Edit(<#= entityName #> item)
         {
-            Edit<#= entityName #>Form.Edit(item, delegate(<#= entityName #> editedItem)
-            {
-                // TODO: update data to BUS here
-				<#= entityName #>DAO.Instance.Update(editedItem);
-            });
+			Edit<#= entityName #>Form.Edit(item, saveAction);
         }
 
         protected override void Delete(<#= entityName #> item)
@@ -58,9 +74,12 @@ namespace <#= Generator.Namespace #>
                 MessageBoxIcon.Warning);
 
             if (dialogResult == DialogResult.Yes)
-            {
-				<#= entityName #>DAO.Instance.Delete(item);
-				bindingList.Remove(item);
+            {    
+				ShowErrorMessageIfNeed((() =>
+                {
+                    <#= entityName #>DAO.Instance.Delete(item);
+					bindingList.Remove(item);
+                }));
             }
         }
 
